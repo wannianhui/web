@@ -1,0 +1,495 @@
+<template>
+  <div class="container" ref="index">
+    <!-- search -->
+    <div class="search_wrap view_row">
+      <input
+        type="text"
+        class="search"
+        placeholder="请输入姓名或编号搜索选手"
+        v-model="searchKeyWord"
+        @input="searchInput()"
+        @blur="inputBlur()"
+      />
+      <p @click="search()">搜索</p>
+    </div>
+
+    <!-- hot_time -->
+    <div class="hot_time_wrap view_row" v-show="!isSearching">
+      <div class="title_wrap">
+        <p>累计人气值</p>
+        <p>离截止时间还剩：</p>
+      </div>
+      <div class="value_wrap">
+        <p class="hot">{{sumPopularity}}</p>
+        <p class="time" v-if="isStarted&&!isEnded">
+          <span>{{showTimeList[0]}}</span>天
+          <span>{{showTimeList[1]}}</span>时
+          <span>{{showTimeList[2]}}</span>分
+          <span>{{showTimeList[3]}}</span>秒
+        </p>
+        <p class="unstart" v-if="!isStarted">活动尚未开始</p>
+        <!-- <p class="unstart" v-if="isStarted&&isEnded">活动已结束！敬请期待</p> -->
+      </div>
+    </div>
+
+    <!-- <player-list ref="playerList" v-show="!isSearching" v-on:showMsgFromPlayList="showMsgFromPlayList" />
+    <player-list ref="playerListSearch" v-if="isSearching" :searchStr="searchKeyWord"  />-->
+    <div class="fuckList">
+      <!-- playerList -->
+      <van-list v-model="loading" :finished="finished" @load="getList" class="list_wrap view_row">
+        <div class="item" v-for="item in playerList" :key="item.id">
+          <div class="avatar_wrap" @click.stop="pageTo_query('/detail', item)">
+            <img class="avatar" :src="$imgurl + item.infoImg" alt />
+            <p class="tag">NO.{{item.num}}</p>
+            <p class="name">{{item.realName}}</p>
+          </div>
+          <div class="msg view_row">
+            <p class="hot">{{item.popularity}}</p>
+            <p class="no">{{item.no}}号</p>
+          </div>
+          <p class="btn" @click.stop="support(item.id)">支持Ta</p>
+        </div>
+      </van-list>
+
+      <!-- list no data -->
+      <div class="list_no_data" v-if="!searchStr && playerList.length==0">
+        <p>暂无选手，敬请期待</p>
+      </div>
+
+      <!-- search no data -->
+      <div class="search_no_data view_column" v-if="searchStr && playerList.length==0">
+        <img src="@/assets/img/result_icon_null.png" alt />
+        <p>无法搜索到该选手，请重新搜索</p>
+      </div>
+
+      <!-- 已经是底部了 -->
+      <div class="isbottom" v-if="finished && playerList.length">已经是底部了</div>
+
+      <popup-gift ref="popupGift" v-on:luanchedGiftCallBack="luanchedGiftCallBack" />
+      <popup-authorize ref="popupAuthorize">想为您的选手投票，请进行微信授权，谢谢您的配合</popup-authorize>
+    </div>
+  </div>
+</template>
+<script >
+// import playerList from '@/components/playerList';
+// import wx from 'weixin-js-sdk'
+import popupAuthorize from "@/components/popupAuthorize";
+import popupGift from "@/components/popupGift";
+// import func from '../../vue-temp/vue-editor-bridge';
+export default {
+  components: { popupGift, popupAuthorize },
+  data() {
+    return {
+      isSearching: false, // 是否在执行搜索
+      searchKeyWord: "", // 搜索关键词
+      sumPopularity: 0, // 累计人气值
+      isStarted: false, // 是否已开始
+      isEnded: true, // 是否已结束
+      showTimeList: [0, 0, 0, 0], // 已开始时显示距离结束时间的 天 时 分 秒
+      playerList: [], // 搜索 参赛选手
+      pageNumber: 1,
+      pageSize: 10,
+      loading: false,
+      finished: false,
+      searchStr: ""
+    };
+  },
+  created() {
+    setTimeout(() => {
+      this.weixinConfig();
+    });
+    // this.weixinConfig();
+    // this.whetherAuthorize();
+  },
+  mounted() {},
+  methods: {
+      // 用于给 platerList 组件请求数据后回调显示 人气和倒计时
+    showMsgFromPlayList(res) {
+      console.log("showMsgFromPlayList111111111111111111111111111111", res);
+      this.sumPopularity = res.data.sumPopularity;
+      let timeList = res.data.stopTime.replace(/\-/g, "/").split(" / ");
+      let now = new Date().getTime();
+      if (new Date(timeList[0]).getTime() > now) {
+        console.log("未开始");
+        this.isStarted = false;
+      } else if (
+        new Date(timeList[0]).getTime() < now &&
+        new Date(timeList[1]).getTime() > now
+      ) {
+        console.log("已开始");
+        this.isStarted = true;
+        this.isEnded = false;
+      } else {
+        console.log("已结束");
+        this.isEnded = true;
+      }
+      // 倒计时 globalFun
+      this.set_count_down(timeList[1], data => {
+        this.showTimeList = [data.day, data.hour, data.minute, data.second];
+      });
+    },
+
+    inputBlur() {
+      window.scroll(0, 0);
+      setTimeout(() => {
+        if (
+          document.activeElement.tagName === "INPUT" ||
+          document.activeElement.tagName === "TEXTAREA"
+        ) {
+          return;
+        }
+        document.activeElement.scrollIntoViewIfNeeded(true);
+      }, 10);
+    },
+
+    searchInput() {
+      if (!this.searchKeyWord) {
+        this.isSearching = false;
+      } else {
+        if (this.isSearching) {
+          // 搜索中
+          this.$refs.playerListSearch.pageNumber = 1;
+          // this.$refs.playerListSearch.playerList = [];
+          console.log(
+            "this.$refs.playerListSearch.pageNumber: ",
+            this.$refs.playerListSearch.pageNumber
+          );
+        }
+      }
+    },
+
+    // 搜索
+    search() {
+      if (this.searchKeyWord.trim() != "") {
+        setTimeout(() => {
+          this.$refs.index.scrollTop = 0;
+        }, 3000);
+        if (!this.isSearching) {
+          this.isSearching = true; // 执行搜索
+        } else {
+          // 搜索中
+          this.$refs.playerListSearch.pageNumber = 1;
+          this.$refs.playerListSearch.getList();
+        }
+      }
+    },
+
+    luanchedGiftCallBack: function() {
+      // alert('列表')
+      this.$toast("发射成功!");
+      // this.$refs.popupGift.isShow = false;
+      // this.$refs.playerList.pageNumber = 1;
+      this.pageNumber = 1;
+      this.playerList = [];
+      this.getList();
+      // this.$refs.playerList.getList();
+    },
+    getList() {
+      setTimeout(() => {
+        console.log(this.playerList, "///////");
+        this.$toast.loading({
+          mask: false,
+          message: "加载中..."
+        });
+        // 获取参数选手
+        if (this.pageNumber == 1) {
+          // 如果更改了 pageNumber=1，则重置 playerList=[]
+          this.playerList = [];
+          this.finished = false;
+        }
+        let param = {
+          sessionId: this.getSessionId(),
+          keyword: this.searchStr,
+          pageNumber: this.pageNumber,
+          pageSize: 10
+        };
+        this.$api.getPlayerList(param).then(res => {
+          console.log("选手列表", res);
+          if (res.data.page.list && res.data.page.list.length != 0) {
+            res.data.page.list.forEach((item, index) => {
+              item.num = index + 1 + (this.pageNumber - 1) * 10;
+            });
+          }
+          this.playerList = this.playerList.concat(res.data.page.list);
+
+          this.loading = false;
+          this.pageNumber++;
+          if (res.data.page.lastPage) {
+            this.finished = true;
+          }
+          // 非搜索
+          if (!this.searchStr) {
+            console.log("this.$emit('showMsgFromPlayList', res)");
+
+            // this.$parent.showMsgFromPlayList(res);
+            // this.$emit("showMsgFromPlayList", res); // 需在父组件定义子组件处定义 @showMsgFromPlayList="showMsgFromPlayList"
+            this.showMsgFromPlayList(res);
+          }
+        });
+      }, 1000);
+    },
+
+    // 支持Ta
+    support(id) {
+      console.log(this.getSessionId(), id);
+      if (!this.getSessionId()) {
+        this.$refs.popupAuthorize.isShow = true; // 弹出 显示授权
+      } else {
+        this.$refs.popupGift.isShow = true; // 弹出 发射礼物
+        this.$refs.popupGift.playerId = id; // 选手ID
+        if (this.$refs.popupGift.giftList.length == 0)
+          this.$refs.popupGift.getGift();
+      }
+    }
+    // 发射礼物后，子组件的回调
+    // luanchedGiftCallBack() {
+    //   console.log("playerList- luanchedGiftCallBack 。 ");
+    //   // this.$refs.playerList.pageNumber = 1;
+    //   // this.$refs.playerList.getList();
+    //   this.pageNumber = 1;
+    //   this.getList();
+    // }
+  }
+};
+</script>
+
+<style lang="scss" scoped >
+@import "../assets/css/public.scss";
+.container {
+  padding-top: 0.1rem;
+  min-height: 40vh;
+  .search_wrap {
+    padding: 0 0.15rem;
+    input.search {
+      flex-grow: 1;
+      padding: 0.05rem;
+      font-size: 13px;
+      line-height: 0.2rem;
+      font-weight: 400;
+      text-align: center;
+      background-color: #f2f5f9;
+      border-radius: 0.05rem;
+      &::placeholder {
+        color: #b4b4b4;
+      }
+    }
+    p {
+      font-size: 0.12rem;
+      line-height: 0.3rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      flex-shrink: 0;
+      padding: 0 0.12rem;
+      margin-left: 0.04rem;
+      border-radius: 0.05rem;
+      background: linear-gradient(
+        -34deg,
+        rgba(41, 131, 255, 1) 0%,
+        rgba(41, 161, 255, 1) 100%
+      );
+      &:before {
+        content: "";
+        background-image: url("~@/assets/img/search_btn_icon.png");
+        background-repeat: no-repeat;
+        background-size: 0.11rem 0.11rem;
+        background-position: left center;
+        padding-left: 0.17rem;
+      }
+    }
+  }
+
+  .hot_time_wrap {
+    padding: 0 0.15rem;
+    margin-top: 0.05rem;
+    .title_wrap {
+      flex-shrink: 0;
+      p {
+        font-size: 0.13rem;
+        line-height: 0.21rem;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        margin: 0.05rem;
+      }
+    }
+    .value_wrap {
+      .hot {
+        margin: 0.05rem 0;
+        font-size: 0.14rem;
+        line-height: 0.21rem;
+        font-weight: bold;
+        color: rgba(255, 155, 48, 1);
+        &:before {
+          content: "";
+          background-image: url("~@/assets/img/home_icon_renqi.png");
+          background-repeat: no-repeat;
+          background-size: 0.1rem 0.13rem;
+          background-position: left center;
+          padding-left: 0.18rem;
+        }
+      }
+      .time {
+        margin: 0.05rem;
+        font-size: 13px;
+        line-height: 0.21rem;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        margin-left: -0.08rem;
+        span {
+          font-size: 12px;
+          line-height: 0.21rem;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 1);
+          background-color: #444444;
+          border-radius: 0.02rem;
+          margin: 0 0.08rem;
+          width: 0.21rem;
+          text-align: center;
+          padding: 0 0.05rem;
+        }
+      }
+      .unstart {
+        font-size: 0.13rem;
+        line-height: 0.21rem;
+        font-weight: bold;
+        color: rgba(51, 51, 51, 1);
+      }
+    }
+  }
+}
+.fuckList {
+  .list_wrap {
+    padding: 0 0.05rem;
+    flex-wrap: wrap;
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: center;
+    .item {
+      width: 50%;
+      margin-bottom: 0.24rem;
+      padding: 0 0.1rem;
+      box-sizing: border-box;
+      .avatar_wrap {
+        position: relative;
+        width: 1.62rem;
+        height: 1.62rem;
+        margin: 0 auto;
+        img.avatar {
+          width: 100%;
+          height: 100%;
+          border-radius: 0.07rem;
+          display: block;
+        }
+        .tag {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0.55rem;
+          height: 0.2rem;
+          line-height: 0.2rem;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 155, 48, 1) 0%,
+            rgba(255, 174, 59, 1) 100%
+          );
+          border-radius: 0.07rem 0.02rem 0.1rem 0px;
+          font-size: 0.11rem;
+          font-weight: bold;
+          color: rgba(255, 255, 255, 1);
+          text-align: center;
+        }
+        .name {
+          position: absolute;
+          right: 0.12rem;
+          bottom: 0.12rem;
+          font-size: 0.12rem;
+          line-height: 1;
+          font-weight: bold;
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+      .msg {
+        margin: 0.06rem 0;
+        justify-content: space-between;
+        .hot {
+          font-size: 0.14rem;
+          line-height: 0.2rem;
+          font-weight: bold;
+          color: rgba(255, 155, 48, 1);
+          padding: 0 0.07rem;
+          background: rgba(255, 239, 222, 1);
+          border-radius: 0.1rem;
+          &:before {
+            content: "";
+            background-image: url("~@/assets/img/home_icon_renqi.png");
+            background-repeat: no-repeat;
+            background-size: 0.1rem 0.13rem;
+            background-position: left center;
+            padding-left: 0.18rem;
+          }
+        }
+        .no {
+          font-size: 0.12rem;
+          line-height: 0.2rem;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
+        }
+      }
+      .btn {
+        width: 100%;
+        font-size: 0.12rem;
+        line-height: 0.27rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        font-weight: bold;
+        border-radius: 0.05rem;
+        background: linear-gradient(
+          -34deg,
+          rgba(41, 131, 255, 1) 0%,
+          rgba(41, 161, 255, 1) 100%
+        );
+        text-align: center;
+      }
+    }
+  }
+
+  .list_no_data {
+    margin: 0.8rem 0;
+    p {
+      width: 100%;
+      text-align: center;
+      font-size: 0.14rem;
+      font-weight: 400;
+      color: rgba(170, 170, 170, 1);
+    }
+  }
+
+  .search_no_data {
+    padding: 0 0.15rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.4rem;
+    align-items: center;
+    img {
+      width: 0.57rem;
+      height: 0.82rem;
+    }
+    p {
+      margin-top: 0.22rem;
+      font-size: 0.14rem;
+      line-height: 1;
+      font-weight: 400;
+      color: rgba(170, 170, 170, 1);
+    }
+  }
+
+  .isbottom {
+    width: 100%;
+    height: 0.42rem;
+    text-align: center;
+    font-size: 0.12rem;
+    line-height: 0.42rem;
+    font-weight: 400;
+    color: rgba(170, 170, 170, 1);
+    background-color: #f2f5f9;
+  }
+}
+</style>

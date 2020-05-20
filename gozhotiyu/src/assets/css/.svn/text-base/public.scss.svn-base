@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+$main-color: rgba(255, 103, 0, 1); // #FF6700
+$bg_color: #F2F2F2;
+
+//字体颜色
+$fontcolor-f: #fff;
+$fontcolor-3: #333;
+$fontcolor-6: #666;
+$fontcolor-9: #999;
+
+//背景
+@mixin bg-img($url) {
+  background-image: url("~@/assets/img/#{$url}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+//背景
+@mixin bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+//一行显示省略号
+@mixin ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+//多行显示省略号
+@mixin ellipsis-n($num){
+  display: -webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: $num;
+  overflow: hidden;
+}
+//上下左右居中
+@mixin space-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//两端居中对齐
+@mixin space{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

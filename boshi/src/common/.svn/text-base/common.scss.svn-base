@@ -1,0 +1,62 @@
+$borRad:5px;
+
+@mixin ibMid() { /* @include ibMid(); */
+  display: inline-block;
+  vertical-align: middle;
+}
+@mixin clearFloat() {
+  &:after { clear:both;content:'';display:block;width:0;height:0;visibility:hidden; }
+}
+@mixin sLineOF() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin multiLineOF() {
+  font-size:14px;
+  margin:15px 0 15px 0;
+  position:relative;
+  line-height:1.4em;
+  /* 3 times the line-height to show 3 lines */
+  max-height:4.2em;
+  overflow:hidden;
+  &:after {
+    content:"";
+    width:4px;
+    height: 1.4em;
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    background:url("http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png") repeat-y;
+  }
+}
+@mixin listBorderRadius() {
+  &:first-child {
+    border-radius: 2px 2px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 2px 2px;
+  }
+}
+
+@mixin posiVertical() {
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+@mixin inputCheck() {
+  input[type='checkbox']{
+    width: 16px;
+    height: 16px;
+    background: url("../../../static/img/icon_nochoice.png")no-repeat center;
+    -webkit-appearance:none;
+    outline: none;
+  }
+  input[type=checkbox]:checked{
+    background: url("../../../static/img/icon_choice.png")no-repeat center;
+    background-size:100% 100%;
+  }
+}

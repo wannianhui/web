@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build
+END
+vue-loader.conf.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/vue-loader.conf.js
+END
+logo.png
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/logo.png
+END
+webpack.base.conf.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/20180724leboshi/!svn/ver/19/project/Html/lbs/build/webpack.base.conf.js
+END
+webpack.dev.conf.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/webpack.dev.conf.js
+END
+build.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/build.js
+END
+utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/utils.js
+END
+check-versions.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/build/check-versions.js
+END
+webpack.prod.conf.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/20180724leboshi/!svn/ver/19/project/Html/lbs/build/webpack.prod.conf.js
+END
