@@ -33,62 +33,38 @@
             <img :src="item.img" alt />
             <span>{{item.text}}</span>
             <img :src="item.icon" alt />
-            <span v-if="openFresh">我是新加的</span>
-            <!-- <div v-if="openFresh">我是新加的</div> -->
           </p>
-          <!-- <div v-for="(item,index) in item.freshMiningClick" :key="index">
-            <li>
-              <p>{{item.p}}</p>
-              <span>{{item.span}}</span>
-            </li>
-          </div>-->
+          <div v-show="clickOne&&index==0" class="clickOne">
+            <ul>
+              <li v-for="(item,index) in freshList" :key="index">
+                <div>
+                  <p>物料类型</p>
+                  <h3>{{item.type}}</h3>
+                </div>
+                <div>
+                  <p>是否包含下级</p>
+                  <h3>{{item.subordinate}}</h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div v-show="clickTwo&&index==1" class="clickTwo">
+            <ul>
+              <li v-for="(item,index) in twoList" :key="index">
+                <span>食材</span>
+                <p>{{item}}</p>
+              </li>
+            </ul>
+          </div>
+          <div v-show="clickThree&&index==2" class="clickTwo">
+            <ul>
+              <li v-for="(item,index) in threeList" :key="index">
+                <span>食材</span>
+                <p>{{item}}</p>
+              </li>
+            </ul>
+          </div>
         </li>
-        <!-- <div>
-          <li>
-            <p>物料类型</p>
-            <span>肉类</span>
-          </li>
-          <li>
-            <p>是否包含下级</p>
-            <span>是</span>
-          </li>
-          <li>
-            <p>物料类型</p>
-            <span>蔬菜</span>
-          </li>
-          <li>
-            <p>是否包含下级</p>
-            <span>是</span>
-          </li>
-          <li>
-            <p>物料类型</p>
-            <span>水果</span>
-          </li>
-          <li>
-            <p>是否包含下级</p>
-            <span>是</span>
-          </li>
-        </div>
-        <div>
-          <li>
-            <span>食材</span>
-            <span>红薯</span>
-          </li>
-          <li>
-            <span>食材</span>
-            <span>油豆腐</span>
-          </li>
-        </div>
-        <div>
-          <li>
-            <span>食材</span>
-            <span>凉薯</span>
-          </li>
-          <li>
-            <span>食材</span>
-            <span>南瓜</span>
-          </li>
-        </div>-->
       </ul>
     </div>
     <Footer />
@@ -101,9 +77,28 @@ export default {
   name: "Shop",
   data() {
     return {
+      click: -1,
+      clickOne: false,
+      clickTwo: false,
+      clickThree: false,
+      twoList: ["红薯", "油豆腐"],
+      threeList: ["凉薯", "南瓜"],
       shopTop: "门店",
-      openFresh:false,
-      num:-1,
+      num: -1,
+      freshList: [
+        {
+          type: "肉类",
+          subordinate: "是"
+        },
+        {
+          type: "蔬菜",
+          subordinate: "是"
+        },
+        {
+          type: "水果",
+          subordinate: "是"
+        }
+      ],
       shopText: [
         "广州科学城店",
         "门店编码：GZ-001",
@@ -179,15 +174,16 @@ export default {
   },
   methods: {
     freshMiningClick(num) {
-      this.num = num;
-      for (var i = 0; i < this.$refs.freshMiningLi.length; i++) {
-        if (num == i && this.num == num) {
-          this.$refs.freshMiningLi[i].style.height = "1.5rem";
-          this.openFresh = true;
-        }else{
-          this.$refs.freshMiningLi[i].style.height = "0.5rem";
-          this.openFresh =false;
-        }
+      switch (num) {
+        case 0:
+          this.clickOne = !this.clickOne;
+          break;
+        case 1:
+          this.clickTwo = !this.clickTwo;
+          break;
+        case 2:
+          this.clickThree = !this.clickThree;
+          break;
       }
     }
   }
@@ -247,7 +243,6 @@ export default {
   text-align: left;
   background: white;
   margin: 0 auto;
-  height: 0.5rem;
   border-radius: 0.1rem;
   line-height: 0.5rem;
   margin: 0.1rem auto;
@@ -270,5 +265,60 @@ export default {
 }
 .freshMining ul li p span {
   margin: 0.03rem;
+}
+.clickOne {
+  font-size: 0px;
+  width: 100%;
+  margin: 0 auto;
+}
+.clickOne ul {
+  width: 100%;
+}
+.clickOne ul li {
+  width: 100%;
+  display: flex;
+  border-radius: 0px;
+  border-top: 1px solid #333;
+}
+.clickOne ul li div {
+  text-align: center;
+  height: 0.6rem;
+  width: 50%;
+  flex: 1;
+  float: left;
+}
+.clickOne ul li div h3 {
+  color: #333 !important;
+  font-size: 0.16rem;
+  position: relative;
+  top: -0.3rem;
+  font-weight: 400;
+}
+.clickOne ul li div p {
+  margin-left: 0px !important;
+  color: #999 !important;
+  font-size: 0.11rem;
+}
+.clickTwo {
+  width: 100%;
+  margin: 0 auto;
+}
+.clickTwo ul li {
+  height: 0.4rem;
+  border-top: 1px solid #999;
+  line-height: 0.4rem;
+  border-radius: 0px;
+  width: 100%;
+}
+.clickTwo ul li span {
+  font-size: 0.13rem;
+  margin-left: 0.17rem;
+  color: #999;
+}
+.clickTwo ul li p {
+  display: inline-block;
+  font-size: 0.16rem;
+  color: #333 !important;
+  font-weight: 400;
 }
 </style>
