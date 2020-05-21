@@ -67,6 +67,7 @@ export default {
   width: 100%;
   height: 0.6rem;
   position: fixed;
+  z-index: 1200;
   bottom: 0px;
   font-size: 0.11rem;
   background: white;
@@ -80,7 +81,7 @@ export default {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
 }
 .footerIndex {
   position: absolute;

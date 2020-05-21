@@ -1,20 +1,8 @@
 <template>
   <div>
     <Top :text="statementText" />
-    <img src="../assets/img/statement/pic_baobiao.png" alt style="width:100%" />
-    <span class="statementSpan">广州科学城店</span>
-    <div style="fontSize:0px;">
-      <img src="../assets/img/statement/icon_pm.png" alt class="divImg1" />
-      <span class="staterevenue">
-        总营收 第
-        <strong style="margin:0.08rem;">3</strong>名
-      </span>
-      <img src="../assets/img/statement/icon_pm.png" alt class="divImg2" />
-      <span class="stateprofit">
-        总利润 第
-        <strong style="margin:0.09rem;">5</strong> 名
-      </span>
-    </div>
+    <img src="../assets/img/statement/pic_baobiao.png" alt style="width:100%"/>
+    <span class="statementSpan">广州黄埔区</span>
     <!-- 本月营收 -->
     <div class="revenue">
       <p>本月营收</p>
@@ -38,7 +26,7 @@
     <div class="echart">
       <div>
         <img src="../assets/img/statement/icon_zzt.png" alt />
-        <p>每日营收、利润、利润率</p>
+        <p @click="add()">每日营收、利润、利润率</p>
         <ul>
           <li>每日营收(元)</li>
           <li>利润(元)</li>
@@ -149,53 +137,63 @@
         <li>2020</li>
       </ul>
     </div>
-    <!-- 档口stall -->
-    <div class="echart" style="height:1.2rem;">
-      <div class="stall">
+    <!-- 排行 -->
+    <div class="ranking">
+      <p>
+        <img src="../assets/img/statement/pic_mdys.png" alt />
+        <span>门店营收排行</span>
+      </p>
+      <ul>
+        <li v-for="(item,index) in ranking" :key="index">{{item}}</li>
+      </ul>
+      <ul>
+        <li v-for="(item,index) in rankingList" :key="index">
+          <img :src="item.img" alt />
+          <span>{{item.text}}</span>
+          <span>{{item.num}}</span>
+          <span>{{item.number}}</span>
+        </li>
+      </ul>
+      <div class="rankBottom">
         <ul>
-          <li>大众餐档口</li>
-          <li>行政餐档口</li>
-          <li>行政餐档口</li>
+          <li>
+            <span>4</span>
+            <span>广州耐克工厂</span>
+            <span>15000</span>
+            <span>5000</span>
+          </li>
+          <li>
+            <span>5</span>
+            <span>广州富士康</span>
+            <span>15000</span>
+            <span>5000</span>
+          </li>
         </ul>
       </div>
+    </div>
+    <!-- 粮油人均消费 -->
+    <div class="consumption">
+      <p class="consumptionP">
+        <img src="../assets/img/statement/icon_kongzhi.png" alt />
+        <span>粮油人均消费</span>
+      </p>
       <ul>
-        <li>每日营收(元)</li>
-        <li>利润(元)</li>
-        <li>利润率</li>
+        <li v-for="(item,index) in consumptionList" :key="index">
+          <div>
+            <p>门店</p>
+            <p>{{item.span1}}</p>
+            <p>粮</p>
+            <p>{{item.span2}}</p>
+          </div>
+          <div>
+            <p>客流</p>
+            <p>{{item.span3}}</p>
+            <p>油</p>
+            <p>{{item.span4}}</p>
+          </div>
+        </li>
       </ul>
     </div>
-    <div class="page">
-      <ul>
-        <li @click="pagestall(echartStall)">
-          <p>上一页</p>
-          <h3 :class="{pageH3:stallOne}">前面没有数据了</h3>
-        </li>
-        <li @click="addstall(echartStall)">
-          <p>下一页</p>
-          <h3 :class="{pageH3:stallTwo}">后面没有数据了</h3>
-        </li>
-      </ul>
-    </div>
-    <ul class="stateUl">
-      <li>4w</li>
-      <li>3w</li>
-      <li>2w</li>
-      <li>1w</li>
-      <li>0</li>
-    </ul>
-    <div
-      id="stall"
-      :style="{width: '94%', height: '4rem',background:'white',margin:'0 auto',position:'relative',top:'-0.49rem',marginBottom:'0.1rem'}"
-    ></div>
-    <!-- 波形图 flow客流 -->
-    <div class="dian">
-      <img src="../assets/img/statement/icon_dian.png" alt />
-      <span>每日客流(人)</span>
-    </div>
-    <div
-      id="flow"
-      :style="{width: '94%', height: '3rem',background:'white',margin:'0 auto',position:'relative',top:'-0.49rem',marginBottom:'0.3rem',}"
-    ></div>
     <!-- footer -->
     <Footer />
   </div>
@@ -203,19 +201,17 @@
 <script>
 import Top from "./common/Top";
 export default {
-  name: "Statement",
+  name: "StatementCopy",
   data() {
     return {
-      statementText: "报表",
       num: 0, //图表的数据序列每天的
       numMonth: 0, //图表的数据序列每月的
-      stallNum: 0,
+      statementText: "报表",
+      ranking: ["排名", "门店", "营收", "利润"],
       pageOne: false,
       pageTwo: false,
       pageMonthOne: false,
       pageMonthTwo: false,
-      stallOne: false,
-      stallTwo: false,
       echartList: [
         {
           data: ["02/02", "02/03", "02/04", "02/05", "02/06"],
@@ -265,30 +261,56 @@ export default {
           }
         }
       ],
-      echartStall: [
+      consumptionList: [
         {
-          data: ["02/02", "02/03", "02/04", "02/05", "02/06"],
-          value: {
-            value1: 35000,
-            value2: 29000,
-            value3: 15000
-          }
+          span1: "广州科学城店",
+          span2: 0.3,
+          span3: 1500,
+          span4: 0.03
         },
         {
-          data: ["02/07", "02/08", "02/09", "02/010", "02/011"],
-          value: {
-            value1: 25000,
-            value2: 19000,
-            value3: 14000
-          }
+          span1: "天河员村店",
+          span2: 0.3,
+          span3: 1500,
+          span4: 0.03
         },
         {
-          data: ["02/12", "02/13", "02/14", "02/15", "02/16"],
-          value: {
-            value1: 15000,
-            value2: 24000,
-            value3: 5000
-          }
+          span1: "广州富力店",
+          span2: 0.3,
+          span3: 1500,
+          span4: 0.03
+        },
+        {
+          span1: "广州耐克工厂店",
+          span2: 0.3,
+          span3: 1500,
+          span4: 0.03
+        },
+        {
+          span1: "广州科学城店",
+          span2: 0.3,
+          span3: 1500,
+          span4: 0.03
+        }
+      ],
+      rankingList: [
+        {
+          img: require("../assets/img/statement/icon_1.png"),
+          text: "广州科学城店",
+          num: 15000,
+          number: 5000
+        },
+        {
+          img: require("../assets/img/statement/icon_2.png"),
+          text: "广州天河员村店",
+          num: 15000,
+          number: 5000
+        },
+        {
+          img: require("../assets/img/statement/icon_3.png"),
+          text: "广州富力店",
+          num: 15000,
+          number: 5000
         }
       ]
     };
@@ -299,10 +321,6 @@ export default {
     this.constitute();
     // 每月营收、利润
     this.profit(this.echartMonthList[0]);
-    // 档口
-    this.stall(this.echartStall[0]);
-    // 客流
-    this.flow();
   },
   components: {
     Top
@@ -624,7 +642,7 @@ export default {
         title: { text: "" },
         //  grid:{containLabel:true},
         tooltip: {},
-        grid: { left: 25 },
+        grid: { left: 10 },
         series: [
           {
             name: "",
@@ -892,426 +910,6 @@ export default {
         ]
       });
     },
-    stall(data) {
-      let myChart = this.$echarts.init(document.getElementById("stall"));
-      // 绘制图表
-      myChart.setOption({
-        title: {},
-        grid: { left: 10 },
-        //  grid:{containLabel:true},
-        legend: {
-          width: 50,
-          data: [
-            {
-              name: "货币",
-              icon: "circle"
-            },
-            {
-              name: "股票",
-              icon: "circle"
-            },
-            {
-              name: "债券",
-              icon: "circle"
-            },
-            {
-              name: "债券",
-              icon: "circle"
-            }
-          ]
-        },
-        tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        xAxis: {
-          type: "category",
-          data: data.data,
-          axisTick: { show: false },
-          axisLine: {
-            //y轴
-            show: false
-          },
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#999"
-            }
-          }
-        },
-        yAxis: {
-          max: 40000,
-          min: 0,
-          splitNumber: 5,
-          axisLabel: {
-            show: false,
-            textStyle: {
-              color: "#999"
-            }
-          },
-          axisLine: {
-            //y轴
-            show: false
-          },
-          axisTick: {
-            //y轴刻度线
-            show: false
-          },
-          splitLine: {
-            //网格线
-            show: false
-          }
-        },
-        series: [
-          {
-            name: "销量",
-            type: "bar",
-            barCategoryGap: "30%",
-            barWidth: 7,
-            data: [
-              {
-                value: data.value.value1,
-                name: "每日营收",
-                itemStyle: {
-                  normal: {
-                    color: "#60ECA5",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                },
-
-                show: false,
-                splitLine: {
-                  show: false
-                }
-              },
-              {
-                value: data.value.value1,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#60ECA5",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value1,
-                name: "利润率",
-
-                itemStyle: {
-                  normal: {
-                    color: "#60ECA5",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value1,
-                name: "每日营收",
-
-                itemStyle: {
-                  normal: {
-                    color: "#60ECA5",
-
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                },
-                barBorderRadius: 12
-              },
-              {
-                value: data.value.value1,
-                name: "每日营收",
-
-                itemStyle: {
-                  normal: {
-                    color: "#60ECA5",
-
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              }
-            ]
-          },
-          {
-            name: "销量",
-            type: "bar",
-            barCategoryGap: "30%",
-            barWidth: 7,
-            data: [
-              {
-                value: data.value.value2,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#5A7FF6",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value2,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#5A7FF6",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value2,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#5A7FF6",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value2,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#5A7FF6",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value2,
-                name: "利润",
-                itemStyle: {
-                  normal: {
-                    color: "#5A7FF6",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              }
-            ]
-          },
-          {
-            name: "销量",
-            barCategoryGap: "30%",
-            type: "bar",
-            barWidth: 7,
-            data: [
-              {
-                value: data.value.value3,
-                name: "利润率",
-                itemStyle: {
-                  normal: {
-                    color: "#9A3CF3",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value3,
-                name: "利润率",
-                itemStyle: {
-                  normal: {
-                    color: "#9A3CF3",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value3,
-                name: "利润率",
-                itemStyle: {
-                  normal: {
-                    color: "#9A3CF3",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value3,
-                name: "利润率",
-                itemStyle: {
-                  normal: {
-                    color: "#9A3CF3",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              },
-              {
-                value: data.value.value3,
-                name: "利润率",
-                itemStyle: {
-                  normal: {
-                    color: "#9A3CF3",
-                    barBorderRadius: [10, 10, 0, 0]
-                  },
-                  emphasis: {
-                    barBorderRadius: [10, 10, 0, 0]
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      });
-    },
-    flow() {
-      let myChart = this.$echarts.init(document.getElementById("flow"));
-      var category = [];
-      var dottedBase = +new Date();
-      var lineData = [];
-      var barData = [];
-
-      for (var i = 0; i < 20; i++) {
-        var date = new Date((dottedBase += 3600 * 24 * 1000));
-        category.push(
-          [date.getFullYear(), date.getMonth() + 1, date.getDate()].join("-")
-        );
-        var b = Math.random() * 200;
-        var d = Math.random() * 200;
-        barData.push(b);
-        lineData.push(d + b);
-      }
-      lineData = [101, 65, 105, 201, 175, 125];
-      myChart.setOption({
-        backgroundColor: "white",
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow"
-          }
-        },
-        legend: {
-          data: [],
-          textStyle: {
-            color: "blue"
-          }
-        },
-        splitLine: {
-          //网格线
-          show: true
-        },
-        xAxis: {
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#999"
-            }
-          },
-          axisLine: {
-            //y轴
-            show: false
-          },
-          // axisLabel: false,
-          axisTick: {
-            //y轴刻度线
-            show: false
-          },
-          splitLine: { show: false },
-          data: ["04/03", "04/04", "04/05", "04/06", "04/07", "04/08"]
-        },
-        yAxis: {
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#999"
-            }
-          },
-          axisLine: {
-            //y轴
-            show: false
-          },
-          // axisLabel: false,
-          axisTick: {
-            //y轴刻度线
-            show: false
-          },
-          splitLine: {
-            show: true,
-            lineStyle: {
-              type: "dashed"
-            }
-          }
-        },
-        series: [
-          {
-            name: "line",
-            type: "line",
-            smooth: true,
-            showAllSymbol: true,
-            symbol: "emptyCircle",
-            // symbol: "#5A7FF6", //拐点样式
-            symbolSize: 2, //拐点大小
-            symbolSize: 15,
-            itemStyle: {
-              normal: {
-                color: "#FF7594",
-                lineStyle: {
-                  width: 3, //折线宽度
-                  color: "#5A7FF6" //折线颜色
-                },
-                label: { show: true, color: "red" }
-              }
-            },
-            data: lineData
-          },
-          {
-            name: "dotted",
-            type: "pictorialBar",
-            symbol: "rect",
-            itemStyle: {
-              color: "white"
-            },
-            symbolRepeat: true,
-            symbolSize: [12, 4],
-            symbolMargin: 1,
-            z: -10,
-            data: lineData
-          }
-        ]
-      });
-    },
     pageadd(data) {
       this.pageOne = false;
       this.num++;
@@ -1359,30 +957,6 @@ export default {
       this.pageMonthOne = false;
       console.log(this.num);
       this.profit(data[this.numMonth]);
-    },
-    addstall(data) {
-      this.stallOne = false;
-      this.stallNum++;
-      if (this.stallNum >= data.length) {
-        this.stallOne = true;
-        this.stallNum = data.length - 1;
-        return;
-      }
-      console.log(this.num);
-      this.stallOne = false;
-      this.stall(data[this.stallNum]);
-    },
-    pagestall(data) {
-      this.stallTwo = false;
-      this.stallNum--;
-      if (this.stallNum < 0) {
-        this.stallTwo = true;
-        this.stallNum = 0;
-        return;
-      }
-      this.stallTwo = false;
-      console.log(this.num);
-      this.stall(data[this.stallNum]);
     }
   }
 };
@@ -1410,7 +984,7 @@ export default {
 .statementSpan {
   position: absolute;
   font-size: 0.2rem;
-  top: 0.86rem;
+  top: 1.19rem;
   color: #fff;
   left: 0.5rem;
 }
@@ -1481,35 +1055,38 @@ export default {
   margin-top: 0.3rem;
   margin-left: 0.34rem;
 }
-.echart ul li:nth-child(1)::after {
+.echart div:nth-child(2) ul {
+  margin: 0px;
+}
+.echart div:nth-child(1) ul li:nth-child(1)::after {
   width: 0.13rem;
   height: 0.13rem;
   background: #60eca5;
   display: block;
   content: "";
   position: relative;
-  top: -0.14rem;
-  left: -0.06rem;
+  top: -0.13rem;
+  left: 0rem;
 }
-.echart ul li:nth-child(2)::after {
+.echart div:nth-child(1) ul li:nth-child(2)::after {
   width: 0.13rem;
   height: 0.13rem;
   background: #5a7ff6;
   display: block;
   content: "";
   position: relative;
-  top: -0.14rem;
+  top: -0.13rem;
   left: 0.1rem;
 }
-.echart ul li:nth-child(3)::after {
+.echart div:nth-child(1) ul li:nth-child(3)::after {
   width: 0.13rem;
   height: 0.13rem;
   background: #9a3cf3;
   display: block;
   content: "";
   position: relative;
-  top: -0.14rem;
-  left: 0.13rem;
+  top: -0.13rem;
+  left: 0.15rem;
 }
 .echart ul li {
   flex: 1;
@@ -1636,6 +1213,7 @@ export default {
   text-align: center;
   line-height: 0.2rem;
   display: inline-block;
+  border-radius: 0.15rem;
   background: #e6ebfa;
   margin-left: 1.2rem;
 }
@@ -1651,47 +1229,223 @@ export default {
 .echartTwo {
   margin-top: -0.8rem;
 }
-.dian {
+.ranking {
   font-size: 0px;
+  /* height: 2.97rem; */
+  width: 94%;
+  margin: 0 auto;
+  background: white;
 }
-.dian span {
-  font-size: 0.15rem;
-  color: #999;
+.ranking p {
+  position: relative;
+  top: -0.14rem;
+}
+.ranking p span {
+  position: absolute;
+  top: 0.12rem;
+  left: 1.37rem;
+  font-size: 0.14rem;
+  color: white;
+}
+.ranking ul:nth-child(2) {
+  font-size: 0.11rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0.2rem;
+  width: 96%;
+  line-height: 0.2rem;
+  margin: -0.11rem auto;
+  background: #5a7ff6;
+  border-radius: 0.1rem;
+}
+.ranking ul:nth-child(2) li {
+  flex: 1;
+}
+.ranking ul:nth-child(3) {
+  /* height: 0.5rem; */
+  margin-top: 0.12rem;
+  /* line-height: 0.5rem; */
+  font-size: 0.12rem;
+  text-align: left;
+  /* margin-left: 0.35rem; */
+}
+.ranking ul:nth-child(3) li {
+  height: 0.5rem;
+  line-height: 0.5rem;
+}
+.ranking ul:nth-child(3) li:nth-child(2),
+.ranking ul:nth-child(3) li:nth-child(4) {
+  background: #f5f8ff;
+}
+.ranking ul:nth-child(3) li img {
+  position: relative;
+  top: 0.1rem;
+  left: 0.35rem;
+}
+.ranking ul:nth-child(3) li span:nth-child(2) {
+  font-weight: bold;
+}
+.ranking ul:nth-child(3) li span:nth-child(2) {
   display: inline-block;
+  margin: auto 0.65rem;
+  text-align: center;
+}
+.ranking ul:nth-child(3) li:nth-child(1) span:nth-child(3) {
   position: relative;
-  z-index: 123;
-  top: -0.11rem;
-  left: -0.93rem;
+  left: -0.3rem;
 }
-.dian img {
+.ranking ul:nth-child(3) li:nth-child(2) span:nth-child(3) {
   position: relative;
-  z-index: 123;
-  top: -0.12rem;
-  left: -1.04rem;
+  left: -0.4rem;
 }
-.staterevenue {
+.ranking ul:nth-child(3) li:nth-child(3) span:nth-child(3) {
+  position: relative;
+  left: -0.16rem;
+}
+.ranking ul:nth-child(3) li:nth-child(1) span:nth-child(4) {
+  position: relative;
+  left: 0.22rem;
+}
+.ranking ul:nth-child(3) li:nth-child(2) span:nth-child(4) {
+  position: relative;
+  left: 0.12rem;
+}
+.ranking ul:nth-child(3) li:nth-child(3) span:nth-child(4) {
+  position: relative;
+  left: 0.38rem;
+}
+.rankBottom ul li {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  font-size: 0.12rem;
+}
+.rankBottom ul li:nth-child(1) {
+  background: #f5f8ff;
+}
+.rankBottom ul li:nth-child(2) {
+  background: white;
+}
+.rankBottom ul li:nth-child(1) span:nth-child(1) {
+  position: relative;
+  left: -0.56rem;
+  top: -0.04rem;
+}
+.rankBottom ul li:nth-child(1) span:nth-child(2) {
+  position: relative;
+  top: -0.05rem;
+  left: -0.19rem;
+  font-weight: bold;
+}
+.rankBottom ul li:nth-child(1) span:nth-child(3) {
+  position: relative;
+  top: -0.05rem;
+  left: 0.2rem;
+}
+.rankBottom ul li:nth-child(1) span:nth-child(4) {
+  position: relative;
+  top: -0.05rem;
+  left: 0.72rem;
+}
+.rankBottom ul li:nth-child(2) span:nth-child(1) {
+  position: relative;
+  left: -0.62rem;
+  top: -0.04rem;
+}
+.rankBottom ul li:nth-child(2) span:nth-child(2) {
+  position: relative;
+  top: -0.05rem;
+  left: -0.25rem;
+  font-weight: bold;
+}
+.rankBottom ul li:nth-child(2) span:nth-child(3) {
+  position: relative;
+  top: -0.05rem;
+  left: 0.25rem;
+}
+.rankBottom ul li:nth-child(2) span:nth-child(4) {
+  position: relative;
+  top: -0.05rem;
+  left: 0.8rem;
+}
+.consumption {
+  width: 94%;
+  background: white;
+  margin: 0 auto;
+  font-size: 0px;
+  margin-bottom: 0.8rem;
+}
+.consumptionP {
+  height: 0.5rem;
+  line-height: 0.5rem;
   font-size: 0.14rem;
-  color: white;
-  position: absolute;
-  top: 1.33rem;
-  left: 0.7rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 0.16rem;
+  margin-top: 0.1rem;
 }
-.stateprofit {
+.consumptionP::after {
+  width: 3.52rem;
+  height: 1px;
+  background: rgb(236, 232, 232);
+  content: "";
+  position: relative;
+  display: block;
+  left: -0.15rem;
+}
+.consumptionP img {
+  position: relative;
+  top: 0.03rem;
+}
+.consumption ul {
+  width: 100%;
+}
+.consumption ul li {
+  height: 1.37rem;
+  border-bottom: 1px solid rgb(236, 232, 232);
+  width: 100%;
+}
+.consumption ul li:nth-child(5) {
+  border-bottom: 0px solid #999;
+}
+.consumption ul li div {
+  width: 50%;
   font-size: 0.14rem;
-  color: white;
-  position: absolute;
-  top: 1.58rem;
-  left: 0.68rem;
+  height: 100%;
+  float: left;
 }
-.divImg1 {
-  position: absolute;
-  top: 1.33rem;
-  left: 1.36rem;
+.consumption ul li div:nth-child(1) p:nth-child(1),
+.consumption ul li div:nth-child(1) p:nth-child(3),
+.consumption ul li div:nth-child(2) p:nth-child(1),
+.consumption ul li div:nth-child(2) p:nth-child(3) {
+  color: #999;
+  font-size: 0.11rem;
 }
-.divImg2 {
-  position: absolute;
-  top: 1.57rem;
-  left: 1.35rem;
+.consumption ul li div:nth-child(1) p:nth-child(2) {
+  color: #333;
+  font-size: 0.16rem;
+}
+.consumption ul li div:nth-child(1) p:nth-child(4),
+.consumption ul li div:nth-child(2) p:nth-child(4),
+.consumption ul li div:nth-child(2) p:nth-child(2) {
+  font-size: 0.2rem;
+  font-weight: bold;
+  color: #5a7ff6;
+}
+.consumption ul li div {
+  position: relative;
+  top: 0.18rem;
+}
+.consumption ul li div:nth-child(1) p:nth-child(1),
+.consumption ul li div:nth-child(1) p:nth-child(2),
+.consumption ul li div:nth-child(1) p:nth-child(3) {
+  margin-bottom: 0.1rem;
+}
+.consumption ul li div:nth-child(2) p:nth-child(1),
+.consumption ul li div:nth-child(2) p:nth-child(2),
+.consumption ul li div:nth-child(2) p:nth-child(3) {
+  margin-bottom: 0.08rem;
 }
 .echartNum {
   font-size: 0px;
@@ -1702,20 +1456,12 @@ export default {
   display: flex;
   position: relative;
   top: -0.55rem;
-  left: 0.28rem;
+  left: 0.33rem;
 }
 .echartNum ul li {
   font-size: 0.11rem;
-  margin-right: 0.37rem;
+  margin-right: 0.36rem;
   color: #999;
-}
-.mouthRevenue::after {
-  left: 0.26rem !important;
-  top: -0.14rem !important;
-}
-.mouthLi::after {
-  left: 0.3rem !important;
-  top: -0.14rem !important;
 }
 .page {
   font-size: 0px;
@@ -1743,4 +1489,12 @@ export default {
   top: 0.26rem;
   color: #999;
 }
-</style>
+.mouthRevenue::after {
+  left: 0.26rem !important;
+  top: -0.13rem !important;
+}
+.mouthLi::after {
+  left: 0.3rem !important;
+  top: -0.13rem !important;
+}
+</style> 

@@ -21,7 +21,13 @@
       </p>
       <!-- 日历组件 -->
       <div class="calendar">
-        <span>2020/3/19</span>
+        <input
+          id="startTime"
+          type="text"
+          readonly
+          placeholder="开始时间"
+          data-lcalendar="2016-05-11,2016-05-11"
+        />
         <img src="../assets/img/freshAffirm/icon_moer_nor.png" alt class="calendarImg" />
       </div>
       <!-- 档口 -->
@@ -46,21 +52,24 @@
           <!-- <img src="../assets/img/make/icon_xuanze.png" alt=""> -->
         </p>
       </div>
-      <!-- 菜品的列表 -->
-      <div class="makeList">
-        <ul>
-          <li v-for="(item,index) in makeList" :key="index">
-            <p>{{item.h3}}</p>
-            <span>{{item.num}}</span>
-          </li>
-        </ul>
-      </div>
+    </div>
+    <!-- 菜品的列表 -->
+    <div class="makeList">
+      <ul>
+        <li v-for="(item,index) in makeList" :key="index">
+          <p>{{item.h3}}</p>
+          <span>{{item.num}}</span>
+        </li>
+      </ul>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
 import Top from "./common/Top";
+import LCalendar from "../assets/js/lcalendar.js";
+import "../assets/css/lcalendar.css";
 // import mobiscroll from "../../node_modules/mobiscroll/js/mobiscroll.android-holo-light.js"
 export default {
   name: "MakeList",
@@ -108,13 +117,45 @@ export default {
   components: {
     Top
   },
-  created() {
-    // console.log(mobiscroll)
+  mounted() {
+    var calendar = new LCalendar();
+    calendar.init({
+      trigger: "#startTime", //标签id
+      type: "date", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
+      minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
+      maxDate: "2040-3-18" //最大日期 注意：该值会覆盖标签内定义的日期范围
+    });
+    //获取input元素
+    var _input = document.getElementById("startTime");
+
+    var date = new Date();
+    var seperator = "/";
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+    }
+    var currentDate = year + seperator + month + seperator + strDate; //当前日期
+
+    _input.value = currentDate; //赋值给input.value
   }
 };
 </script>
 
 <style scoped>
+#startTime {
+  border: none;
+  font-size: 0.14rem;
+  font-weight: bold;
+  text-align: center;
+}
+input {
+	outline: none
+}
 .makeTop {
   height: 1.4rem;
   width: 95%;
@@ -270,6 +311,10 @@ export default {
 .calendarImg {
   transform: rotate(90deg);
   position: relative;
-  left: 0.17rem;
+  left: -0.5rem;
+}
+.date_ctrl {
+  border-radius: 20px 20px 0 0 !important;
+  background-color: white !important;
 }
 </style>

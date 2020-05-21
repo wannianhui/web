@@ -7,8 +7,8 @@
       <img src="../assets/img/login/pic_touxiang.png" alt />
       <p>微信账号ID:{{id}}</p>
       <div style="font-size:0px;padding-top:0.5rem;">
-        <input type="text" value placeholder="请输入用户名" />
-        <input type="text" value placeholder="请输入密码" />
+        <input type="text" value placeholder="请输入用户名" v-model="username"/>
+        <input type="text" value placeholder="请输入密码" v-model="password"/>
       </div>
     </div>
     <!-- 登录 -->
@@ -24,6 +24,8 @@ export default {
   name: "Login",
   data() {
     return {
+      username:"",
+      password:"",
       backgroundImg: {
         backgroundImage:
           "url(" + require("../assets/img/login/pic_beijing.png") + ")",
@@ -36,11 +38,29 @@ export default {
   },
   methods: {
     IndexClick(){
-      this.$router.push("/Index");
+       if(this.password && this.username){
+         //axios的请求
+         this.$api.login({username:this.username,password:this.password}).then((res)=>{
+           this.$router.push("/Index");
+         })
+       }else if(!this.password && !this.username){
+         this.$toast("不能为空")
+       }else if(!this.password){
+         //提醒写密码
+         this.$toast("请写密码");
+       }else if(!this.username){
+        // 提醒写用户名
+         this.$toast("请写用户名");
+       }
     }
   },
   components:{
     Top
+  },
+  created(){
+    this.$api.login({}).then((res)=>{
+      console.log(res)
+    })
   }
 };
 </script>

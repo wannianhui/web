@@ -11,10 +11,12 @@ const Classify = () => import("@/components/Classify") //分类组件
 const FreshMining = () => import("@/components/FreshMining") //鲜采组件
 const MakeList = () => import("@/components/MakeList") //制作列表组件
 const Practical = () => import("@/components/Practical") //实际消费组件
-const Audit = () => import("@/components/Audit") //实际消费组件
+const Audit = () => import("@/components/Audit") 
+const StatementCopy = () => import("@/components/StatementCopy") //报表拷贝
 Vue.use(Router)
 
 export default new Router({
+  mode: 'hash',
   routes: [{
     path: '/',
     name: 'Login',
@@ -66,5 +68,9 @@ export default new Router({
     path: "/Audit",
     name: "Audit",
     component: Audit
+  },{
+    path: "/StatementCopy",
+    name: "StatementCopy",
+    component: StatementCopy
   }]
 })

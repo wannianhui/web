@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-bottom:0.5rem">
     <Top :text="auditText" />
     <!-- 搜索 -->
     <div class="freshTop">
@@ -11,35 +11,15 @@
     <!-- 处理 -->
     <div class="dispose">
       <p @click="disposeClick(0)">
-        <span>未处理</span>
+        <span :style="{color:disposeImg==false?'#999':'#333'}">未处理</span>
         <img src="../assets/img/freshMining/icon_xuanze.png" alt v-if="disposeImg" />
       </p>
       <p @click="disposeClick(1)">
-        <span>已处理</span>
+        <span :style="{color:disposeImg==false?'#333':'#999'}">已处理</span>
         <img src="../assets/img/freshMining/icon_xuanze.png" alt v-if="!disposeImg" />
       </p>
     </div>
-    <!-- 处理信息 -->
-    <div class="message" v-if="disposeImg">
-      <ul>
-        <li v-for="(item,index) in yesMessageList" :key="index">
-          <p>
-            单号ID：{{item.ID}}
-            <span>{{item.audit}}</span>
-            <!-- <img src="../assets/img/freshMining/pic_xian.png" alt=""> -->
-          </p>
-          <p>订货日期{{item.orderTime}}</p>
-          <p>
-            要货日期：{{item.enquiryTime}}
-            <img src="../assets/img/freshMining/icon_moer2.png" alt />
-          </p>
-          <p>
-            <img :src="item.overproofImg" alt />
-            <span>{{item.overproof}}</span>
-          </p>
-        </li>
-      </ul>
-    </div>
+   
     <div class="auditBottom" v-if="!disposeImg">
       <!-- 申请 -->
       <ul>
@@ -50,9 +30,33 @@
               <span>{{item.p}}</span>
             </p>
           </div>
-           <img src="../assets/img/btn/pic_xian.png" alt="">
+          <img src="../assets/img/btn/pic_xian.png" alt />
           <h3 class="auditH3">{{item.Bottomh3}}</h3>
-          <p class="auditP">{{item.Bottomp}}</p>
+          <p class="auditP">
+            <span>{{item.Bottomp}}</span>
+            <span style="position: relative;left: 0.24rem;">{{item.BottomHao}}</span>
+          </p>
+          <p class="auditP">{{item.Bottomspan}}</p>
+          <p class="auditP auditLast">{{item.Bottomtext}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="auditBottom" v-if="disposeImg">
+      <!-- 申请 -->
+      <ul>
+        <li v-for="(item,index) in bottomText" :key="index">
+          <div style="display:flex;">
+            <p>{{item.text}}</p>
+            <p>
+              <span class="bottomTextSpan">{{item.p}}</span>
+            </p>
+          </div>
+          <img src="../assets/img/btn/pic_xian.png" alt />
+          <h3 class="auditH3">{{item.Bottomh3}}</h3>
+          <p class="auditP">
+            <span>{{item.Bottomp}}</span>
+            <span style="position: relative;left: 0.24rem;">{{item.BottomHao}}</span>
+          </p>
           <p class="auditP">{{item.Bottomspan}}</p>
           <p class="auditP auditLast">{{item.Bottomtext}}</p>
         </li>
@@ -70,12 +74,14 @@ export default {
   data() {
     return {
       auditText: "我的审核",
-      topText: [
+      disposeImg:false,
+      topText: [//已经处理
         {
           text: "广州科学城店",
           p: "通过",
           Bottomh3: "鲜采申请",
-          Bottomp: "单号：0001",
+          Bottomp: "单",
+          BottomHao: "号：0001",
           Bottomspan: "申请时间：2020-03-19  15:14:00",
           Bottomtext: "处理时间：2020-03-19  15:14:00"
         },
@@ -83,7 +89,8 @@ export default {
           text: "广州科学城店",
           p: "通过",
           Bottomh3: "鲜采申请",
-          Bottomp: "单号：0001",
+          Bottomp: "单",
+          BottomHao: "号：0001",
           Bottomspan: "申请时间：2020-03-19  15:14:00",
           Bottomtext: "处理时间：2020-03-19  15:14:00"
         },
@@ -91,15 +98,54 @@ export default {
           text: "广州科学城店",
           p: "未通过",
           Bottomh3: "鲜采申请",
-          Bottomp: "单号：0001",
+          Bottomp: "单",
+          BottomHao: "号：0001",
           Bottomspan: "申请时间：2020-03-19  15:14:00",
           Bottomtext: "处理时间：2020-03-19  15:14:00"
+        }
+      ],
+      //未处理
+      bottomText:[//已经处理
+        {
+          text: "广州科学城店",
+          p: "3小时",
+          Bottomh3: "鲜采申请",
+          Bottomp: "单",
+          BottomHao: "号：0001",
+          Bottomspan: "完成时间：2020-03-19  15:14:00",
+          Bottomtext: "上阶段完成时间：2020-03-19  15:14:00"
+        },
+        {
+          text: "广州科学城店",
+          p: "3小时",
+          Bottomh3: "鲜采申请",
+          Bottomp: "单",
+          BottomHao: "号：0001",
+          Bottomspan: "完成时间：2020-03-19  15:14:00",
+          Bottomtext: "上阶段完成时间：2020-03-19  15:14:00"
+        },
+        {
+          text: "广州科学城店",
+          p: "3小时",
+          Bottomh3: "鲜采申请",
+          Bottomp: "单",
+          BottomHao: "号：0001",
+          Bottomspan: "完成时间：2020-03-19  15:14:00",
+          Bottomtext: "上阶段完成时间：2020-03-19  15:14:00"
         }
       ]
     };
   },
   components: {
     Top
+  } ,methods: {
+    disposeClick(num) {
+      if (num == 0) {
+        this.disposeImg = true;
+      } else {
+        this.disposeImg = false;
+      }
+    }
   }
 };
 </script>
@@ -171,7 +217,7 @@ export default {
   font-size: 0.16rem;
 }
 .auditBottom ul li {
-    background: white;
+  background: white;
   width: 100%;
   margin-bottom: 0.15rem;
 }
@@ -200,28 +246,32 @@ export default {
 }
 .auditBottom ul li:nth-child(3) div p:nth-child(2) span {
   color: #ec6060;
-  background: rgb(238, 187, 187);
+  background: rgb(248, 237, 237);
 }
 .auditBottom div p {
   flex: 1;
   margin-top: 0.07rem;
 }
-.auditH3{
+.auditH3 {
   height: 0.3rem;
   font-size: 0.14rem;
   line-height: 0.3rem;
-  color:#333;
+  color: #333;
   text-align: left;
   margin-left: 0.18rem;
 }
-.auditP{
+.auditP {
   font-size: 0.11rem;
   color: #999;
   margin: 0.05rem auto;
   margin-left: 0.18rem;
   text-align: left;
 }
-.auditLast{
-  padding-bottom:0.15rem;
+.auditLast {
+  padding-bottom: 0.15rem;
+}
+.bottomTextSpan{
+  background: rgb(235, 236, 245) !important;
+  color:#5A7FF6 !important;
 }
 </style>
