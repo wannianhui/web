@@ -165,6 +165,9 @@
       let start = new Date();
       //判断是否是iphone并是否有下载app，并唤醒app
       window.location.href = "ZanLiaoIMProject://#(code)";//schema链接或者universal link
+
+      //苹果系统的在跳转之后这个延时器可能不会启动，只有在没有跳转的情况下才启动，confirm是询问框来看是否跳下载
+      
       window.setTimeout(function () {
         //如果没有安装app,便会执行setTimeout跳转下载页
         if(confirm("是否跳转到AppStore下载？")){
@@ -175,6 +178,9 @@
     } else if (navigator.userAgent.match(/android/i)) {
       //判断是否是安卓并是否有下载app，并唤醒app
       window.location = "zanliao://invite/group?code=#(code)";//schema链接或者universal link
+
+      //安卓是跳转之后还是会启动延时器，这个时候就通过监听焦点事件来进行判断是否跳下载地址
+
       window.setTimeout(function () { //如果没有安装app,便会执行setTimeout跳转下载页
         if (!appBlur) {
           appBlur = false;
