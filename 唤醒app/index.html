@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安全下载</title>
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .div {
+      width: 100%;
+      position: absolute;
+      z-index: 555;
+      top: 0.4rem;
+    }
+
+    .img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .div p {
+      width: 95%;
+      margin: 0.2rem auto;
+      height: 0.45rem;
+      font-size: 0.16rem;
+      color: white;
+      border-radius: 0.12rem;
+      background: #4B91F4;
+      line-height: 0.45rem;
+      text-align: center;
+    }
+
+    .div span {
+      display: inline;
+      font-size: 0.20rem;
+      font-family: "微软雅黑";
+      position: relative;
+      left: 0.85rem;
+    }
+
+    .img_logo {
+      transform: translate(-50%, -50%);
+      position: relative;
+      z-index: 555;
+      top: 50%;
+      left: 50%;
+    }
+
+    #mask {
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      left: 50%;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      background: black;
+      height: 100%;
+      opacity: 0.5;
+    }
+    #maskText{
+      display: none;
+      font-size: 0.20rem;
+      text-align: center;
+      margin: 0 auto;
+      position: absolute;
+      z-index: 1001;
+      left: 50%;
+      color:rgb(221, 226, 231);
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="div">
+    <img src="#(ctx)/h5/and_h5.png" alt="" class="img">
+    <p id="clickClone">安全下载(30M)</p>
+    <img src="#(ctx)/h5/h5_logo.png" alt="" class="img_logo">
+    <span>千讯</span>
+  </div>
+  <!-- 遮罩 -->
+  <div id="mask"></div>
+  <p id = "maskText">微信不可以打开，请去浏览器</p>
+</body>
+<script>
+  //rem的适配
+  (function (doc, win) {
+    // 分辨率Resolution适配
+    var docEl = doc.documentElement
+    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+    var recalc = function () {
+      var clientWidth = docEl.clientWidth
+      if (!clientWidth) return
+      docEl.style.fontSize = 100 * (clientWidth / 375) + 'px'
+    }
+    // Abort if browser does not support addEventListener
+    if (!doc.addEventListener) return
+    win.addEventListener(resizeEvt, recalc, false)
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+
+    // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
+    (function () {
+      // return
+      var dpr = scale = 1
+      var isIPhone = win.navigator.appVersion.match(/iphone/gi)
+      var devicePixelRatio = win.devicePixelRatio
+      if (isIPhone) {
+        // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+        if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+          dpr = 3
+        } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)) {
+          dpr = 2
+        } else {
+          dpr = 1
+        }
+      } else {
+        // 其他设备下，仍旧使用1倍的方案
+        dpr = 1
+      }
+      scale = 1 / dpr
+
+      //
+      var metaEl = ''
+      metaEl = doc.createElement('meta')
+      metaEl.setAttribute('name', 'viewport')
+      metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no')
+      if (docEl.firstElementChild) {
+        docEl.firstElementChild.appendChild(metaEl)
+      } else {
+        var wrap = doc.createElement('div')
+        wrap.appendChild(metaEl)
+        doc.write(wrap.innerHTML)
+      }
+    })()
+
+  })(document, window);
+  //加一个判断是否有下载app
+  var appBlur = false;
+  // 加一个失去焦点的事件
+  window.onblur = function () {
+    appBlur = true;
+  };
+  //点击跳转
+  var clone = document.getElementById("clickClone");
+  clone.addEventListener("click", function () {
+    if(navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == 'micromessenger'){
+      //微信浏览器
+      var mask = document.getElementById("mask");
+      var maskText = document.getElementById("maskText");
+      mask.style.display = "block";
+      maskText.style.display = "block";
+    }else if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+      let start = new Date();
+      //判断是否是iphone并是否有下载app，并唤醒app
+      window.location.href = "ZanLiaoIMProject://#(code)";//schema链接或者universal link
+      window.setTimeout(function () {
+        //如果没有安装app,便会执行setTimeout跳转下载页
+        if(confirm("是否跳转到AppStore下载？")){
+          window.location.href = "https://apps.apple.com/cn/app/千讯-聊天交友/id1505970951"; //ios下载地址
+        }
+      }, 2000);
+
+    } else if (navigator.userAgent.match(/android/i)) {
+      //判断是否是安卓并是否有下载app，并唤醒app
+      window.location = "zanliao://invite/group?code=#(code)";//schema链接或者universal link
+      window.setTimeout(function () { //如果没有安装app,便会执行setTimeout跳转下载页
+        if (!appBlur) {
+          appBlur = false;
+          window.location.href = "https://sj.qq.com/myapp/search.htm?kw=%E5%8D%83%E8%AE%AF"; //安卓下载地址
+        }
+      }, 1000);
+    }
+  });
+
+
+  function openApp(src) {
+// 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+// 否则打开a标签的href链接
+    var ifr = document.createElement('iframe');
+    ifr.src = src;
+    ifr.style.display = 'none';
+    document.body.appendChild(ifr);
+    window.setTimeout(function(){
+      document.body.removeChild(ifr);
+    },2000);
+  }
+</script>
+
+</html>
