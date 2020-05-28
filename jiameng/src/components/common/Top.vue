@@ -29,8 +29,9 @@ export default {
 .loginTop {
   width: 100%;
   background: white;
-  line-height: 0px;
+  /* line-height: 0.5rem; */
   height: 0.5rem;
+  font-size: 0px;
   /* margin-bottom: 0.3rem; */
 }
 .loginTop span:last-child{
@@ -40,9 +41,8 @@ export default {
   text-align:center;
   font-size: 0.16rem;
   color: #333333;
-  width: 11%;
-  /* display: inline-block; */
-  line-height: 0.5rem;
+  /* width: 11%; */
+  display: inline-block;
   font-weight: bold;
   font-family: "PingFang-SC-Bold";
 }

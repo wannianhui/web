@@ -13,6 +13,7 @@ const MakeList = () => import("@/components/MakeList") //制作列表组件
 const Practical = () => import("@/components/Practical") //实际消费组件
 const Audit = () => import("@/components/Audit") 
 const StatementCopy = () => import("@/components/StatementCopy") //报表拷贝
+const Cost = () => import ("@/components/Cost") //费用登记
 Vue.use(Router)
 
 export default new Router({
@@ -72,5 +73,9 @@ export default new Router({
     path: "/StatementCopy",
     name: "StatementCopy",
     component: StatementCopy
+  },{
+    path:"/Cost",
+    name:"Cost",
+    component:Cost
   }]
 })

@@ -73,8 +73,8 @@ export default {
         },
         {
           text: "费用登记",
-          img: require("../assets/img/index/icon_fydj.png")
-          // path:"/Consignee"
+          img: require("../assets/img/index/icon_fydj.png"),
+          path:"/Cost"
         },
         {
           text: "收货",
