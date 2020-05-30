@@ -6,8 +6,8 @@ END
 index.js
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/src/vuex/index.js
+V 67
+/svn/20180724leboshi/!svn/ver/21/project/Html/lbs/src/vuex/index.js
 END
 actions.js
 K 25
@@ -18,8 +18,8 @@ END
 state.js
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/svn/20180724leboshi/!svn/ver/4/project/Html/lbs/src/vuex/state.js
+V 67
+/svn/20180724leboshi/!svn/ver/22/project/Html/lbs/src/vuex/state.js
 END
 type.js
 K 25

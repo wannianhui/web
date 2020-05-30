@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="">
+  <link rel="ico" type="image/x-icon" href="static/img/fivezone_favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="static/img/fivezone_favicon.ico">
+  <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+  <!--   <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101540935" data-callback="true" charset="utf-8"></script> -->
+  <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101540935"
+    data-redirecturi="http://127.0.0.1:8080/jumpUrl" charset="utf-8"></script>
+  <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+  <!--微信扫码登录-->
+
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=302770164&debug=true" type="text/javascript"
+    charset="utf-8"></script> <!-- 微博登录 -->
+  <!-- <script language="javascript" src="http://pyt.zoosnet.net/JS/LsJS.aspx?siteid=PYT89550094&float=1&lng=cn"></script> -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.12.0/theme-chalk/index.css" rel="stylesheet">
+  <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/3.4.2/css/swiper.css" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.0/qs.js"></script> -->
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.20/vue.js"></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.20/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.12.0/index.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.18.0/axios.js"></script>
+  <meta charset="UTF-8">
+  <meta property="wb:webmaster" content="xxxxxxx" />
+  <title>乐博士</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

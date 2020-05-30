@@ -12,7 +12,7 @@ const state={
     advisoryData:sessionStorage["advisoryData"]?JSON.parse(sessionStorage["advisoryData"]): [], //资讯信息
     eventData:sessionStorage["eventData"]?JSON.parse(sessionStorage["eventData"]): [], //赛事信息
     zoneData:sessionStorage["zoneData"]?JSON.parse(sessionStorage["zoneData"]): [], //EST专区信息
-    // labelData:sessionStorage["labelData"]?JSON.parse(sessionStorage.getItem('labelData')):{},
+    //  labelData:sessionStorage["labelData"]?JSON.parse(sessionStorage.getItem('labelData')):{},
     labelData:{},
     labelheadr:0,
 

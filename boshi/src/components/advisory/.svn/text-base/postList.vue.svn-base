@@ -111,13 +111,14 @@
             <span>请登录</span>
           </p>
         </div>
-      </div>el-image elimg
+      </div>
       <ul class="hotPost">
         <h3>推荐阅读</h3>
         <li
           v-for="(item,index) in tuiShow"
           :style="{backgroundImage: 'url('+ apiImg + item.image}"
           :key="index"
+          class="tuiShuwClass"
         >
           <router-link
             target="_blank"
@@ -179,7 +180,7 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      pagination:false,
+      pagination: false,
       stateType: 0, //选项卡
       postsShow: [
         {
@@ -218,8 +219,7 @@ export default {
       mestopicNumbers: 0 //消息+评论数
     };
   },
-  created() {
-  },
+  created() {},
   mounted: function() {
     let that = this;
     that.defaultImg = common.defaultImg;
@@ -346,7 +346,10 @@ export default {
               content: "请先登录"
             });
           }
-          this.$router.push({ path: "/forumCenter", query: { isActive: type } });
+          this.$router.push({
+            path: "/forumCenter",
+            query: { isActive: type }
+          });
           let list = res.data.data;
           that.postsShow = list.list;
           that.total = list.totalRow;
@@ -436,13 +439,12 @@ export default {
     switchCategory(type) {
       let that = this;
       that.$store.dispatch("initPageNum", true); //强制初始化页码
-      
-        that.stateType = type;
-        that.pageNumber = 1;
-        that.postsShow = [];
-        this.$router.push({ path: "/forumCenter", query: { isActive: type } });
-        that.getForumList({ type: type });
-      
+
+      that.stateType = type;
+      that.pageNumber = 1;
+      that.postsShow = [];
+      this.$router.push({ path: "/forumCenter", query: { isActive: type } });
+      that.getForumList({ type: type });
     },
     timeSort() {
       let that = this;
@@ -925,5 +927,15 @@ export default {
     }
   }
   @include clearFloat();
+}
+.tuiShuwClass {
+  background-repeat: no-repeat;
+  width: 167px;
+  background-size: 100%;
+  height: 134px;
+}
+.hotPost li a{
+  position: relative;
+  top: 130px;
 }
 </style>

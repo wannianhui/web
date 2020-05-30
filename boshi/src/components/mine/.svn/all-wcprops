@@ -42,8 +42,8 @@ END
 about.vue
 K 25
 svn:wc:ra_dav:version-url
-V 78
-/svn/20180724leboshi/!svn/ver/3/project/Html/lbs/src/components/mine/about.vue
+V 79
+/svn/20180724leboshi/!svn/ver/21/project/Html/lbs/src/components/mine/about.vue
 END
 addressModule.vue
 K 25
@@ -79,7 +79,7 @@ mineOthers.vue
 K 25
 svn:wc:ra_dav:version-url
 V 84
-/svn/20180724leboshi/!svn/ver/11/project/Html/lbs/src/components/mine/mineOthers.vue
+/svn/20180724leboshi/!svn/ver/21/project/Html/lbs/src/components/mine/mineOthers.vue
 END
 setting.vue
 K 25

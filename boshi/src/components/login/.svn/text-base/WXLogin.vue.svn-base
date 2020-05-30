@@ -35,6 +35,7 @@ export default {
       self_redirect: false,
       id:"wxqr",
       appid: "wx50c84bbe29aee0bf",
+      // appid:"wxf20833034495e129",
       scope: "snsapi_login",
       redirect_uri: "http://www.drluck.club",
       state: "wx",

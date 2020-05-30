@@ -41,6 +41,7 @@
   padding: 62px 0 130px;
   min-height: 100%;
   box-sizing: border-box;
+  margin-bottom: 95px;
   .main{
     width: 1200px;
     background-color: #fff;

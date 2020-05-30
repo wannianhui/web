@@ -1,5 +1,5 @@
 <template>
-  <section style="min-height: 100%">
+  <section style="min-height: 100%;margin-bottom:100px;">
     <globalSwiper></globalSwiper>
     <div class="content">
       <div class="classification">
@@ -431,11 +431,11 @@
       moreList() { //更多列表
         const that = this;
         const type = that.sortAvtive;
-        let pageNumber = that.pageNumber;
-        pageNumber++; //先++再判断
+        // let pageNumber = that.pageNumber;
+        that.pageNumber+=1; //先++再判断
         that.articleList({
           type: type,
-          pageNumber: pageNumber
+          pageNumber: that.pageNumber
         })
       },
       //进入帖子详情时的验证

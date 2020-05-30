@@ -363,6 +363,7 @@
     margin: 62px 0 0 0;
     padding: 6px 0 0 0;
     min-height: 84%;
+    margin-bottom: 95px;
     & > div {
       width: 1200px;
       margin: 0 auto 100px auto;

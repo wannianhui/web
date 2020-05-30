@@ -43,7 +43,7 @@ header.vue
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/20180724leboshi/!svn/ver/15/project/Html/lbs/src/common/header.vue
+/svn/20180724leboshi/!svn/ver/22/project/Html/lbs/src/common/header.vue
 END
 pagination.vue
 K 25
@@ -54,8 +54,8 @@ END
 globalSwiper.vue
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/20180724leboshi/!svn/ver/4/project/Html/lbs/src/common/globalSwiper.vue
+V 77
+/svn/20180724leboshi/!svn/ver/21/project/Html/lbs/src/common/globalSwiper.vue
 END
 common.css.map
 K 25
@@ -66,6 +66,6 @@ END
 footer.vue
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/20180724leboshi/!svn/ver/4/project/Html/lbs/src/common/footer.vue
+V 71
+/svn/20180724leboshi/!svn/ver/21/project/Html/lbs/src/common/footer.vue
 END

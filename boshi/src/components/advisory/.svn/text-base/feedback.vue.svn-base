@@ -66,6 +66,7 @@
     margin:62px 0 0 0;
     min-height:84%;
     padding:14px 0 0 0;
+    margin-bottom: 95px;
     &>div {
       width:1200px;
       min-height:600px;

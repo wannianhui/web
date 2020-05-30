@@ -548,6 +548,7 @@ export default {
 
     // 封装的一个input事件，name为input的名字
     inputFunc(name) {
+      console.log(name)
       //初始化
       let regPassword = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/; //验证密码
       let regMailbox = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/; //验证邮箱

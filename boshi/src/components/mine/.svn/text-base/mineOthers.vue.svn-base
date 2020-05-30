@@ -461,6 +461,7 @@
   section {
     margin: 62px 0 0 0;
     min-height: 84%;
+    margin-bottom: 95px;
     .banner {
       position: relative;
       font-size: 0;

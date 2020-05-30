@@ -46,6 +46,7 @@
   section {
     margin:62px 0 0 0;
     min-height:84%;
+    margin-bottom: 95px;
     /* padding:14px 0 0 0; */
     &>div {
       width:1200px;

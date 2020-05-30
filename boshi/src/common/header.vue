@@ -368,7 +368,7 @@ export default {
         .then(res => {
           that.$store.dispatch("labelheadr", index);
           // console.log(that.labelData, 258)
-          that.$router.push("/newsList");
+          that.$router.push({path:"/newsList",query:list});
         })
         .catch(err => {
           console.log(err);
@@ -444,6 +444,7 @@ export default {
         .then(res => {
           // console.log('%c EST专区信息', 'color:green', res);
           that.zone = res.data.data;
+          console.log(that.zone+"zone")
           // that.$store.dispatch('zoneData',res.data.data);
         })
         .catch(function(error) {

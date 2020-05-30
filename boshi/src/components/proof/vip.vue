@@ -330,6 +330,7 @@
     margin: 62px 0 0 0;
     min-height: 84%;
     padding-top: 20px;
+    margin-bottom: 95px;
     & > div {
       width: 1200px;
       position: relative;
