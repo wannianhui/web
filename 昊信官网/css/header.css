@@ -1,0 +1,13 @@
+#header {
+  height: 0.4rem;
+  width: 94%;
+  margin: 0 auto;
+  font-size: 0px;
+}
+#header img:nth-child(1){
+  margin: 0.12rem auto;
+}
+#header img:nth-child(2){
+  margin: 0.17rem auto;
+  float: right;
+}

@@ -1,0 +1,56 @@
+.footerImg {
+  width: 100%;
+  font-size: 0px;
+}
+
+.footerImg img {
+  margin: auto 0.77rem;
+  margin-top: 0.45rem;
+}
+
+.footerText {
+  width: 100%;
+  font-size: 0px;
+  margin-top: 0.2rem; 
+}
+
+.footerText p {
+  text-align: center;
+  font-size: 0.1rem;
+  color: #8A8A8A;
+  margin-bottom: 0.05rem;
+}
+
+.footerText p:last-child {
+  color: rgb(97, 90, 207);
+  font-size: 0.12rem;
+}
+
+.footerBottom {
+  width: 100%;
+  height: 0.48rem;
+  font-size: 0px;
+  margin-top: 0.2rem;
+  background: #BC0E0E;
+}
+
+.footerBottom ul {
+  display: flex;
+}
+
+.footerBottom ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.footerBottom ul li span {
+  font-size: 0.16rem;
+  color: white;
+  line-height: 0.52rem;
+}
+
+.footerBottom ul li img {
+  position: relative;
+  top: 0.04rem;
+  left: -0.06rem;
+}

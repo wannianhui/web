@@ -1,0 +1,183 @@
+.warehouseDiv {
+  width: 100%;
+  font-size: 0px;
+  height: 0.46rem;
+}
+
+.warehouseDiv div {
+  display: inline-block;
+}
+
+.warehouseDiv div:nth-child(1) {
+  width: 80%;
+  background: black;
+  height: 100%;
+  float: left;
+}
+
+.warehouseDiv div:nth-child(2) {
+  width: 20%;
+  float: right;
+}
+
+.warehouseDiv div:nth-child(2) img {
+  height: 0.46rem;
+  width: 100%;
+}
+.warehouseDiv div:nth-child(1) img {
+  position: relative;
+  top: 0.04rem;
+  left: 0.14rem;
+}
+
+.estate {
+  width: 100%;
+  font-size: 0px;
+}
+
+.estate ul {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.estate ul li {
+  width: 100%;
+  height: 1.14rem;
+  margin-top: 0.15rem;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.estate ul li:last-child {
+  border-bottom: 0px solid #E4E4E4;
+}
+
+.estate ul li div {
+  display: inline-block;
+}
+
+.estate ul li div:nth-child(1) {
+  width: 40%;
+  position: relative;
+}
+
+.estate ul li div:nth-child(1) img:nth-child(1) {
+  width: 1.21rem;
+  height: 0.8rem;
+  position: relative;
+  top: -0.08rem;
+  left: 0.13rem;
+}
+.estate ul li div:nth-child(1) span{
+  position: absolute;
+  top: -0.05rem;
+  transform: rotate(-43deg);
+  left: 0.14rem;
+  font-size: 0.12rem;
+  color: white;
+}
+
+.estate ul li div:nth-child(1) img:nth-last-child(2) {
+  position: absolute;
+  top: -0.1rem;
+  left: 0.14rem;
+}
+
+.estate ul li div:nth-child(2) {
+  width:57%;
+  /* margin-top: 0.1rem; */
+}
+
+.estate ul li div:nth-child(2) h3 {
+  font-size: 0.13rem;
+  color: #141414;
+  font-weight: bold;
+}
+
+.estate ul li div * {
+  margin-bottom: 0.08rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(2) {
+  color: #252525;
+  font-size: 0.1rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(3) {
+  color: #DD2935;
+  font-size: 0.14rem;
+  font-weight: bold;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) {
+  height: 0.15rem;
+  text-align: center;
+  line-height: 15px;
+  font-size: 0.11rem;
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span {
+  padding: 0.01rem 0.05rem;
+  border-radius: 0.04rem;
+  margin-right: 0.1rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(1) {
+  background: #E9F3FC;
+  color: #66ACE2;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(2) {
+  background: #E4FFFA;
+  color: #4CBBA7;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(3) {
+  background: #FCF2C9;
+  color: #FFCF10;
+}
+.estate button{
+  margin: 0 auto;
+  display: block;
+  border: none;
+  background: none;
+  font-size: 0.15rem;
+  width: 94%;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  background: #BC0F10;
+  color: white;
+  margin-top: 0.3rem;
+}
+
+.select {
+  font-size: 0px;
+}
+.select ul {
+  display: flex;
+  height: 0.43rem;
+  border-bottom: 1px solid #EEEEEE;
+}
+.select ul li{
+  font-size: 0.13rem;
+  flex: 1;
+  color: #333333;
+  line-height: 0.43rem;
+  text-align: center;
+}
+.select ul li img{
+  position: relative;
+  top: -0.02rem;
+  left: 0.04rem;
+}
+.select ul li:nth-child(4) img{
+  top: 0rem ;
+  left: 0.04rem ;
+}
+.selectNone{
+  display: none;
+}
+.selectBlock{
+  display: inline-block;
+}

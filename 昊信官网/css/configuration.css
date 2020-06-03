@@ -1,0 +1,153 @@
+.title {
+  width: 100%;
+  font-size: 0px;
+  /* height: 0.93rem; */
+  margin-bottom: -0.21rem;
+}
+
+.title>div {
+  width: 84%;
+  height: 0.70rem;
+  margin: 0 auto;
+  border-radius: 0.12rem;
+  display: flex;
+  box-shadow: 0px 2px 20px 8px #EBEBEB;
+}
+
+.title img {
+  width: 20%;
+  position: relative;
+  left: 0.2rem;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0.15rem;
+}
+.img img{
+  width: 100%;
+  height: 100%;
+}
+.title>div div {
+  width: 80%;
+  line-height: 0.06rem;
+  margin-left: 0.83rem;
+  margin-top: 0.08rem;
+}
+
+.title h3 {
+  font-size: 0.15rem;
+  color: #161616;
+  font-weight: bold;
+  position: relative;
+  top: 0.14rem;
+}
+
+.title p {
+  font-size: 0.1rem;
+  color: #979797;
+  position: relative;
+  top: 0.3rem;
+}
+
+.configuration {
+  width: 100%;
+  font-size: 0px;
+}
+
+.configuration ul {
+  padding: 0px;
+}
+
+.configuration ul li {
+  height: 1.7rem;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.configuration ul li:nth-child(3) {
+  height: 1.3rem !important;
+}
+
+.configuration ul li:nth-child(4) {
+  height: 1rem;
+  border-bottom: 0px solid red;
+}
+
+.configuration ul li h3 {
+  font-size: 0.165rem;
+  font-family: "SourceHanSansCN-Bold";
+  color: #161616;
+  font-weight: bold;
+}
+
+.configuration ul li span {
+  font-size: 0.12rem;
+}
+
+.configuration ul li span {
+  width: 1rem;
+  height: 0.23rem;
+  margin-right: 0.06rem;
+  margin-top: 0.16rem;
+  color: #979797;
+  text-align: center;
+  font-family: "SourceHanSansCN-Regular";
+  line-height: 0.21rem;
+  border-radius: 0.08rem;
+  border: 1px solid #979797;
+  display: inline-block;
+}
+
+.spanColor {
+  color: #B10909 !important;
+  border: 1px solid #B10909 !important;
+}
+
+.configuration ul li div {
+  position: relative;
+  top: 0.3rem;
+}
+
+.configuration ul li:nth-child(1) div {
+  top: 0.68rem;
+}
+
+.configuration ul li:nth-child(3) input {
+  color: #C5C5C5;
+  border-bottom: 1px solid #C5C5C5;
+  height: 0.3rem;
+  margin-right: 0.1rem;
+}
+
+.configuration ul li:nth-child(4) input {
+  width: 100%;
+  color: #C5C5C5;
+  border-bottom: 1px solid #C5C5C5;
+  height: 0.3rem;
+  margin-right: 0.1rem;
+  margin-top: 0.2rem;
+}
+
+.configuration ul li:nth-child(3) span {
+  width: 0.69rem;
+}
+
+.button {
+  font-size: 0px;
+  display: flex;
+}
+
+.button button {
+  font-size: 0.11rem;
+  color: white;
+  width: 2.06rem;
+  height: 0.26rem;
+  border-radius: 0.1rem;
+  background: #BC0E0E;
+  text-align: center;
+  line-height: 0.26rem;
+  margin: 0 auto;
+  margin-top: 0.4rem;
+}

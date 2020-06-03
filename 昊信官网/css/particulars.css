@@ -1,0 +1,110 @@
+body {
+  background: #F8F8F8;
+  width: 100%;
+  height: 100%;
+}
+
+.partcularsTop {
+  width: 100%;
+  background: white;
+  font-size: 0px;
+  height: 0.35rem;
+}
+
+.partcularsTop img {
+  margin-left: 0.2rem;
+  margin-top: 0.09rem;
+}
+
+.partculartsBanner {
+  width: 100%;
+  font-size: 0px;
+  background: white;
+  height: 2.4rem;
+}
+
+.partculartsBanner img {
+  width: 100%;
+  height: 100%;
+}
+
+.partculartsShop {
+  width: 100%;
+  background: white;
+  height: 0.7rem;
+  font-size: 0px;
+}
+
+.partculartsShop p {
+  line-height: 0.7rem;
+  font-size: 0.15rem;
+  color: #151414;
+  font-weight: 600;
+  margin-left: 0.2rem;
+}
+
+.partculartSite {
+  height: 1.38rem;
+  width: 100%;
+  font-size: 0px;
+  background: white;
+  margin-top: 0.15rem;
+}
+
+.partculartSite h3 {
+  font-size: 0.14rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  border-bottom: 1px solid #EEEEEE;
+  color: #BC0F10;
+}
+
+.partculartSite h3 span {
+  margin-left: 0.2rem;
+}
+
+.partculartSite h3 span::after {
+  width: 0.05rem;
+  height: 0.13rem;
+  position: relative;
+  background: #BC0F10;
+  display: block;
+  content: "";
+  top: -0.31rem;
+}
+
+.partculartSite p {
+  color: #333333;
+  margin-left: 0.2rem;
+  font-size: 0.13rem;
+  margin-top: 0.24rem;
+}
+
+.footerBottom {
+  width: 100%;
+  height: 0.48rem;
+  font-size: 0px;
+  margin-top: 0.5rem;
+  background: #BC0E0E;
+}
+
+.footerBottom ul {
+  display: flex;
+}
+
+.footerBottom ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.footerBottom ul li span {
+  font-size: 0.16rem;
+  color: white;
+  line-height: 0.52rem;
+}
+
+.footerBottom ul li img {
+  position: relative;
+  top: 0.04rem;
+  left: -0.06rem;
+}

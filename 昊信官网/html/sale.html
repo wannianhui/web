@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/init.css">
+  <link rel="stylesheet" href="../css/configuration.css">
+  <title>昊信官网</title>
+</head>
+
+<body>
+  <!-- 放盘源 -->
+    <div class="img">
+      <img src="../img/configuration/wwpp_top_logo.png" alt="">
+    </div>
+    <div class="title">
+      <div>
+        <img src="../img/configuration/wwpp_icon_title.png" alt="">
+        <div>
+          <h3>填写几个简单选项</h3>
+          <p>工业地产专家快速为您匹配厂房</p>
+        </div>
+      </div>
+    </div>
+    <div class="configuration">
+      <ul>
+        <li>
+          <div>
+            <h3>1.您的物业在哪里？</h3>
+            <span class="spanColor">番禺</span>
+            <span>南沙</span>
+            <span>顺德</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>2.您的物业多大面积？</h3>
+            <span>1000㎡以下</span>
+            <span>1000㎡~3000㎡</span>
+            <span class="spanColor">3000㎡~6000㎡</span>
+            <span>6000㎡~10000㎡</span>
+            <span>10000㎡以上</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>3.请问您怎么称呼？</h3>
+            <input type="text" value="请输入您的名字">
+            <span class="spanColor">先生</span>
+            <span>女士</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>4.请输入您的联系方式</h3>
+            <input type="text" value="请输入您的电话号码">
+          </div>
+        </li>
+      </ul>
+    </div>
+  <div class="button">
+    <button>马上提交</button>
+  </div>
+  <!-- 尾部 -->
+  <div id = "footer"></div>
+  <script src="../js/rem.js"></script>
+  <script src="../js/jq.js"></script>
+  <script>
+    // 加尾部
+    // 加载尾部
+    $(function () {
+      $('#footer').load('../html/footer.html');
+    })
+  </script>
+</body>
+
+</html>

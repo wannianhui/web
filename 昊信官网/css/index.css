@@ -1,0 +1,196 @@
+.swiper-container {
+  width: 100%;
+  height: 4.13rem;
+}
+
+.swiper-wrapper {
+  width: 100% !important;
+}
+
+.swiper-slide {
+  width: 100% !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.home {
+  width: 100%;
+  font-size: 0px;
+  height: 1.93rem;
+  background: #CE1927;
+}
+
+.home ul {
+  width: 94%;
+  margin: 0 auto;
+  position: relative;
+  top: -0.2rem;
+  z-index: 15;
+  left: 0.05rem;
+}
+
+.home ul li {
+  font-size: 0.17rem;
+  border-radius: 0.07rem;
+  color: #2C2C2C;
+  font-weight: 400;
+  background: white;
+  display: inline-block;
+  width: 1.12rem;
+  text-align: center;
+  height: 0.9rem;
+  margin-right: 0.05rem;
+}
+
+.home ul li div {
+  margin: 0.14rem auto;
+}
+
+.home ul li:nth-child(1) {
+  width: 2.29rem;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.recommend {
+  width: 100%;
+  border-bottom: 1px solid #E4E4E4;
+  font-size: 0px;
+  height: 0.6rem;
+}
+
+.recommend div {
+  width: 94%;
+  margin: 0 auto;
+  margin: 0.2rem auto;
+  height: 0.41rem;
+  border-left: 0.02rem solid #870303;
+}
+
+.recommend h3 {
+  padding-left: 0.1rem;
+  font-size: 0.2rem;
+  color: #870303;
+  position: relative;
+  margin-bottom: 0.03rem;
+  top: -0.04rem;
+}
+
+.recommend p {
+  padding-left: 0.1rem;
+  font-size: 0.1rem;
+  position: relative;
+  top: 0.01rem;
+  color: #727171;
+}
+
+.estate {
+  width: 100%;
+  font-size: 0px;
+}
+
+.estate ul {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.estate ul li {
+  width: 100%;
+  height: 1.14rem;
+  margin-top: 0.15rem;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.estate ul li:last-child {
+  border-bottom: 0px solid #E4E4E4;
+}
+
+.estate ul li div {
+  display: inline-block;
+}
+
+.estate ul li div:nth-child(1) {
+  width: 40%;
+  position: relative;
+}
+
+.estate ul li div:nth-child(1) img:nth-child(1) {
+  width: 1.21rem;
+  height: 0.8rem;
+  position: relative;
+  top: -0.08rem;
+  left: 0.13rem;
+}
+.estate ul li div:nth-child(1) span{
+  position: absolute;
+  top: -0.05rem;
+  transform: rotate(-43deg);
+  left: 0.14rem;
+  font-size: 0.12rem;
+  color: white;
+}
+
+.estate ul li div:nth-child(1) img:nth-last-child(2) {
+  position: absolute;
+  top: -0.1rem;
+  left: 0.14rem;
+}
+
+.estate ul li div:nth-child(2) {
+  width: 57%;
+  /* margin-top: 0.1rem; */
+}
+
+.estate ul li div:nth-child(2) h3 {
+  font-size: 0.13rem;
+  color: #141414;
+  font-weight: bold;
+}
+
+.estate ul li div * {
+  margin-bottom: 0.08rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(2) {
+  color: #252525;
+  font-size: 0.1rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(3) {
+  color: #DD2935;
+  font-size: 0.14rem;
+  font-weight: bold;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) {
+  height: 15px;
+  text-align: center;
+  line-height: 0.15rem;
+  font-size: 0.11rem;
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span {
+  padding: 0.01rem 0.05rem;
+  border-radius: 0.04rem;
+  margin-right: 0.1rem;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(1) {
+  background: #FECB7B;
+  color: #D07F00;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(2) {
+  background: #FD7B7B;
+  color: #870303;
+}
+
+.estate ul li div:nth-child(2) p:nth-child(4) span:nth-child(3) {
+  background: #C8FFB1;
+  color: #397F19;
+}
