@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
+  <link rel="stylesheet" href="../css/warehouse.css">
+  <link rel="stylesheet" href="../css/propertyID.css">
+  <title>昊信官网</title>
+</head>
+<body>
+  <!-- 租房的房源详细信息 -->
+  <!-- header头部 -->
+  <div id="header"></div>
+  <!-- logo -->
+  <div class="warehouseDiv">
+    <div><img src="../img/logo/zxf_logo.png" alt=""></div>
+    <div><img src="../img/logo/zcf_btn_zhankai.png" alt=""></div>
+  </div>
+   <!-- swiper轮播图 -->
+   <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="../img/header/home_list_image.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/header/home_list_image.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/header/home_list_image.png" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- 详细信息 -->
+  <div class="message">
+    <h3>急租!南沙22000方笋仓库出租，证照齐全，超大 空地，独门独院</h3>
+    <p><img src="../img/header/home_icon_wwpp.png" alt=""><span>番禺区 . 沙湾镇</span></p>
+    <ul>
+      <li>
+        <h2>租金</h2>
+        <p>面议</p>
+      </li>
+      <li>
+        <h2>面积</h2>
+        <p>36430m²</p>
+      </li>
+      <li>
+        <h2>租赁方式</h2>
+        <p>分租</p>
+      </li>
+    </ul>
+  </div>
+  <!-- swiper结束 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
+  <script src="../js/rem.js"></script>
+  <script src="../js/jq.js"></script>
+</body>
+<script>
+  // 轮播图组件
+var mySwiper = new Swiper('.swiper-container', {
+  loop: true, // 循环模式选项
+  spaceBetween: 0,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  autoplay: true
+})
+  // 加载头部
+$(function () {
+  $('#header').load('../html/header.html');
+})
+</script>
+</html>

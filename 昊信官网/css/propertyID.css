@@ -1,0 +1,117 @@
+body {
+  background: #F8F8F8;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 4.13rem;
+}
+
+.swiper-wrapper {
+  width: 100% !important;
+}
+
+.swiper-slide {
+  width: 100% !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  height: 0.24rem;
+  width: 0.63rem;
+  left: 44%;
+  border-radius: 0.1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-bullet {
+  width: 0.12rem;
+  height: 0.12rem;
+  position: relative;
+  top: -0.87rem;
+  z-index: 15;
+  left: -0.02rem;
+}
+
+.swiper-container {
+  --swiper-theme-color: white;
+}
+
+.message {
+  background: white;
+  width: 100%;
+  font-size: 0px;
+}
+
+.message h3 {
+  font-size: 0.15rem;
+  color: #151414;
+  font-family: "SourceHanSansCN-Medium";
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0.15rem;
+}
+
+.message p {
+  margin: 0.15rem;
+}
+
+.message p span {
+  color: #BC0F10;
+  font-size: 0.13rem;
+  position: relative;
+  top: -0.11rem;
+  left: 0.15rem;
+}
+
+.message ul {
+  display: flex;
+  position: relative;
+}
+
+.message ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.message ul li h2 {
+  color: #666666;
+  font-size: 0.14rem;
+}
+
+.message ul li p {
+  color: #BC0F10;
+  font-size: 0.16rem;
+  position: relative;
+  top: -0.05rem;
+}
+
+.message ul li:nth-child(1)::after {
+  position: absolute;
+  width: 1px;
+  top: 0.2rem;
+  left: 1.3rem;
+  height: 0.37rem;
+  background: red;
+  display: block;
+  content: "";
+}
+
+.message ul li:nth-child(2)::after {
+  position: absolute;
+  width: 1px;
+  top: 0.2rem;
+  left: 2.54rem;
+  height: 0.37rem;
+  background: red;
+  display: block;
+  content: "";
+}
