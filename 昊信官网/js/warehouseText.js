@@ -53,14 +53,14 @@ function eash(data) {
 }
 eash(List);
 // 点击加载更多仓库
-$(".estateButton").click(function () {
-  console.log($(".estate ul").children("li").length)
-  if($(".estate ul").children("li").length>6){
-    $(".estateButton").html("已经没有数据了");
-  }else{
-    eash(List);
-  }
-});
+// $(".estateButton").click(function () {
+//   console.log($(".estate ul").children("li").length)
+//   if($(".estate ul").children("li").length>6){
+//     $(".estateButton").html("已经没有数据了");
+//   }else{
+//     eash(List);
+//   }
+// });
 //   <!-- 区镇,面积，排序,筛选 -->的点击
 $(".select>ul>li").click(function () {
   if ($(".shade").hasClass("shadeBlock")) {
@@ -98,7 +98,4 @@ $(".confirm #button").click(function (event) {
   $(".select ul li").find(".img01").removeClass("selectNone");
   $(".select ul li").find(".img02").addClass("selectNone");
 })
-$(".img").click(function () { 
-   
- })
 //区镇的显示

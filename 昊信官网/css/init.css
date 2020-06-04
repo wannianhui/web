@@ -9,6 +9,7 @@ th, td ,div{
 }
 input {
   text-emphasis: none;
+  outline: none;
 }
 ul,
 li,p,span{

@@ -1,3 +1,30 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  position: absolute;
+  font-size: 0.16rem;
+  top: 0.08rem;
+  left: 1.6rem;
+}
+
+.shade {
+  width: 100%;
+  height: 80%;
+  background: rgb(0, 0, 0);
+  opacity: 0.7;
+  position: fixed;
+  top: 1.62rem;
+  z-index: 20;
+}
+
 .warehouseDiv {
   width: 100%;
   font-size: 0px;
@@ -24,6 +51,7 @@
   height: 0.46rem;
   width: 100%;
 }
+
 .warehouseDiv div:nth-child(1) img {
   position: relative;
   top: 0.04rem;
@@ -67,7 +95,8 @@
   top: -0.08rem;
   left: 0.13rem;
 }
-.estate ul li div:nth-child(1) span{
+
+.estate ul li div:nth-child(1) span {
   position: absolute;
   top: -0.05rem;
   transform: rotate(-43deg);
@@ -83,7 +112,7 @@
 }
 
 .estate ul li div:nth-child(2) {
-  width:57%;
+  width: 57%;
   /* margin-top: 0.1rem; */
 }
 
@@ -137,7 +166,8 @@
   background: #FCF2C9;
   color: #FFCF10;
 }
-.estate button{
+
+.estate button {
   margin: 0 auto;
   display: block;
   border: none;
@@ -154,30 +184,144 @@
 .select {
   font-size: 0px;
 }
-.select ul {
+
+.select>ul {
   display: flex;
   height: 0.43rem;
   border-bottom: 1px solid #EEEEEE;
+  border-top: 1px solid #EEEEEE;
+  position: relative;
 }
-.select ul li{
+
+.select ul li {
   font-size: 0.13rem;
   flex: 1;
   color: #333333;
   line-height: 0.43rem;
   text-align: center;
 }
-.select ul li img{
+
+.select ul li img {
   position: relative;
   top: -0.02rem;
   left: 0.04rem;
 }
-.select ul li:nth-child(4) img{
-  top: 0rem ;
-  left: 0.04rem ;
+
+.select ul li:nth-child(4) img {
+  top: 0rem;
+  left: 0.04rem;
 }
-.selectNone{
+
+.selectNone {
   display: none;
 }
-.selectBlock{
+
+.selectBlock {
   display: inline-block;
+}
+
+.div {
+  display: inline-block !important;
+}
+
+.select ul .div1 {
+  position: absolute;
+  z-index: 21;
+  width: 100%;
+  top: 0.44rem;
+  /* height: 2.37rem; */
+  left: 0px;
+  background: white;
+}
+
+.shadeBlock {
+  display: none;
+}
+
+.div1 {
+  font-size: 0px;
+  width: 100%;
+  position: absolute;
+  z-index: 23;
+  background: white;
+}
+
+.div1 ul {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 0.14rem;
+}
+
+.selectDiv div:nth-child(2) ul li {
+  width: 1.1rem;
+  font-size: 0.16rem;
+  height: 0.35rem;
+  float: left;
+  margin: 0.04rem;
+  line-height: 0.35rem;
+  background: red;
+  border-radius: 0.07rem;
+  color: #6E6E6E;
+  background: #E5E5E5;
+}
+
+.confirm {
+  font-size: 0px;
+  height: 0.8rem;
+  margin-top: 1.69rem;
+  border-top: 1px solid #E5E5E5;
+}
+
+.confirm2 {
+  margin-top: 0px;
+}
+
+.confirm button {
+  width: 1.52rem;
+  height: 0.41rem;
+  margin-top: 0.23rem;
+  background: #EEEEEE;
+  font-size: 0.14rem;
+  font-weight: bold;
+  color: black;
+  border-radius: 0.07rem;
+}
+
+.confirm button:nth-child(2) {
+  margin-left: 0.33rem;
+}
+
+.confirm button:nth-child(1) {
+  margin-left: 0.19rem;
+}
+
+.buttonColor {
+  background: #BC0F10 !important;
+  color: white !important;
+}
+
+.selectDiv div:nth-child(1) ul li {
+  text-align: left;
+  margin-left: 0.15rem;
+}
+
+.warehouseDiv ul {
+  font-size: 0px;
+  position: absolute;
+  left: 2.43rem;
+  top: 0.95rem;
+  text-align: center;
+}
+.warehouseDiv ul li{
+  width: 1.3rem;
+  font-size: 0.14rem;
+  line-height: 0.4rem;
+  height: 0.4rem;
+  background: white;
+  position: relative;
+  z-index: 30;
+  border-bottom: 1px solid #EEEEEE;
+}
+.warehouseUl{
+  display: none;
 }
