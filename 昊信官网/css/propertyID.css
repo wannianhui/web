@@ -191,7 +191,7 @@ body {
 
 .plant {
   font-size: 0px;
-  height: 2.54rem;
+  height: 2.8rem;
   width: 100%;
   margin: 0.15rem auto;
   background: white;
@@ -239,6 +239,7 @@ body {
 .subscribe {
   font-size: 0px;
   height: 4.43rem;
+  margin-bottom: 1rem;
   background: white;
 }
 
@@ -284,6 +285,11 @@ body {
   outline: none;
   background: #F5F5F5;
   left: 0.91rem;
+}
+.subscribe ul li:nth-child(5) img{
+  position: relative;
+  top: 0.15rem;
+  left: 3.3rem;;
 }
 .subscribe div{
   font-size: 0px;
@@ -337,4 +343,14 @@ body {
   position: relative;
   top: 0.04rem;
   left: -0.06rem;
+}
+.textAfter::after{
+  width: 0.06rem;
+  height: 0.14rem;
+  display: block;
+  background: red;
+  content: "";
+  position: relative;
+  top: -0.17rem;
+  left: -0.23rem;
 }

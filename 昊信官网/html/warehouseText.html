@@ -7,13 +7,20 @@
   <title>昊信官网</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
   <link rel="stylesheet" href="../css/warehouse.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/init.css">
+  <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
   <!-- 租仓库盘源信息-->
   <div class="shade shadeBlock"></div>
   <!-- header头部 -->
-  <div id="header">
+  <!-- <div id="header">
+  </div> -->
+  <div id = "header">
+    <a href="../index.html"><img src="../img/header/home_nav_icon_back.png" alt="" ></a>
+    <img src="../img/header/home_nav_icon_more.png" alt="">
   </div>
   <p class="text">盘源信息</p>
   <!-- logo -->
@@ -45,7 +52,8 @@
       </li>
       <li class="li04">
         <span>筛选</span>
-        <img src="../img/logo/zcf_icon_saixuan.png" >
+        <img src="../img/logo/zcf_icon_saixuan.png" class="img01">
+        <img src="../img/logo/zcf_icon_saixuan_sel.png" alt="" class="selectNone img02">
       </li>
     </ul>
     <div class="selectDiv">
@@ -54,16 +62,49 @@
           <li>
             全部
           </li>
-          <li>
+          <li class="li01">
             番禺区
-         </li>
-         <li>
-          南沙区
-         </li>
-         <li>
-          顺德区
-         </li>
+          </li>
+          <li class="li02">
+            南沙区
+          </li>
+          <li class="li03">
+            顺德区
+          </li>
         </ul>
+        <div class="selectCity">
+          <h3>全部</h3>
+          <ul>
+            <li class="selectCityLi">
+              <span>市桥街道</span>
+              <span>钟村街道</span>
+              <span>石壁街道</span>
+              <span>大石街道</span>
+              <span>洛浦街道</span>
+              <span>大龙街道</span>
+              <span>东环街道</span>
+              <span>桥南街道</span>
+              <span>沙头街道</span>
+              <span>小谷围街道</span>
+            </li>
+            <li class="selectCityLi">
+              <span>万顷沙镇</span>
+              <span>黄阁镇</span>
+              <span>横沥镇</span>
+              <span>榄核镇</span>
+              <span>大岗镇</span>
+              <span>东涌镇</span>
+            </li>
+            <li class="selectCityLi">
+              <span>陈村镇</span>
+              <span>均安镇</span>
+              <span>杏坛镇</span>
+              <span>龙江镇</span>
+              <span>乐从镇</span>
+              <span>北滘镇</span>
+            </li>
+          </ul>
+        </div>
         <div class="confirm confirm2">
           <button>重置</button>
           <button class="buttonColor" id = "button">确定</button>
@@ -119,6 +160,60 @@
           <button class="buttonColor" id = "button">确定</button>
         </div>
        </div>
+       <div style="display: none;" class="div1">
+        <ul>
+         <li>
+           <h3>类型</h3>
+           <span>工业园</span>
+           <span>标准</span>
+           <span>简易</span>
+           <span>标准加简易</span>
+           <span>标准天车</span>
+           <span>简易天车</span>
+           <span class="span">土地</span>
+           <span>仓库</span>
+         </li>
+         <li>
+          <h3>用途</h3>
+          <span>厂房</span>
+          <span>写字楼</span>
+          <span>商铺</span>
+          <span class="span">土地</span>
+          <span>仓库</span>
+        </li>
+        <li>
+          <h3>行业</h3>
+          <span>服装</span>
+          <span>设备类</span>
+          <span>塑料塑胶类</span>
+          <span>电子电器类</span>
+          <span>木制品类</span>
+          <span>印刷类</span>
+          <span>包装类</span>
+          <span>化妆品类</span>
+          <span>建材类</span>
+          <span>其他类</span>
+          <span>五金机械类</span>
+          <span>学校类</span>
+        </li>
+        <li>
+          <h3>标签</h3>
+          <span>独门独院</span>
+          <span>卸货平台</span>
+          <span>高速口</span>
+          <span>马路边</span>
+          <span>一手房东</span>
+          <span>可办环评</span>
+          <span>证件齐全</span>
+          <span>带装修</span>
+          <span>形象好</span>
+        </li>
+        </ul>
+        <div class="confirm confirm2">
+          <button>重置</button>
+          <button class="buttonColor" id="button">确定</button>
+        </div>
+      </div>
     </div>
   </div>
   <!-- 地产信息 -->
@@ -127,11 +222,42 @@
     <button class="estateButton">点击加载更多仓库</button>
   </div>
   <!-- footer -->
-  <div id="footer"></div>
+  <!-- <div id="footer"></div> -->
+  <div class="footerImg">
+    <img src="../img/header/home_bottom_logo.png" alt="">
+  </div>
+  <div class="footerText">
+    <p>Copyright @ 2018 qalex.com All Right Reserved </p>
+    <p>版权所有：广州市昊信联行物业投资管理有限公司</p>
+    <p>ICP经营许可证：粤B2-20080214</p>
+    <p>粤IC备06127393号-1</p>
+  </div>
+  <div class="footerBottom">
+    <ul>
+      <li>
+        <a href="/">
+          <img src="../img/header/tab_icon_home.png" alt="">
+          <span>首页</span>
+        </a>
+      </li>
+      <li>
+        <a href="../html/plant.html">
+          <img src="../img/header/tab_icon_cf.png" alt="">
+          <span>我要租厂房</span>
+        </a>
+      </li>
+      <li>
+        <a href="../html/relation.html">
+          <img src="../img/header/tab_icon_contact.png" alt="">
+          <span>联系我</span>
+        </a>
+      </li>
+    </ul>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
   <script src="../js/rem.js"></script>
   <script src="../js/jq.js"></script>
-  <script src="../js/warehouseText.js"></script>
+  <script src="../js/warehouse.js"></script>
 </body>
 
 </html>

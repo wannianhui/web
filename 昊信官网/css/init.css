@@ -7,8 +7,11 @@ th, td ,div{
   margin: 0;
   padding: 0;
 }
-input {
+input{
   text-emphasis: none;
+  outline: none;
+}
+button{
   outline: none;
 }
 ul,

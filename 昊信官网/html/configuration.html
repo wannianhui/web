@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/init.css">
   <link rel="stylesheet" href="../css/configuration.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <title>昊信官网</title>
 </head>
 
@@ -26,7 +27,7 @@
     <div class="configuration">
       <ul>
         <li>
-          <div>
+          <div id = "div1">
             <h3>1.您需要找哪里的厂房？</h3>
             <span class="spanColor">番禺</span>
             <span>南沙</span>
@@ -34,8 +35,8 @@
           </div>
         </li>
         <li>
-          <div>
-            <h3>2.您需要多大面积？</h3>
+          <div id = "div2">
+            <h3>2.您需多大面积？</h3>
             <span>1000㎡以下</span>
             <span>1000㎡~3000㎡</span>
             <span class="spanColor">3000㎡~6000㎡</span>
@@ -44,9 +45,9 @@
           </div>
         </li>
         <li>
-          <div>
+          <div id = "div3">
             <h3>3.请问您怎么称呼？</h3>
-            <input type="text" value="请输入您的名字">
+            <input type="text" value="请输入您的名字" id = "name">
             <span class="spanColor">先生</span>
             <span>女士</span>
           </div>
@@ -54,7 +55,7 @@
         <li>
           <div>
             <h3>4.请输入您的联系方式</h3>
-            <input type="text" value="请输入您的电话号码">
+            <input type="text" value="请输入您的电话号码" id = "iphone">
           </div>
         </li>
       </ul>
@@ -63,15 +64,95 @@
     <button>马上提交</button>
   </div>
   <!-- 尾部 -->
-  <div id = "footer"></div>
+  <!-- <div id = "footer"></div> -->
+  <div class="footerImg">
+    <img src="../img/header/home_bottom_logo.png" alt="">
+  </div>
+  <div class="footerText">
+    <p>Copyright @ 2018 qalex.com All Right Reserved </p>
+    <p>版权所有：广州市昊信联行物业投资管理有限公司</p>
+    <p>ICP经营许可证：粤B2-20080214</p>
+    <p>粤IC备06127393号-1</p>
+  </div>
+  <div class="footerBottom">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <img src="../img/header/tab_icon_home.png" alt="">
+          <span>首页</span>
+        </a>
+      </li>
+      <li>
+        <a href="../html/plant.html">
+          <img src="../img/header/tab_icon_cf.png" alt="">
+          <span>我要租厂房</span>
+        </a>
+      </li>
+      <li>
+        <a href="../html/relation.html">
+          <img src="../img/header/tab_icon_contact.png" alt="">
+          <span>联系我</span>
+        </a>
+      </li>
+    </ul>
+  </div>
   <script src="../js/rem.js"></script>
   <script src="../js/jq.js"></script>
   <script>
     // 加尾部
     // 加载尾部
-    $(function () {
-      $('#footer').load('../html/footer.html');
-    })
+    // $(function () {
+    //   $('#footer').load('../html/footer.html');
+    // })
+    $("#div1 span").click(function(){
+      $("#div1 span").removeClass("spanColor");
+      $(this).addClass("spanColor");
+    });
+    $("#div2 span").click(function(){
+      $("#div2 span").removeClass("spanColor");
+      $(this).addClass("spanColor");
+    });
+    $("#div3 span").click(function(){
+      $("#div3 span").removeClass("spanColor");
+      $(this).addClass("spanColor");
+    });
+    $("#name").focus(function(){
+  $(this).val("");
+  $(this).removeClass("cityColor")
+});
+$("#iphone").focus(function(){
+  $(this).val("");
+});
+    // 清空value
+$("#name").blur(function () { 
+  var reg=/^[\u4E00-\u9FA5]{1,6}$/;
+   if(!$(this).val()){
+    $(this).val("不能为空");
+    $(this).addClass("cityColor")
+  }else{
+    if(!reg.test($(this).val())){
+      $(this).val("请输入正确的名字");
+      $(this).addClass("cityColor")
+    }
+  }
+ })
+//  手机的验证
+$("#iphone").blur(function () { 
+  var reg=/^1\d{10}$/;
+   if(!$(this).val()){
+    $(this).val("不能为空");
+    $(this).addClass("cityColor")
+  }else{
+    if(!reg.test($(this).val())){
+      $(this).val("请输入正确的手机号");
+      $(this).addClass("cityColor")
+    }
+  }
+ })
+//  提交
+$(".button button").click(function(){
+  window.location.href = "./button.html";
+})
   </script>
 </body>
 

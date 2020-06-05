@@ -667,4 +667,4 @@ class MobileCalendar {
     }
   }
   window.LCalendar = MobileCalendar;
-  export default MobileCalendar;
+  // export default MobileCalendar;
