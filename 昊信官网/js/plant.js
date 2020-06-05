@@ -66,7 +66,7 @@ eash(List);
 // 点击加载更多仓库
 $(".estateButton").click(function () {
   console.log($(".estate ul").children("li").length)
-  if ($(".estate ul").children("li").length > 6) {
+  if ($(".estate ul").children("a").length > 6) {
     $(".estateButton").html("已经没有数据了");
   } else {
     eash(List);
