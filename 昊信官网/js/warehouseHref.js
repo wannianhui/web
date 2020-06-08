@@ -100,6 +100,13 @@ $(".confirm #button").click(function (event) {
   $(".select ul li").find(".img02").addClass("selectNone");
   $("#ulImage1 li").removeClass("liImage");
   $("#ulImage1 li:nth-child(1)").addClass("liImage");
+  $("#ulColor li").removeClass("cityColor");
+  $("#ulColor li:nth-child(1)").addClass("cityColor");
+  $("#cityLi li").removeClass("cityColor");
+  $("#cityLi li:nth-child(1)").addClass("cityColor");
+  $(".selectCity h3").addClass("cityH3");
+  $("#city li span").removeClass("cityH3");
+  $("body").css("overflow", "");
 })
 $(".img").click(function () {
 
@@ -134,3 +141,24 @@ $("#reset").click(function(){
   $("#ulImage1 li").removeClass("liImage");
   $("#ulImage1 li:nth-child(1)").addClass("liImage");
 });
+// 排序
+$("#ulColor li").click(function(){
+  $(this).addClass("cityColor");
+});
+$("#resetColor").click(function(){
+  $("#ulColor li").removeClass("cityColor");
+  $("#ulColor li:nth-child(1)").addClass("cityColor");
+});
+// 区镇
+$("#city li span").click(function () {
+  $(".cityH3").removeClass("cityH3")
+  $("#city li span").removeClass("cityH3")
+  $(this).addClass("cityH3");
+})
+$("#cityButton").click(function () {
+  $("#cityLi li").removeClass("cityColor");
+  $("#city li span").removeClass("cityH3");
+  $("#city li span").removeClass("cityColor");
+  $(".selectCity h3").addClass("cityH3");
+  $("#cityLi li:nth-child(1)").addClass("cityColor");
+})

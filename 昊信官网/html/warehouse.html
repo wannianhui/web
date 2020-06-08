@@ -64,8 +64,8 @@
     </ul>
     <div class="selectDiv">
       <div style="display: none;" class="div1">
-        <ul>
-          <li>
+        <ul id = "cityLi">
+          <li class="cityColor">
             全部
           </li>
           <li class="li01">
@@ -79,8 +79,8 @@
           </li>
         </ul>
         <div class="selectCity">
-          <h3>全部</h3>
-          <ul>
+          <h3 class="cityH3">全部</h3>
+          <ul id = "city">
             <li class="selectCityLi">
               <span>市桥街道</span>
               <span>钟村街道</span>
@@ -112,7 +112,7 @@
           </ul>
         </div>
         <div class="confirm confirm2">
-          <button>重置</button>
+          <button id = "cityButton">重置</button>
           <button class="buttonColor" id="button">确定</button>
         </div>
       </div>
@@ -143,8 +143,8 @@
         </div>
       </div>
       <div style="display: none;" class="div1">
-        <ul>
-          <li>
+        <ul id = "ulColor">
+          <li class="cityColor">
             默认
           </li>
           <li>
@@ -162,7 +162,7 @@
 
         </ul>
         <div class="confirm confirm2">
-          <button id = "reset">重置</button>
+          <button id = "resetColor">重置</button>
           <button class="buttonColor" id="button">确定</button>
         </div>
       </div>
@@ -177,7 +177,7 @@
            <span>标准天车</span>
            <span>简易天车</span>
            <span class="span">土地</span>
-           <span>仓库</span>
+           <span class="lastSpan">仓库</span>
          </li>
          <li>
           <h3>用途</h3>
@@ -185,7 +185,7 @@
           <span>写字楼</span>
           <span>商铺</span>
           <span class="span">土地</span>
-          <span>仓库</span>
+          <span class="lastSpan">仓库</span>
         </li>
         <li>
           <h3>行业</h3>
@@ -301,6 +301,10 @@ $("#img").click(function(){
     imgBoolean = true;
   }
 });
+$(".selectDiv div:nth-child(3) ul li").click(function(){
+  $(".selectDiv div ul li").removeClass("cityColor")
+  $(this).addClass("cityColor");
+})
   </script>
   </script>
 </body>

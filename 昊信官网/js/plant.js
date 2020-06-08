@@ -113,10 +113,11 @@ $(".confirm #button").click(function (event) {
   $("#ulImage1 li:nth-child(1)").addClass("liImage");
   $("#ulColor li").removeClass("cityColor");
   $("#ulColor li:nth-child(1)").addClass("cityColor");
-  $("body").css("overflow","");
-})
-$(".img").click(function () {
-
+  $("#cityLi li").removeClass("cityColor");
+  $("#cityLi li:nth-child(1)").addClass("cityColor");
+  $(".selectCity h3").addClass("cityH3");
+  $("#city li span").removeClass("cityH3");
+  $("body").css("overflow", "");
 })
 //区镇的显示
 $(".select div ul li").click(function () {
@@ -130,11 +131,11 @@ $(".select div ul li").click(function () {
 });
 // 监听滚动事件
 var city = document.getElementById("city");
-city.addEventListener("touchstart",function(e){
-  $("body").css("overflow","hidden");
+city.addEventListener("touchstart", function (e) {
+  $("body").css("overflow", "hidden");
   console.log(e.touches[0].pageY)
 })
-city.addEventListener("touchmove",function(e){
+city.addEventListener("touchmove", function (e) {
   console.log(e.touches[0].pageY)
 })
 
@@ -144,24 +145,31 @@ $(".select ul li span").click(function () {
   $(this).addClass("cityColor");
 });
 // 面积的监听
-$("#ulImage1 li").click(function(){
+$("#ulImage1 li").click(function () {
   $(this).addClass("liImage");
 });
-$("#reset").click(function(){
+$("#reset").click(function () {
   $("#ulImage1 li").removeClass("liImage");
   $("#ulImage1 li:nth-child(1)").addClass("liImage");
 });
 // 排序
-$("#ulColor li").click(function(){
+$("#ulColor li").click(function () {
   $(this).addClass("cityColor");
 });
-$("#resetColor").click(function(){
+$("#resetColor").click(function () {
   $("#ulColor li").removeClass("cityColor");
   $("#ulColor li:nth-child(1)").addClass("cityColor");
 });
 // 区镇
-$("#city li span").click(function(){
+$("#city li span").click(function () {
   $(".cityH3").removeClass("cityH3")
   $("#city li span").removeClass("cityH3")
   $(this).addClass("cityH3");
+})
+$("#cityButton").click(function () {
+  $("#cityLi li").removeClass("cityColor");
+  $("#city li span").removeClass("cityH3");
+  $("#city li span").removeClass("cityColor");
+  $(".selectCity h3").addClass("cityH3");
+  $("#cityLi li:nth-child(1)").addClass("cityColor");
 })
