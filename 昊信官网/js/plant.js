@@ -109,6 +109,11 @@ $(".confirm #button").click(function (event) {
   $(".select ul li span").removeClass("cityColor");
   $(".select ul li").find(".img01").removeClass("selectNone");
   $(".select ul li").find(".img02").addClass("selectNone");
+  $("#ulImage1 li").removeClass("liImage");
+  $("#ulImage1 li:nth-child(1)").addClass("liImage");
+  $("#ulColor li").removeClass("cityColor");
+  $("#ulColor li:nth-child(1)").addClass("cityColor");
+  $("body").css("overflow","");
 })
 $(".img").click(function () {
 
@@ -124,14 +129,39 @@ $(".select div ul li").click(function () {
   $(".selectCity ul li").eq(itemId).removeClass("selectCityLi").siblings().addClass("selectCityLi");
 });
 // 监听滚动事件
-$(".selectCity").mousedown(function () {
-  $(document).scroll(function () {
-    var scroH = $(document).scrollTop();
-    console.log(scroH)
-  })
+var city = document.getElementById("city");
+city.addEventListener("touchstart",function(e){
+  $("body").css("overflow","hidden");
+  console.log(e.touches[0].pageY)
 })
+city.addEventListener("touchmove",function(e){
+  console.log(e.touches[0].pageY)
+})
+
 // 给字加样式
 $(".select ul li span").click(function () {
   $(".select ul li span").removeClass("cityColor");
   $(this).addClass("cityColor");
 });
+// 面积的监听
+$("#ulImage1 li").click(function(){
+  $(this).addClass("liImage");
+});
+$("#reset").click(function(){
+  $("#ulImage1 li").removeClass("liImage");
+  $("#ulImage1 li:nth-child(1)").addClass("liImage");
+});
+// 排序
+$("#ulColor li").click(function(){
+  $(this).addClass("cityColor");
+});
+$("#resetColor").click(function(){
+  $("#ulColor li").removeClass("cityColor");
+  $("#ulColor li:nth-child(1)").addClass("cityColor");
+});
+// 区镇
+$("#city li span").click(function(){
+  $(".cityH3").removeClass("cityH3")
+  $("#city li span").removeClass("cityH3")
+  $(this).addClass("cityH3");
+})

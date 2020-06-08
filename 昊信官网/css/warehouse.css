@@ -41,7 +41,9 @@ body {
   height: 100%;
   float: left;
 }
-
+.selectDiv div:nth-child(1) ul li{
+  height: 0.45rem !important;
+}
 .warehouseDiv div:nth-child(2) {
   width: 20%;
   float: right;
@@ -98,7 +100,7 @@ body {
 
 .estate ul li div:nth-child(1) span {
   position: absolute;
-  top: -0.05rem;
+  top: -0.04rem;
   transform: rotate(-43deg);
   left: 0.14rem;
   font-size: 0.12rem;
@@ -196,9 +198,10 @@ body {
 .select ul li {
   font-size: 0.13rem;
   flex: 1;
-  color: #333333;
+  color: #999999;
   line-height: 0.43rem;
   text-align: center;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .select ul li img {
@@ -247,29 +250,36 @@ body {
 }
 
 .div1 ul {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  margin-left: 15px;
-  margin-top: -5px;
+  margin-top: -0.04rem;
 }
 
 .selectDiv .div1:nth-child(1) ul:nth-child(1) {
-  width: 25%;
-  margin-left: 0.15rem;
-  margin-top: 0px;
+  width: 45%;
+  position: relative;
+  left: -1.56rem;
+  height: 2.76rem;
+  text-indent: 0.64rem;
 }
 
 .selectDiv div:nth-child(2) ul li {
   width: 1.1rem;
   font-size: 0.16rem;
-  height: 0.35rem;
+  height: 0.45rem;
   float: left;
   margin: 0.04rem;
-  line-height: 0.35rem;
+  line-height: 0.45rem;
   background: red;
   border-radius: 0.07rem;
   color: #6E6E6E;
   background: #E5E5E5;
+}
+
+.selectCity ul li {
+  background: white !important;
+  border-radius: 0rem !important;
+  height: 0px !important;
 }
 
 .confirm {
@@ -323,7 +333,7 @@ body {
 .warehouseDiv ul li {
   width: 1.3rem;
   font-size: 0.14rem;
-  line-height: 0.4rem;
+  line-height: 0.41rem;
   height: 0.4rem;
   background: white;
   position: relative;
@@ -339,7 +349,7 @@ body {
   width: 77%;
   position: absolute;
   top: 0px;
-  left: 93px;
+  left: 0.84rem;
 }
 
 .selectCityLi {
@@ -351,48 +361,63 @@ body {
 }
 
 .selectCity ul {
-  height: 140px;
+  height: 2.36rem;
   overflow: hidden;
 }
 
 .selectCity ul li span {
   display: block;
   text-align: left;
-  text-indent: 25px;
+  height: 0.46rem;
+  width: 99%;
+  margin-left: 0.17rem;
+  border-left: 1px solid #eeeeee;
+  text-indent: 0.25rem;
+  line-height: 0.46rem;
   border-bottom: 1px solid #eeeeee;
 }
 
 .selectCity ul li {
   width: 100% !important;
 }
-.selectCity h3{
+
+.selectCity h3 {
   font-size: 0.14rem;
-    color: white;
-    height: 47px;
-    width: 89%;
-    background: #BC0F10;
-    text-align: left;
-    line-height: 47px;
-    margin-left: 34px;
-    text-indent: 20px;
+  height: 0.4rem;
+  width: 89%;
+  font-family: serif;
+  text-align: left;
+  color: #999999;
+  line-height: 0.4rem;
+  margin-left: 0.34rem;
+  text-indent: 0.24rem;
+  border-bottom: 1px solid #eeeeee;
 }
-.selectDiv div:nth-child(4){
+.cityH3{
+  background: #BC0F10;
+  color: white !important;
+}
+.selectDiv div:nth-child(4) {
   font-size: 0px;
-  width:100%;
+  width: 100%;
 }
-.selectDiv div:nth-child(4) ul li h3{
+
+.selectDiv div:nth-child(4) ul li h3 {
   font-size: 0.15rem;
   font-weight: bold;
   text-align: left;
 }
-.selectDiv div:nth-child(4) ul li{
+
+.selectDiv div:nth-child(4) ul li {
   width: 92%;
   margin: 0 auto;
 }
-.select div:nth-child(4) ul{
+
+.select div:nth-child(4) ul {
   margin-bottom: 0.6rem;
 }
-.selectDiv div:nth-child(4) ul li span{
+
+.selectDiv div:nth-child(4) ul li span {
   font-size: 0.12rem;
   margin-right: 0.06rem;
   display: inline-block;
@@ -404,10 +429,18 @@ body {
   text-align: center;
   line-height: 0.35rem;
 }
-.span{
-  margin-left: -1.1rem;
+
+.span {
+  position: relative;
+  left: -0.55rem;
 }
-.liImage{
+
+.lastSpan {
+  position: relative;
+  left: -0.55rem;
+}
+
+.liImage {
   background-image: url('../img/select/zcf_xuanxiang_sel.png') !important;
   background-repeat: no-repeat !important;
   background-size: 100% 100% !important;

@@ -138,7 +138,7 @@
           </li>
         </ul>
         <div class="confirm">
-          <button>重置</button>
+          <button id = "reset">重置</button>
           <button class="buttonColor" id="button">确定</button>
         </div>
       </div>
@@ -162,7 +162,7 @@
 
         </ul>
         <div class="confirm confirm2">
-          <button>重置</button>
+          <button id = "reset">重置</button>
           <button class="buttonColor" id="button">确定</button>
         </div>
       </div>
@@ -275,12 +275,31 @@ $(".estateButton").click(function () {
   }
 });
 $("#ulImage1 li").click(function(){
-  $("#ulImage1 li").removeClass("liImage");
+  // $("#ulImage1 li").removeClass("liImage");
   $(this).addClass("liImage");
 });
 $("#ulImage2 li:nth-child(1) span").click(function(){
   $("#ulImage2 li span").removeClass("liImage");
   $(this).addClass("liImage");
+});
+// 面积的监听
+$("#ulImage1 li").click(function(){
+  $(this).addClass("liImage");
+});
+$("#reset").click(function(){
+  $("#ulImage1 li").removeClass("liImage");
+  $("#ulImage1 li:nth-child(1)").addClass("liImage");
+});
+var imgBoolean = true;
+// 点击显示warehouseUl
+$("#img").click(function(){
+  if(imgBoolean){
+    $(".warehouseUl").removeClass("warehouseUl");
+    imgBoolean = false;
+  }else{
+    $(".warehouseDiv ul").addClass("warehouseUl");
+    imgBoolean = true;
+  }
 });
   </script>
   </script>

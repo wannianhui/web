@@ -21,7 +21,7 @@
   margin-bottom: 0.05rem;
 }
 
-.footerText p:last-child {
+.footerText p:last-child a{
   color: rgb(97, 90, 207);
   font-size: 0.12rem;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,16 @@
   <link rel="stylesheet" href="../css/init.css">
   <link rel="stylesheet" href="../css/lcalendar.css">
   <link rel="stylesheet" href="../css/propertyID.css">
+  <link rel="stylesheet" href="../css/header.css">
   <title>昊信官网</title>
 </head>
+
 <body>
   <!-- 租厂房的房源详细信息 -->
   <!-- header头部 -->
   <!-- <div id="header"></div> -->
-  <div id = "header">
-    <a href="../index.html"><img src="../img/header/home_nav_icon_back.png" alt="" ></a>
+  <div id="header">
+    <a href="../index.html"><img src="../img/header/home_nav_icon_back.png" alt=""></a>
     <img src="../img/header/home_nav_icon_more.png" alt="">
   </div>
   <!-- logo -->
@@ -23,8 +26,8 @@
     <div><img src="../img/logo/zxf_logo.png" alt=""></div>
     <div><img src="../img/logo/zcf_btn_zhankai.png" alt=""></div>
   </div>
-   <!-- swiper轮播图 -->
-   <div class="swiper-container">
+  <!-- swiper轮播图 -->
+  <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="../img/propertyID/123.png" alt=""></div>
       <div class="swiper-slide"><img src="../img/propertyID/123.png" alt=""></div>
@@ -56,9 +59,9 @@
     <h3 class="textAfter">厂房概括</h3>
     <ul>
       <li>▪&nbsp;&nbsp;仓库类型&nbsp;:&nbsp;<span>标准</span></li>
-      <li>▪&nbsp;&nbsp;配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电  ：<span>1130KW</span></li>
+      <li>▪&nbsp;&nbsp;配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电 ：<span>1130KW</span></li>
       <li>▪&nbsp;&nbsp;证件类型&nbsp;:&nbsp;<span>房产证</span></li>
-      <li>▪&nbsp;&nbsp;所在楼层  ：<span>1层</span></li>
+      <li>▪&nbsp;&nbsp;所在楼层 ：<span>1层</span></li>
       <li>▪&nbsp;&nbsp;层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高 :<span>&nbsp;5.8m</span></li>
     </ul>
     <p>
@@ -73,7 +76,7 @@
     <p>1.番禺区石基镇标准厂房出租，花园式，独门独院，形象好，空地大，靠路边，交通方便，能进出大车，证照齐全，可过环评</p>
     <p>2.厂房面积：10000平方米，办公面积：1200平方米，宿舍面积：1400平方米，空地面积：6800平方米</p>
     <p>3.消防有证，配电：500K，</p>
-    <p>4.厂房位于番禺区石基镇，邻近番禺大道、市新路、金山大道、迎新东路、坑头西线、南沙港快速、广州绕城高速、广明高速</p>                              
+    <p>4.厂房位于番禺区石基镇，邻近番禺大道、市新路、金山大道、迎新东路、坑头西线、南沙港快速、广州绕城高速、广明高速</p>
   </div>
   <!-- 适合行业 -->
   <div class="industry">
@@ -103,23 +106,23 @@
     <ul>
       <li>
         <span>姓名</span>
-        <input type="text" value="请输入申请人姓名" id = "name">
+        <input type="text" value="请输入申请人姓名" id="name">
       </li>
       <li>
         <span>手机</span>
-        <input type="text" value="请输入手机号" id = "iphone">
+        <input type="text" value="请输入手机号" id="iphone">
       </li>
       <li>
         <span>预约时间</span>
-        <input type="text" value="请选择开始时间" id = "timeStart">
+        <input type="text" value="请选择开始时间" id="timeStart">
         <img src="../img/propertyID/zcf_yykc_icon_more.png" alt="">
       </li>
       <li>
-        <input type="text" value="请选择结束时间" id = "timeEnd">
+        <input type="text" value="请选择结束时间" id="timeEnd">
         <img src="../img/propertyID/zcf_yykc_icon_more.png" alt="">
       </li>
       <li>
-        <input type="text" value="请选择日期" id = "day">
+        <input type="text" value="请选择日期" id="day">
         <img src="../img/propertyID/zcf_yykc_icon_more.png" alt="">
       </li>
     </ul>
@@ -158,55 +161,60 @@
 </body>
 <script>
   // 轮播图组件
-var mySwiper = new Swiper('.swiper-container', {
-  loop: true, // 循环模式选项
-  spaceBetween: 0,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  autoplay: true
-})
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true, // 循环模式选项
+    spaceBetween: 0,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    autoplay: true,
+    on: {
+      click:function(){
+        window.location.href = "./imgBig.html";
+      }
+    }
+  })
   // 加载头部
-// $(function () {
-//   $('#header').load('../html/header.html');
-// })
-$("#name").focus(function(){
-  $(this).val("");
-  $(this).removeClass("cityColor")
-});
-$("#iphone").focus(function(){
-  $(this).val("");
-});
-// 清空value
-$("#name").blur(function () { 
-  var reg=/^[\u4E00-\u9FA5]{1,6}$/;
-   if(!$(this).val()){
-    $(this).val("不能为空");
-    $(this).addClass("cityColor")
-  }else{
-    if(!reg.test($(this).val())){
-      $(this).val("请输入正确的名字");
+  // $(function () {
+  //   $('#header').load('../html/header.html');
+  // })
+  $("#name").focus(function () {
+    $(this).val("");
+    $(this).removeClass("cityColor")
+  });
+  $("#iphone").focus(function () {
+    $(this).val("");
+  });
+  // 清空value
+  $("#name").blur(function () {
+    var reg = /^[\u4E00-\u9FA5]{1,6}$/;
+    if (!$(this).val()) {
+      $(this).val("不能为空");
       $(this).addClass("cityColor")
+    } else {
+      if (!reg.test($(this).val())) {
+        $(this).val("请输入正确的名字");
+        $(this).addClass("cityColor")
+      }
     }
-  }
- })
-//  手机的验证
-$("#iphone").blur(function () { 
-  var reg=/^1\d{10}$/;
-   if(!$(this).val()){
-    $(this).val("不能为空");
-    $(this).addClass("cityColor")
-  }else{
-    if(!reg.test($(this).val())){
-      $(this).val("请输入正确的手机号");
+  })
+  //  手机的验证
+  $("#iphone").blur(function () {
+    var reg = /^1\d{10}$/;
+    if (!$(this).val()) {
+      $(this).val("不能为空");
       $(this).addClass("cityColor")
+    } else {
+      if (!reg.test($(this).val())) {
+        $(this).val("请输入正确的手机号");
+        $(this).addClass("cityColor")
+      }
     }
-  }
- })
-//  日期
- $("#day").focus(function(){
-  var calendar = new LCalendar();
-  calendar.init({
+  })
+  //  日期
+  $("#day").focus(function () {
+    var calendar = new LCalendar();
+    calendar.init({
       trigger: "#day", //标签id
       type: "date", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
       minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
@@ -229,11 +237,11 @@ $("#iphone").blur(function () {
     var currentDate = year + seperator + month + seperator + strDate; //当前日期
 
     _input.value = currentDate; //赋值给input.value
- })
-//  开始时间段
- $("#timeStart").focus(function(){
-  var calendar = new LCalendar();
-  calendar.init({
+  })
+  //  开始时间段
+  $("#timeStart").focus(function () {
+    var calendar = new LCalendar();
+    calendar.init({
       trigger: "#timeStart", //标签id
       type: "time", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
       minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
@@ -256,11 +264,11 @@ $("#iphone").blur(function () {
     var currentDate = year + seperator + month + seperator + strDate; //当前日期
 
     _input.value = currentDate; //赋值给input.value
- })
- //  结束时间段
- $("#timeEnd").focus(function(){
-  var calendar = new LCalendar();
-  calendar.init({
+  })
+  //  结束时间段
+  $("#timeEnd").focus(function () {
+    var calendar = new LCalendar();
+    calendar.init({
       trigger: "#timeEnd", //标签id
       type: "time", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
       minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
@@ -283,10 +291,11 @@ $("#iphone").blur(function () {
     var currentDate = year + seperator + month + seperator + strDate; //当前日期
 
     _input.value = currentDate; //赋值给input.value
- })
+  })
   //  提交
-$(".button p").click(function(){
-  window.location.href = "./button.html";
-})
+  $(".button p").click(function () {
+    window.location.href = "./button.html";
+  })
 </script>
+
 </html>

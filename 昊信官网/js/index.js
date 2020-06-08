@@ -1,12 +1,12 @@
  // 轮播图组件
-var mySwiper = new Swiper('.swiper-container', {
-  loop: true, // 循环模式选项
-  spaceBetween: 0,
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-  autoplay: true
-})// 加载头部
+// var mySwiper = new Swiper('.swiper-container', {
+//   loop: true, // 循环模式选项
+//   spaceBetween: 0,
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+//   autoplay: true
+// })// 加载头部
  $(function () {
   $('#header').load('./html/header.html');
 })
@@ -87,11 +87,11 @@ var List = [{
   p3span3: "证件齐全"
 }]
 $.each(List, function (key, value) {
-  var li = "<li><div><img src = " +
+  var li = "<a href = './html/propertyID.html'><li><div><img src = " +
     value.img + "><img src = "+value.img2+"><span>"+value.imgSpan+"</span></div><div><h3>" +
     value.h3 + "</h3><p>" + value.p1 +
     "</p><p>" + value.p2 + "</p><p><span>" +
     value.p3span1 + "</span><span>" + value.p3span2 +
-    "</span><span>" + value.p3span3 + "</span></p></div></li>";
+    "</span><span>" + value.p3span3 + "</span></p></div></li></a>";
   $(".estate ul").append(li);
 });
