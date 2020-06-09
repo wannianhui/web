@@ -122,7 +122,7 @@ $(".confirm #button").click(function (event) {
   $("body").css("overflow", "");
 })
 //区镇的显示
-$(".select div ul li").click(function () {
+$(".select div #cityLi li").click(function () {
   var itemId = Number($(this)[0].className.substr($(this)[0].className.length - 1, 1) - 1);
   console.log(itemId)
   if (itemId == -1) {
