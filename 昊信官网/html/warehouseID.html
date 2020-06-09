@@ -34,6 +34,61 @@
       <li><a href="../html/particulars.html">关于昊信</a></li>
     </ul>
   </div>
+  <!-- 时间段的界面 -->
+  <!-- <div style="font-size: 0px;width: 100%;height: 160px;" id = "time">
+    <ul style="font-size: 15px;width: 50%;display: inline-block;">
+      <li>00:00</li>
+      <li>01:00</li>
+      <li>02:00</li>
+      <li>03:00</li>
+      <li>04:00</li>
+      <li>05:00</li>
+      <li>06:00</li>
+      <li>07:00</li>
+      <li>08:00</li>
+      <li>09:00</li>
+      <li>10:00</li>
+      <li>11:00</li>
+      <li>12:00</li>
+      <li>13:00</li>
+      <li>14:00</li>
+      <li>15:00</li>
+      <li>16:00</li>
+      <li>17:00</li>
+      <li>18:00</li>
+      <li>19:00</li>
+      <li>20:00</li>
+      <li>21:00</li>
+      <li>22:00</li>
+      <li>23:00</li>
+    </ul>
+    <ul style="font-size: 15px;width: 50%;display:inline-block">
+      <li>01:00</li>
+      <li>02:00</li>
+      <li>03:00</li>
+      <li>04:00</li>
+      <li>05:00</li>
+      <li>06:00</li>
+      <li>07:00</li>
+      <li>08:00</li>
+      <li>09:00</li>
+      <li>10:00</li>
+      <li>11:00</li>
+      <li>12:00</li>
+      <li>13:00</li>
+      <li>14:00</li>
+      <li>15:00</li>
+      <li>16:00</li>
+      <li>17:00</li>
+      <li>18:00</li>
+      <li>19:00</li>
+      <li>20:00</li>
+      <li>21:00</li>
+      <li>22:00</li>
+      <li>23:00</li>
+      <li>00:00</li>
+    </ul>
+  </div> -->
   <!-- swiper轮播图 -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -304,6 +359,44 @@
   $(".button p").click(function () {
     window.location.href = "./button.html";
   })
+  // 监听滚动事件
+var city = document.getElementById("time");
+city.addEventListener("touchstart", function (e) {
+  $("body").css("overflow", "hidden");
+  timeStart = e.touches[0].pageY;
+})
+city.addEventListener("touchmove", function (e) {
+  var timeMove = e.touches[0].pageY;
+  console.log(timeMove)
+  if(timeStart>timeMove){
+    // 往上
+    var y = timeStart-timeMove; 
+    if(y<40){
+      $("#time ul").css("top","0em");
+    }else{
+      var top = "-"+(y%40)*40+"em";
+      console.log(top)
+      if(y==0){
+        $("#time ul").css("top","0em");
+      }
+      $("#time ul").css("top",top);
+    }
+  }else{
+    // 往下
+    var y = timeMove-timeStart;
+    if(y<40){
+      $("#time ul").css("top","0px");
+    }else{
+      var top = (y%40)*40+"px";
+      console.log(top)
+      if(y == 0){
+        $("#time ul").css("top","0px");
+      }
+      $("#time ul").css("top",top);
+    }
+  }
+})
+
 </script>
 
 </html>

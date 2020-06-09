@@ -216,7 +216,7 @@
         </li>
         </ul>
         <div class="confirm confirm2">
-          <button>重置</button>
+          <button id = "filtrate">重置</button>
           <button class="buttonColor" id="button">确定</button>
         </div>
       </div>
@@ -279,9 +279,10 @@ $("#ulImage1 li").click(function(){
   $(this).addClass("liImage");
 });
 $("#ulImage2 li:nth-child(1) span").click(function(){
-  $("#ulImage2 li span").removeClass("liImage");
+  // $("#ulImage2 li span").removeClass("liImage");
   $(this).addClass("liImage");
 });
+// 筛选的清除
 // 面积的监听
 $("#ulImage1 li").click(function(){
   $(this).addClass("liImage");

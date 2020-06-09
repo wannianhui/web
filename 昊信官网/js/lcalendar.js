@@ -516,6 +516,13 @@ class MobileCalendar {
         this.gearDate = null;
       };
     }
+    // 取消
+    confirmNo(closeCalendar){
+      return (e)=>{
+        this.trigger.value = "请选择日期";
+        closeCalendar(e);
+      }
+    }
     //确认
     confirm(closeCalendar) {
       return (e) => {
@@ -573,6 +580,8 @@ class MobileCalendar {
       this.defaultValueInit();
       let closeCalendar = this.destroy();
       let confirmValue = this.confirm(closeCalendar);
+      //取消事件
+      let confirmValueNo = this.confirmNo(closeCalendar);
       let gearTouchStart = this.handleTouchStart();
       let gearTouchEnd = this.handleTouchEnd();
       let gearTouchMove = this.handleTouchMove(gearTouchEnd);
@@ -580,6 +589,9 @@ class MobileCalendar {
       // lcalendar_cancel.addEventListener("touchstart", closeCalendar);
       let lcalendar_finish = this.gearDate.querySelector(".lcalendar_finish");
       lcalendar_finish.addEventListener("touchstart", confirmValue);
+      // 添加取消事件
+      let lcalendar_finishNo = this.gearDate.querySelector(".lcalendar_finishNo");
+      lcalendar_finishNo.addEventListener("touchstart", confirmValueNo);
       let date_yy = this.gearDate.querySelector(".date_yy");
       let date_mm = this.gearDate.querySelector(".date_mm");
       let date_dd = this.gearDate.querySelector(".date_dd");
@@ -611,8 +623,9 @@ class MobileCalendar {
       function getTemp(containsStr, str) {
         let tempStr = `<div class="date_ctrl slideInUp">
               <div class="date_btn_box">
-              <div class="date_btn lcalendar_cancel">请选择日期</div>
-              <div class="date_btn lcalendar_finish">确定</div>
+              <div class="date_btn lcalendar_cancel" id = "cancel">请选择日期</div>
+              <div class="date_btn lcalendar_finish" id = "yes">确定</div>
+              <div class="date_btn lcalendar_finish lcalendar_finishNo" id = "no">取消</div>
               </div>
               <div class="date_roll_mask">
               <div class="${str ? str : "date_roll"}">

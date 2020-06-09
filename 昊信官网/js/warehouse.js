@@ -106,6 +106,8 @@ $(".confirm #button").click(function (event) {
   $("#cityLi li:nth-child(1)").addClass("cityColor");
   $(".selectCity h3").addClass("cityH3");
   $("#city li span").removeClass("cityH3");
+  $("#ulImage2 li span").removeClass("liImage");
+  $("#ulImage2 li:nth-child(1) span:nth-child(2)").addClass("liImage");
   $("body").css("overflow", "");
 })
 //区镇的显示
@@ -126,8 +128,8 @@ $(".selectCity").mousedown(function () {
   })
 })
 // 给字加样式
-$(".select ul li span").click(function () {
-  $(".select ul li span").removeClass("cityColor");
+$(".select>ul>li>span").click(function () {
+  $(".select>ul>li>span").removeClass("cityColor");
   $(this).addClass("cityColor");
 });
 // 面积的监听
@@ -160,7 +162,6 @@ $("#cityButton").click(function () {
   $("#cityLi li:nth-child(1)").addClass("cityColor");
 })
 $("#ulImage2 li:nth-child(1) span").click(function(){
-  $("#ulImage2 li span").removeClass("liImage");
   $(this).addClass("liImage");
 });
 var imgBoolean = true;
@@ -177,4 +178,9 @@ $("#img").click(function(){
 $(".selectDiv div:nth-child(3) ul li").click(function(){
   $(".selectDiv div ul li").removeClass("cityColor")
   $(this).addClass("cityColor");
+})
+// 重置筛选
+$("#filtrate").click(function(){
+  $("#ulImage2 li span").removeClass("liImage");
+  $("#ulImage2 li:nth-child(1) span:nth-child(2)").addClass("liImage");
 })

@@ -1,15 +1,46 @@
-.lcalendar_finish{
+#yes {
+  border-top: 1px solid #333;
+  width: 42%;
+  background: white;
+  left: 177px;
+  top: 238px;
+  border-left: 1px solid #333;
+}
+#cancel{
+  color: #BC0F10;
+}
+#yes::after {
+  width: 1px;
+  background: #333;
+  height: 53px;
+  content: "";
+  display: block;
+  position: relative;
+  top: -36px;
+  left: -16px;
+}
+
+#no {
+  width: 37%;
+  background: white;
+  left: 1px;
+  top: 237px;
+  border-top: 1px solid #333;
+}
+
+.lcalendar_finish {
   position: fixed;
   bottom: 0;
   left: 32px;
   top: 231px;
   width: 76%;
-  border-radius: 33px;
+  /* border-radius: 33px; */
   height: 18px;
   margin: 0 auto;
-  background: #5A7FF6;
+  /* background: #5A7FF6; */
   z-index: 10001;
 }
+
 .gearDate,
 .gearDatetime {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -48,15 +79,18 @@
 
 @keyframes slideInUp {
   from {
-      transform: translate3d(0, 100%, 0)
+    transform: translate3d(0, 100%, 0)
   }
+
   to {
-      transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
   }
 }
-.date_roll{
+
+.date_roll {
   margin-bottom: 13px;
 }
+
 .ym_roll,
 .date_roll,
 .datetime_roll,
@@ -193,7 +227,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  background-color:white;
+  background-color: white;
   position: relative
 }
 

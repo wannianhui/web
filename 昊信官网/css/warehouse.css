@@ -445,3 +445,16 @@ body {
   background-repeat: no-repeat !important;
   background-size: 100% 100% !important;
 }
+#time{
+  overflow: hidden;
+}
+#time ul {
+  transition: top 0.5s;
+  position: relative;
+  top: 0px;  
+}
+#time ul li{
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
