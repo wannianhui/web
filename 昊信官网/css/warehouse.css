@@ -56,7 +56,8 @@ body {
 
 .warehouseDiv div:nth-child(1) img {
   position: relative;
-  top: 0.04rem;
+  top: 0.01rem;
+  width: 43%;
   left: 0.14rem;
 }
 

@@ -111,13 +111,15 @@ $(".confirm #button").click(function (event) {
   $("body").css("overflow", "");
 })
 //区镇的显示
-$(".select div ul li").click(function () {
+$(".select div #cityLi li").click(function () {
   var itemId = Number($(this)[0].className.substr($(this)[0].className.length - 1, 1) - 1);
-  console.log(itemId)
-  if (itemId == -1) {
-    return;
-  }
   $(this).addClass("cityColor").siblings().removeClass("cityColor");
+  if(itemId == -1){
+    $(".selectCity ul li").addClass("selectCityLi");
+    $(".selectCity h3").addClass("cityH3");
+    $("#city li span").removeClass("cityH3")
+    return;
+  };
   $(".selectCity ul li").eq(itemId).removeClass("selectCityLi").siblings().addClass("selectCityLi");
 });
 // 监听滚动事件
@@ -134,7 +136,11 @@ $(".select>ul>li>span").click(function () {
 });
 // 面积的监听
 $("#ulImage1 li").click(function(){
-  $(this).addClass("liImage");
+  if(!$(this).hasClass("liImage")){
+    $(this).addClass("liImage");
+  }else{
+    $(this).removeClass("liImage");
+  }
 });
 $("#reset").click(function(){
   $("#ulImage1 li").removeClass("liImage");
@@ -161,8 +167,12 @@ $("#cityButton").click(function () {
   $(".selectCity h3").addClass("cityH3");
   $("#cityLi li:nth-child(1)").addClass("cityColor");
 })
-$("#ulImage2 li:nth-child(1) span").click(function(){
-  $(this).addClass("liImage");
+$("#ulImage2 li span").click(function(){
+  if(!$(this).hasClass("liImage")){
+    $(this).addClass("liImage");
+  }else{
+    $(this).removeClass("liImage");
+  }
 });
 var imgBoolean = true;
 // 点击显示warehouseUl

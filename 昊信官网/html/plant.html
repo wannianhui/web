@@ -114,24 +114,12 @@
        </div>
        <div style="display: none;" class="div1">
         <ul id = "ulImage1">
-          <li class="liImage">
-            全部
-          </li>
-          <li>
-           1000㎡以下
-         </li>
-         <li>
-          1000-3000㎡
-         </li>
-         <li>
-          3000-6000㎡
-         </li>
-         <li>
-          6000-10000㎡
-        </li>
-        <li>
-          10000㎡以上
-        </li>
+          <li class="liImage"> 全部</li>
+          <li>1000㎡以下</li>
+          <li>1000-3000㎡</li>
+          <li>3000-6000㎡</li>
+          <li>6000-10000㎡</li>
+          <li>10000㎡以上</li>
         </ul>
         <div class="confirm">
           <button id = "reset">重置</button>
@@ -232,7 +220,7 @@
     <p>Copyright @ 2018 qalex.com All Right Reserved </p>
     <p>版权所有：广州市昊信联行物业投资管理有限公司</p>
     <p>ICP经营许可证：粤B2-20080214</p>
-    <p><a href="http://www:miit.gov.cn/">粤IC备06127393号-1</a></p>
+    <p><a href="http://www.beian.miit.gov.cn">粤IC备06127393号-1</a></p>
   </div>
   <div class="footerBottom">
     <ul>
@@ -261,17 +249,19 @@
   <script src="../js/jq.js"></script>
   <script src="../js/plant.js"></script>
   <script>
-    var image1 = false;
     $("#ulImage1 li").click(function(){
-      image1 = !image1;
-      if(image1){
+      if(!$(this).hasClass("liImage")){
         $(this).addClass("liImage");
       }else{
         $(this).removeClass("liImage");
       }
 });
-$("#ulImage2 li:nth-child(1) span").click(function(){
-  $(this).addClass("liImage");
+$("#ulImage2 li span").click(function(){
+  if(!$(this).hasClass("liImage")){
+        $(this).addClass("liImage");
+      }else{
+        $(this).removeClass("liImage");
+      }
 });
 var imgBoolean = true;
 // 点击显示warehouseUl

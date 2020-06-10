@@ -1,0 +1,70 @@
+html {
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.3); */
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.relationDiv {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 152;
+}
+
+.relationDiv div {
+  width: 2.42rem;
+  height: 1.48rem;
+  background: white;
+  position: fixed;
+  top: 50%;
+  font-size: 0px;
+  left: 50%;
+  z-index: 1555;
+  margin-left: -1.21rem;
+  margin-top: -0.7rem;
+}
+
+.relationDivDisplay {
+  display: none;
+}
+
+.relationDiv div p {
+  font-size: 0.16rem;
+  text-align: center;
+  padding: 0.32rem;
+  margin-top: 0.1rem;
+  color: #333333;
+}
+
+.relationDiv div h3 {
+  font-size: 0.16rem;
+  text-align: center;
+  padding-bottom: 0.18rem;
+  color: #333333;
+}
+
+.relationDiv div ul {
+  display: flex;
+}
+
+.relationDiv div ul li {
+  flex: 1;
+  text-align: center;
+  font-size: 0.14rem;
+  color: #999999;
+  width: 50%;
+  height: 0.52rem;
+  border-top: 1px solid #eeeeee;
+  line-height: 0.44rem;
+}
+
+
+.relationDiv div ul li:nth-child(2) {
+  color: #BC0F10;
+}

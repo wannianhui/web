@@ -3,7 +3,46 @@ body {
   width: 100%;
   height: 100%;
 }
+.swiper-container {
+  width: 100%;
+  height: 2.4rem;
+}
 
+.swiper-wrapper {
+  width: 100% !important;
+}
+
+.swiper-slide {
+  width: 100% !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  height: 0.24rem;
+  width: 0.63rem !important;
+  left: 44% !important;
+  border-radius: 0.1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-pagination-bullet {
+  width: 0.12rem;
+  height: 0.12rem;
+  position: relative;
+  top: -0.9rem;
+  z-index: 15;
+  left: -0.02rem;
+}
+
+.swiper-container {
+  --swiper-theme-color: white;
+}
 .partcularsTop {
   width: 100%;
   background: white;

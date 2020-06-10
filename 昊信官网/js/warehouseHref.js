@@ -111,13 +111,15 @@ $(".confirm #button").click(function (event) {
   $("body").css("overflow", "");
 })
 //区镇的显示
-$(".select div ul li").click(function () {
+$(".select div #cityLi li").click(function () {
   var itemId = Number($(this)[0].className.substr($(this)[0].className.length - 1, 1) - 1);
-  console.log(itemId)
-  if (itemId == -1) {
-    return;
-  }
   $(this).addClass("cityColor").siblings().removeClass("cityColor");
+  if(itemId == -1){
+    $(".selectCity ul li").addClass("selectCityLi");
+    $(".selectCity h3").addClass("cityH3");
+    $("#city li span").removeClass("cityH3")
+    return;
+  };
   $(".selectCity ul li").eq(itemId).removeClass("selectCityLi").siblings().addClass("selectCityLi");
 });
 // 监听滚动事件
@@ -131,10 +133,6 @@ $(".selectCity").mousedown(function () {
 $(".select>ul>li>span").click(function () {
   $(".select>ul>li>span").removeClass("cityColor");
   $(this).addClass("cityColor");
-});
-// 面积的监听
-$("#ulImage1 li").click(function(){
-  $(this).addClass("liImage");
 });
 $("#reset").click(function(){
   $("#ulImage1 li").removeClass("liImage");

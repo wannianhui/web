@@ -10,10 +10,22 @@
   <link rel="stylesheet" href="../css/lcalendar.css">
   <link rel="stylesheet" href="../css/propertyID.css">
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/buttom.css">
   <title>昊信官网</title>
 </head>
 
 <body>
+  <!-- 联系我 -->
+  <div class="relationDiv relationDivDisplay">
+    <div>
+      <p>提交成功</p>
+      <!-- <h3>4000-666-178</h3> -->
+      <ul>
+        <li id="index"><a href="../index.html">确认</a></li>
+        <!-- <li>呼叫</li> -->
+      </ul>
+    </div>
+  </div>
   <!-- 租厂房的房源详细信息 -->
   <!-- header头部 -->
   <!-- <div id="header"></div> -->
@@ -42,6 +54,19 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
+  <!-- 图片放大 -->
+  <div class="imgBig imgBigDisplay">
+  </div>
+    <div class="imgDiv imgBigDisplay">
+      <div>
+        <img src="../img/propertyID/123.png" alt="" id="divImg">
+       </div>
+      <ul id="clickUl">
+        <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
+        <li><img src="../img/propertyID/123.png" alt=""></li>
+        <li><img src="../img/propertyID/123.png" alt=""></li>
+      </ul>
+    </div>
   <!-- 详细信息 -->
   <div class="message">
     <h3>急租!南沙22000方笋仓库出租，证照齐全，超大 空地，独门独院</h3>
@@ -177,9 +202,15 @@
     autoplay: true,
     on: {
       click:function(){
-        window.location.href = "./imgBig.html";
+        $(".imgBig").removeClass("imgBigDisplay");
+        $(".imgDiv").removeClass("imgBigDisplay");
       }
     }
+  })
+  // 添加点击阴影加class
+  $(".imgBig").click(function(){
+    $(".imgBig").addClass("imgBigDisplay");
+    $(".imgDiv").addClass("imgBigDisplay");
   })
   // 加载头部
   // $(function () {
@@ -223,7 +254,7 @@
     var calendar = new LCalendar();
     calendar.init({
       trigger: "#day", //标签id
-      type: "date", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
+      type: "ym", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
       minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
       maxDate: "2040-3-18" //最大日期 注意：该值会覆盖标签内定义的日期范围
     });
@@ -299,10 +330,27 @@
 
     _input.value = currentDate; //赋值给input.value
   })
-  //  提交
-  $(".button p").click(function () {
-    window.location.href = "./button.html";
-  })
+ //  提交
+ $(".button p").click(function () {
+      $(".relationDiv").removeClass("relationDivDisplay");
+    })
+     //  点击图片
+     $("#clickUl li img").click(function () {
+      $("#clickUl li img").removeClass("liImg");
+      $(this).addClass("liImg");
+      var num = $(this).parent("li").index();
+      switch (num) {
+        case 0:
+          $("#divImg").attr('src', '../img/propertyID/123.png');
+          break;
+        case 1:
+          $("#divImg").attr('src', '../img/propertyID/123.png');
+          break;
+        case 2:
+          $("#divImg").attr('src', '../img/particulars/photo_06.png');
+          break;
+      }
+    })
 </script>
 
 </html>

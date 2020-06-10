@@ -11,10 +11,22 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/init.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/buttom.css">
   <title>昊信官网</title>
 </head>
 
 <body>
+  <!-- 联系我 -->
+  <div class="relationDiv relationDivDisplay">
+    <div>
+      <p>提交成功</p>
+      <!-- <h3>4000-666-178</h3> -->
+      <ul>
+        <li id="index"><a href="../index.html">确认</a></li>
+        <!-- <li>呼叫</li> -->
+      </ul>
+    </div>
+  </div>
   <!-- 租仓库的房源详细信息 -->
   <!-- header头部 -->
   <!-- <div id="header"></div> -->
@@ -34,61 +46,6 @@
       <li><a href="../html/particulars.html">关于昊信</a></li>
     </ul>
   </div>
-  <!-- 时间段的界面 -->
-  <!-- <div style="font-size: 0px;width: 100%;height: 160px;" id = "time">
-    <ul style="font-size: 15px;width: 50%;display: inline-block;">
-      <li>00:00</li>
-      <li>01:00</li>
-      <li>02:00</li>
-      <li>03:00</li>
-      <li>04:00</li>
-      <li>05:00</li>
-      <li>06:00</li>
-      <li>07:00</li>
-      <li>08:00</li>
-      <li>09:00</li>
-      <li>10:00</li>
-      <li>11:00</li>
-      <li>12:00</li>
-      <li>13:00</li>
-      <li>14:00</li>
-      <li>15:00</li>
-      <li>16:00</li>
-      <li>17:00</li>
-      <li>18:00</li>
-      <li>19:00</li>
-      <li>20:00</li>
-      <li>21:00</li>
-      <li>22:00</li>
-      <li>23:00</li>
-    </ul>
-    <ul style="font-size: 15px;width: 50%;display:inline-block">
-      <li>01:00</li>
-      <li>02:00</li>
-      <li>03:00</li>
-      <li>04:00</li>
-      <li>05:00</li>
-      <li>06:00</li>
-      <li>07:00</li>
-      <li>08:00</li>
-      <li>09:00</li>
-      <li>10:00</li>
-      <li>11:00</li>
-      <li>12:00</li>
-      <li>13:00</li>
-      <li>14:00</li>
-      <li>15:00</li>
-      <li>16:00</li>
-      <li>17:00</li>
-      <li>18:00</li>
-      <li>19:00</li>
-      <li>20:00</li>
-      <li>21:00</li>
-      <li>22:00</li>
-      <li>23:00</li>
-      <li>00:00</li>
-    </ul>
-  </div> -->
   <!-- swiper轮播图 -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -98,6 +55,19 @@
     </div>
     <div class="swiper-pagination"></div>
   </div>
+  <!-- 图片放大 -->
+  <div class="imgBig imgBigDisplay">
+  </div>
+    <div class="imgDiv imgBigDisplay">
+      <div>
+        <img src="../img/propertyID/123.png" alt="" id="divImg">
+       </div>
+      <ul id="clickUl">
+        <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
+        <li><img src="../img/propertyID/123.png" alt=""></li>
+        <li><img src="../img/propertyID/123.png" alt=""></li>
+      </ul>
+    </div>
   <!-- 详细信息 -->
   <div class="message">
     <h3>急租!南沙22000方笋仓库出租，证照齐全，超大 空地，独门独院</h3>
@@ -233,9 +203,15 @@
     autoplay: true,
     on: {
       click: function () {
-        window.location.href = "./imgBigHouse.html";
+        $(".imgBig").removeClass("imgBigDisplay");
+        $(".imgDiv").removeClass("imgBigDisplay");
       }
     }
+  })
+   // 添加点击阴影加class
+   $(".imgBig").click(function(){
+    $(".imgBig").addClass("imgBigDisplay");
+    $(".imgDiv").addClass("imgBigDisplay");
   })
   // 加载头部
   // $(function () {
@@ -355,48 +331,27 @@
 
     _input.value = currentDate; //赋值给input.value
   })
-  //  提交
-  $(".button p").click(function () {
-    window.location.href = "./button.html";
-  })
-  // 监听滚动事件
-var city = document.getElementById("time");
-city.addEventListener("touchstart", function (e) {
-  $("body").css("overflow", "hidden");
-  timeStart = e.touches[0].pageY;
-})
-city.addEventListener("touchmove", function (e) {
-  var timeMove = e.touches[0].pageY;
-  console.log(timeMove)
-  if(timeStart>timeMove){
-    // 往上
-    var y = timeStart-timeMove; 
-    if(y<40){
-      $("#time ul").css("top","0em");
-    }else{
-      var top = "-"+(y%40)*40+"em";
-      console.log(top)
-      if(y==0){
-        $("#time ul").css("top","0em");
+ //  提交
+ $(".button p").click(function () {
+      $(".relationDiv").removeClass("relationDivDisplay");
+    })
+     //  点击图片
+     $("#clickUl li img").click(function () {
+      $("#clickUl li img").removeClass("liImg");
+      $(this).addClass("liImg");
+      var num = $(this).parent("li").index();
+      switch (num) {
+        case 0:
+          $("#divImg").attr('src', '../img/propertyID/123.png');
+          break;
+        case 1:
+          $("#divImg").attr('src', '../img/propertyID/123.png');
+          break;
+        case 2:
+          $("#divImg").attr('src', '../img/particulars/photo_06.png');
+          break;
       }
-      $("#time ul").css("top",top);
-    }
-  }else{
-    // 往下
-    var y = timeMove-timeStart;
-    if(y<40){
-      $("#time ul").css("top","0px");
-    }else{
-      var top = (y%40)*40+"px";
-      console.log(top)
-      if(y == 0){
-        $("#time ul").css("top","0px");
-      }
-      $("#time ul").css("top",top);
-    }
-  }
-})
-
+    })
 </script>
 
 </html>
