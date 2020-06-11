@@ -267,7 +267,6 @@ body {
 
 .subscribe ul li input {
   width: 2.61rem;
-  border-radius: 0.05rem;
   height: 0.4rem;
   color: #BBBBBB;
   font-size: 0.14rem;
@@ -355,9 +354,7 @@ body {
   height: 100%;
 }
 
-img {
-  border-radius: 0.05rem;
-}
+
 
 .imgDiv {
   width: 92%;

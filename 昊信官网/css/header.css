@@ -5,9 +5,11 @@
   font-size: 0px;
 }
 #header img:nth-child(1){
-  margin: 0.12rem auto;
+  margin: 0.1rem auto;
+  width: 4%;
 }
 #header img:nth-child(2){
   margin: 0.17rem auto;
   float: right;
+  width: 7%;
 }

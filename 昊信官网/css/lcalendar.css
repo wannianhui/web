@@ -1,30 +1,22 @@
 #yes {
   border-top: 1px solid #333;
-  width: 42%;
+  width: 1.49rem;
   background: white;
-  left: 177px;
-  top: 238px;
-  border-left: 1px solid #333;
+  left: 1.87rem;
+  top: 2.37rem;
+  /* border-left: 1px solid #333; */
 }
 #cancel{
   color: #BC0F10;
 }
-#yes::after {
-  width: 1px;
-  background: #333;
-  height: 53px;
-  content: "";
-  display: block;
-  position: relative;
-  top: -36px;
-  left: -16px;
-}
+
 
 #no {
-  width: 37%;
+  width: 1.48rem;
   background: white;
-  left: 1px;
-  top: 237px;
+  left: 0px;
+  height: 0.18rem;
+  top: 2.37rem;
   border-top: 1px solid #333;
 }
 

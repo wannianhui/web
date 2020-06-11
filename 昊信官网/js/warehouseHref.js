@@ -120,8 +120,14 @@ $(".select div #cityLi li").click(function () {
     $("#city li span").removeClass("cityH3")
     return;
   };
+  $(".selectCity h3").addClass("cityH3");
   $(".selectCity ul li").eq(itemId).removeClass("selectCityLi").siblings().addClass("selectCityLi");
 });
+// 点击全部selectCity，清除cityH3
+$(".selectCity h3").click(function(){
+  $(this).addClass("cityH3");
+  $("#city li span").removeClass("cityH3");
+})
 // 监听滚动事件
 $(".selectCity").mousedown(function () {
   $(document).scroll(function () {

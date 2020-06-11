@@ -36,7 +36,7 @@
   <!-- logo -->
   <div class="warehouseDiv">
     <div><img src="../img/logo/zxf_logo.png" alt=""></div>
-    <div><img src="../img/logo/zcf_btn_zhankai.png" alt="" id = "img"></div>
+    <div><img src="../img/logo/zcf_btn_zhankai.png" alt="" id="img"></div>
     <ul class="warehouseUl">
       <li><a href="../html/plant.html">租厂房</a></li>
       <li><a href="../html/warehouse.html">租仓库</a></li>
@@ -57,16 +57,16 @@
   <!-- 图片放大 -->
   <div class="imgBig imgBigDisplay">
   </div>
-    <div class="imgDiv imgBigDisplay">
-      <div>
-        <img src="../img/propertyID/123.png" alt="" id="divImg">
-       </div>
-      <ul id="clickUl">
-        <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
-        <li><img src="../img/propertyID/123.png" alt=""></li>
-        <li><img src="../img/particulars/photo_06.png" alt=""></li>
-      </ul>
+  <div class="imgDiv imgBigDisplay">
+    <div>
+      <img src="../img/propertyID/123.png" alt="" id="divImg">
     </div>
+    <ul id="clickUl">
+      <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
+      <li><img src="../img/propertyID/123.png" alt=""></li>
+      <li><img src="../img/particulars/photo_06.png" alt=""></li>
+    </ul>
+  </div>
   <!-- 详细信息 -->
   <div class="message">
     <h3>急租!南沙22000方笋仓库出租，证照齐全，超大 空地，独门独院</h3>
@@ -200,17 +200,39 @@
       el: '.swiper-pagination',
     },
     autoplay: {
-        delay: 1000
-      },
+      delay: 1000
+    },
     on: {
-      click:function(){
+      click: function () {
         $(".imgBig").removeClass("imgBigDisplay");
         $(".imgDiv").removeClass("imgBigDisplay");
       }
     }
   })
+  // 轮播图组件
+  var mySwiper1 = new Swiper('.swiper-container1', {
+    // loop: true, // 循环模式选项
+    spaceBetween: 0,
+    direction: 'vertical',
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    on: {
+      click: function () {
+        $(".imgBig").removeClass("imgBigDisplay");
+        $(".imgDiv").removeClass("imgBigDisplay");
+      },
+      slideChangeTransitionEnd:function(){
+        // console.log(this.activeIndex)
+      }     
+    }
+  })
+  $("#mySwiper").click(function(){
+    console.log(mySwiper1.activeIndex);
+  })
+  // console.log(mySwiper1.activeIndex);
   // 添加点击阴影加class
-  $(".imgBig").click(function(){
+  $(".imgBig").click(function () {
     $(".imgBig").addClass("imgBigDisplay");
     $(".imgDiv").addClass("imgBigDisplay");
   })
@@ -256,7 +278,7 @@
     var calendar = new LCalendar();
     calendar.init({
       trigger: "#day", //标签id
-      type: "ym", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
+      type: "date", //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
       minDate: "1900-1-1", //最小日期 注意：该值会覆盖标签内定义的日期范围
       maxDate: "2040-3-18" //最大日期 注意：该值会覆盖标签内定义的日期范围
     });
@@ -332,27 +354,27 @@
 
     _input.value = currentDate; //赋值给input.value
   })
- //  提交
- $(".button p").click(function () {
-      $(".relationDiv").removeClass("relationDivDisplay");
-    })
-     //  点击图片
-     $("#clickUl li img").click(function () {
-      $("#clickUl li img").removeClass("liImg");
-      $(this).addClass("liImg");
-      var num = $(this).parent("li").index();
-      switch (num) {
-        case 0:
-          $("#divImg").attr('src', '../img/propertyID/123.png');
-          break;
-        case 1:
-          $("#divImg").attr('src', '../img/propertyID/123.png');
-          break;
-        case 2:
-          $("#divImg").attr('src', '../img/particulars/photo_06.png');
-          break;
-      }
-    })
+  //  提交
+  $(".button p").click(function () {
+    $(".relationDiv").removeClass("relationDivDisplay");
+  })
+  //  点击图片
+  $("#clickUl li img").click(function () {
+    $("#clickUl li img").removeClass("liImg");
+    $(this).addClass("liImg");
+    var num = $(this).parent("li").index();
+    switch (num) {
+      case 0:
+        $("#divImg").attr('src', '../img/propertyID/123.png');
+        break;
+      case 1:
+        $("#divImg").attr('src', '../img/propertyID/123.png');
+        break;
+      case 2:
+        $("#divImg").attr('src', '../img/particulars/photo_06.png');
+        break;
+    }
+  })
 </script>
 
 </html>
