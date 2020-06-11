@@ -108,7 +108,7 @@ $(".confirm #button").click(function (event) {
   $("#city li span").removeClass("cityH3");
   $("#ulImage2 li span").removeClass("liImage");
   $("#ulImage2 li:nth-child(1) span:nth-child(2)").addClass("liImage");
-  $("body").css("overflow", "");
+  // $("body").css("overflow", "");
 })
 //区镇的显示
 $(".select div #cityLi li").click(function () {
