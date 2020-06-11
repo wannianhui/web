@@ -348,7 +348,14 @@ body {
 .warehouseUl {
   display: none;
 }
-
+.swiper-pagination-bullet {
+  width: 0.12rem;
+  height: 0.12rem;
+  position: relative;
+  top: -0.73rem;
+  z-index: 15;
+  left: 0.02rem;
+}
 .selectCity {
   width: 77%;
   position: relative;

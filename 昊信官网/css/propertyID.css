@@ -32,15 +32,6 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.swiper-pagination-bullet {
-  width: 0.12rem;
-  height: 0.12rem;
-  position: relative;
-  top: -0.87rem;
-  z-index: 15;
-  left: -0.02rem;
-}
-
 .swiper-container {
   --swiper-theme-color: white;
 }

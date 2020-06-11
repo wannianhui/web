@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
+  <link rel="stylesheet" href="../css/swiper.css">
   <link rel="stylesheet" href="../css/warehouse.css">
   <link rel="stylesheet" href="../css/lcalendar.css">
   <link rel="stylesheet" href="../css/propertyID.css">
@@ -65,7 +65,7 @@
       <ul id="clickUl">
         <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
         <li><img src="../img/propertyID/123.png" alt=""></li>
-        <li><img src="../img/propertyID/123.png" alt=""></li>
+        <li><img src="../img/particulars/photo_06.png" alt=""></li>
       </ul>
     </div>
   <!-- 详细信息 -->
@@ -186,9 +186,9 @@
       </li>
     </ul>
   </div>
+  <script src="../js/rem.js"></script>
   <!-- swiper结束 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
-  <script src="../js/rem.js"></script>
   <script src="../js/jq.js"></script>
   <script src="../js/lcalendar.js"></script>
 </body>
@@ -200,7 +200,9 @@
     pagination: {
       el: '.swiper-pagination',
     },
-    autoplay: true,
+    autoplay: {
+        delay: 1000
+      },
     on: {
       click: function () {
         $(".imgBig").removeClass("imgBigDisplay");

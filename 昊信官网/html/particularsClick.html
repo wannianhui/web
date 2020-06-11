@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/init.css">
+  <link rel="stylesheet" href="../css/particulars.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
+  <title>门店详情</title>
+</head>
+
+<body>
+  <div id="header">
+    <a href="./particulars.html"><img src="../img/header/home_nav_icon_back.png" alt=""></a>
+    <img src="../img/header/home_nav_icon_more.png" alt="">
+  </div>
+  <!-- swiper轮播图 -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
+      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- 图片放大 -->
+  <div class="imgBig imgBigDisplay">
+  </div>
+  <div class="imgDiv imgBigDisplay">
+    <div>
+      <img src="../img/propertyID/123.png" alt="" id="divImg">
+    </div>
+    <ul id="clickUl">
+      <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
+      <li><img src="../img/propertyID/123.png" alt=""></li>
+      <li><img src="../img/propertyID/123.png" alt=""></li>
+    </ul>
+  </div>
+  <div class="partculartsShop">
+    <p>昊信地产-石基店</p>
+  </div>
+  <!-- 门店地址 -->
+  <div class="partculartSite">
+    <h3><span>门店地址</span></h3>
+    <p>广东省广州市番禺区石基镇钟XX路10号中超商务写字楼</p>
+  </div>
+  <!-- 门店电话 -->
+  <div class="partculartSite">
+    <h3><span>门店电话</span></h3>
+    <p>13112345678</p>
+  </div>
+  <!-- 最下面 -->
+  <div class="footerBottom">
+    <ul>
+      <li>
+        <a href="../index.html">
+          <img src="../img/header/tab_icon_home.png" alt="">
+          <span>首页</span>
+        </a>
+      </li>
+      <li>
+        <a href="./plant.html">
+          <img src="../img/header/tab_icon_cf.png" alt="">
+          <span>我要租厂房</span>
+        </a>
+      </li>
+      <li>
+        <a href="../html/relation.html">
+          <img src="../img/header/tab_icon_contact.png" alt="">
+          <span>联系我</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
+  <script src="../js/rem.js"></script>
+  <script src="../js/jq.js"></script>
+  <script>
+    // 获取地址中的img和店名
+    var url = '../img' + window.location.href.split("img")[1];
+    var num = Number(window.location.href.split("num")[1]);
+    $("#clickUl li img").attr("src",url);
+    $("#clickUl li:nth-child(2) img").attr("src","../img/propertyID/123.png");
+    $("#divImg").attr("src","../img/"+url);
+    switch (num) {
+      case 0:
+        $(".partculartsShop p").html("昊信地产-宏展店");
+        break;
+      case 1:
+        $(".partculartsShop p").html("昊信地产-顺昊店");
+        break;
+      case 2:
+        $(".partculartsShop p").html("昊信地产-聚晟店");
+        break;
+      case 3:
+        $(".partculartsShop p").html("昊信地产-众兴店");
+        break;
+      case 4:
+        $(".partculartsShop p").html("昊信地产-昊隆店");
+        break;
+      case 5:
+        $(".partculartsShop p").html("昊信地产-沙湾店");
+        break;
+      case 6:
+        $(".partculartsShop p").html("昊信地产-石基店");
+        break;
+      case 7:
+        $(".partculartsShop p").html("昊信地产-众兴店");
+        break;
+      case 8:
+        $(".partculartsShop p").html("昊信地产-昊英店");
+        break;
+      case 9:
+        $(".partculartsShop p").html("昊信地产-昊强店");
+        break;
+    }
+    $(".swiper-wrapper div img").attr("src", url);
+    // 轮播图组件
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true, // 循环模式选项
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      autoplay: {
+        delay: 1000
+      },
+      on: {
+        click: function () {
+          console.log("q")
+          $(".imgBig").removeClass("imgBigDisplay");
+          $(".imgDiv").removeClass("imgBigDisplay");
+        }
+      }
+    })
+    // 添加点击阴影加class
+    $(".imgBig").click(function () {
+      $(".imgBig").addClass("imgBigDisplay");
+      $(".imgDiv").addClass("imgBigDisplay");
+    })
+    //  点击图片
+    $("#clickUl li img").click(function () {
+      $("#clickUl li img").removeClass("liImg");
+      $(this).addClass("liImg");
+      var num = $(this).parent("li").index();
+      switch (num) {
+        case 0:
+          $("#divImg").attr('src', '../img/'+url);
+          break;
+        case 1:
+          $("#divImg").attr('src', "../img/propertyID/123.png");
+          break;
+        case 2:
+          $("#divImg").attr('src', '../img/'+url);
+          break;
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -5,77 +5,196 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/init.css">
-  <link rel="stylesheet" href="../css/particulars.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.min.css">
-  <title>门店详情</title>
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <title>Document</title>
+  <style>
+    .regard {
+      width: 100%;
+      height: 100%;
+    }
+
+    .regardClick,
+    .regardClick ul {
+      width: 100%;
+      font-size: 0px;
+      background: rgba(221, 248, 255);
+    }
+
+    #img {
+      font-size: 0px;
+      width: 100%;
+    }
+
+    #img img,
+    .bottomImg {
+      width: 100%;
+    }
+
+    .regardClick ul div {
+      position: relative;
+      left: 0.08rem;
+      padding-top: 0.2rem;
+    }
+
+    .regardClick ul div::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+
+    .regardClick ul li {
+      width: 45%;
+      font-size: 0.15rem;
+      float: left;
+      padding: 0.05rem;
+    }
+
+    .regardClick ul li {
+      position: relative;
+    }
+
+    .regardClick ul li img:nth-child(2) {
+      position: absolute;
+      z-index: 16;
+      top: 0.07rem;
+      left: 0.08rem;
+    }
+
+    .regardClick ul li p {
+      position: absolute;
+      top: 1.06rem;
+      left: 0.65rem;
+      color: white;
+    }
+
+    .regardImg1 {
+      margin-left: 0.17rem;
+    }
+
+    .regardImg2 {
+      margin-top: 0.15rem;
+      margin-left: 0.35rem;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="partcularsTop">
-    <a href="../index.html"><img src="../img/particulars/home_nav_icon_back.png" alt=""></a>
+  <div id = "header">
+    <a href="../index.html"><img src="../img/header/home_nav_icon_back.png" alt="" ></a>
+    <img src="../img/header/home_nav_icon_more.png" alt="">
   </div>
-  <!-- swiper轮播图 -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
-      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
-      <div class="swiper-slide"><img src="../img/particulars/detail_banner.png" alt=""></div>
+  <div class="regard">
+    <div id="img">
+      <img src="../img/particular/top_bg.png" alt="">
+      <img src="../img/particular/about_advantage_01.png" alt="">
+      <img src="../img/particular/about_advantage_02.png" alt="">
+      <img src="../img/particular/about_advantage_03.png" alt="">
+      <img src="../img/particular/Vs.png" alt="">
+      <img src="../img/particular/about_case.png" alt="">
     </div>
-    <div class="swiper-pagination"></div>
+    <!-- 跳转的 -->
+    <div class="regardClick">
+      <img src="../img/particular/about_shop_title_01.png" alt="" class="regardImg1">
+      <img src="../img/particular/about_shop_title_02.png" alt="" class="regardImg2">
+      <ul id = "clickUl">
+        <div>
+          <li>
+            <img src="../img/particular/about_shop_01.png" alt="">
+            <img src="../img/particular/photo_01.png" alt="">
+            <p>宏展店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_02.png" alt="">
+            <img src="../img/particular/photo_02.png" alt="">
+            <p>顺昊店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_03.png" alt="">
+            <img src="../img/particular/photo_03.png" alt="">
+            <p>聚晟店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_04.png" alt="">
+            <img src="../img/particular/photo_04.png" alt="">
+            <p>众兴店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_05.png" alt="">
+            <img src="../img/particular/photo_05.png" alt="">
+            <p>昊隆店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_06.png" alt="">
+            <img src="../img/particular/photo_06.png" alt="">
+            <p>沙湾店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_07.png" alt="">
+            <img src="../img/particular/photo_07.png" alt="">
+            <p>石基店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_08.png" alt="">
+            <img src="../img/particular/photo_08.png" alt="">
+            <p>昊进店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_09.png" alt="">
+            <img src="../img/particular/photo_09.png" alt="">
+            <p>昊英店</p>
+          </li>
+          <li>
+            <img src="../img/particular/about_shop_10.png" alt="">
+            <img src="../img/particular/photo_10.png" alt="">
+            <p>昊强店</p>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <img src="../img/particular/about_bottom.png" alt="" class="bottomImg">
+    <!-- 尾部 -->
+    <!-- <div id = "footer"></div> -->
+    <div class="footerImg">
+      <img src="../img/header/home_bottom_logo.png" alt="">
+    </div>
+    <div class="footerText">
+      <p>Copyright @ 2018 qalex.com All Right Reserved </p>
+      <p>版权所有：广州市昊信联行物业投资管理有限公司</p>
+      <p>ICP经营许可证：粤B2-20080214</p>
+      <p><a href="http://www.beian.miit.gov.cn">粤IC备06127393号-1</a></p>
+    </div>
+    <div class="footerBottom">
+      <ul>
+        <li>
+          <a href="../index.html">
+            <img src="../img/header/tab_icon_home.png" alt="">
+            <span>首页</span>
+          </a>
+        </li>
+        <li>
+          <a href="../html/plant.html">
+            <img src="../img/header/tab_icon_cf.png" alt="">
+            <span>我要租厂房</span>
+          </a>
+        </li>
+        <li>
+          <a href="../html/relation.html">
+            <img src="../img/header/tab_icon_contact.png" alt="">
+            <span>联系我</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="partculartsShop">
-    <p>昊信地产-石基店</p>
-  </div>
-  <!-- 门店地址 -->
-  <div class="partculartSite">
-    <h3><span>门店地址</span></h3>
-    <p>广东省广州市番禺区石基镇钟XX路10号中超商务写字楼</p>
-  </div>
-  <!-- 门店电话 -->
-  <div class="partculartSite">
-    <h3><span>门店电话</span></h3>
-    <p>13112345678</p>
-  </div>
-  <!-- 最下面 -->
-  <div class="footerBottom">
-    <ul>
-      <li>
-        <a href="../index.html">
-          <img src="../img/header/tab_icon_home.png" alt="">
-          <span>首页</span>
-        </a>
-      </li>
-      <li>
-        <a href="./plant.html">
-          <img src="../img/header/tab_icon_cf.png" alt="">
-          <span>我要租厂房</span>
-        </a>
-      </li>
-      <li>
-        <a href="../html/relation.html">
-          <img src="../img/header/tab_icon_contact.png" alt="">
-          <span>联系我</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
   <script src="../js/rem.js"></script>
   <script src="../js/jq.js"></script>
   <script>
-    // 轮播图组件
-    var mySwiper = new Swiper('.swiper-container', {
-      loop: true, // 循环模式选项
-      spaceBetween: 0,
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      autoplay: true,
-      on: {
-        click: function () {
-          window.location.href = "./particularsBig.html";
-        }
-      }
+    $("#clickUl img:nth-child(2)").click(function () {
+      console.log($(this));
+      var data = $(this)[0].src;
+      var p = "num"+$(this).parent().index();
+      window.location.href = "./particularsClick.html?value=" + data+"?value="+p;
     })
   </script>
 </body>

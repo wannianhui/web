@@ -64,7 +64,7 @@
       <ul id="clickUl">
         <li><img src="../img/propertyID/123.png" alt="" class="liImg"></li>
         <li><img src="../img/propertyID/123.png" alt=""></li>
-        <li><img src="../img/propertyID/123.png" alt=""></li>
+        <li><img src="../img/particulars/photo_06.png" alt=""></li>
       </ul>
     </div>
   <!-- 详细信息 -->
@@ -186,8 +186,8 @@
     </ul>
   </div>
   <!-- swiper结束 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
   <script src="../js/rem.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.min.js"></script>
   <script src="../js/jq.js"></script>
   <script src="../js/lcalendar.js"></script>
 </body>
@@ -199,7 +199,9 @@
     pagination: {
       el: '.swiper-pagination',
     },
-    autoplay: true,
+    autoplay: {
+        delay: 1000
+      },
     on: {
       click:function(){
         $(".imgBig").removeClass("imgBigDisplay");
