@@ -60,6 +60,7 @@ body {
   position: relative;
   top: -0.09rem;
   left: 0.09rem;
+  width: 4%;
 }
 
 .message p span {
@@ -209,7 +210,9 @@ body {
   margin: 0.15rem auto;
   background: white;
 }
-
+.industry ul li img{
+  width: 50%;
+}
 .industry h3 {
   padding: 0.2rem;
   font-size: 0.14rem;
@@ -332,6 +335,7 @@ body {
 .footerBottom ul li img {
   position: relative;
   top: 0.04rem;
+  width: 18%;
   left: -0.06rem;
 }
 .textAfter::after{

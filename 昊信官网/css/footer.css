@@ -53,5 +53,6 @@
 .footerBottom ul li img {
   position: relative;
   top: 0.04rem;
+  width: 18%;
   left: -0.06rem;
 }

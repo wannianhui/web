@@ -209,6 +209,17 @@
       }
     }
   })
+  var imgBoolean = true;
+// 点击显示warehouseUl
+$("#img").click(function(){
+  if(imgBoolean){
+    $(".warehouseUl").removeClass("warehouseUl");
+    imgBoolean = false;
+  }else{
+    $(".warehouseDiv ul").addClass("warehouseUl");
+    imgBoolean = true;
+  }
+});
   // 轮播图组件
   var mySwiper1 = new Swiper('.swiper-container1', {
     // loop: true, // 循环模式选项
