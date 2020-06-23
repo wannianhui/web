@@ -1,0 +1,143 @@
+/* pages/my/my.wxss */
+.my {
+  background: #F7F8FC;
+}
+
+.my-top {
+  /* height: 300rpx; */
+  background: #20CD88;
+  position: relative;
+}
+
+.my-img1 {
+  width: 179rpx;
+  height: 153rpx;
+  position: relative;
+  top: 7rpx;
+  left: 54rpx;
+  z-index: 163;
+}
+
+.my-text {
+  display: inline;
+  color: white;
+  position: relative;
+  top: -92rpx;
+  left: 284rpx;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+
+.my-img3 {
+  width: 136rpx;
+  height: 122rpx;
+  position: relative;
+  top: -188rpx;
+  right: -575rpx;
+}
+
+.my-img2 {
+  position: absolute;
+  top: 118rpx;
+  z-index: 12;
+  width: 1070rpx;
+  height: 247rpx;
+}
+
+.my-text1 {
+  width: 66rpx;
+  position: relative;
+  z-index: 1625;
+  top: -59rpx;
+  left: 74rpx;
+  color: #333333;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.my-text2 {
+  width: 66rpx;
+  position: relative;
+  z-index: 1625;
+  top: -59rpx;
+  left: 346rpx;
+  color: #FFA00C;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.stay {
+  background: white;
+  width: 100%;
+  display: flex;
+}
+
+.stay view {
+  /* flex: 1; */
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  height: 181rpx;
+}
+
+.stay view view {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.stay view view cover-image {
+  width: 111rpx;
+  height: 100rpx;
+}
+
+.stay view view text {
+  position: absolute;
+  top: 123rpx;
+  left: 14rpx;
+  color: #666666;
+  font-size: 27rpx;
+}
+
+.stay view view:nth-child(5) text {
+  position: absolute;
+  top: 123rpx;
+  left: 3rpx;
+  color: #666666;
+  font-size: 27rpx;
+}
+
+.my-classify {
+  width: 95%;
+  margin: 0 auto;
+margin-top: 25rpx;
+border-radius: 50rpx;
+height: 808rpx;
+}
+
+.my-classify view {
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  /* margin-bottom: 35rpx; */
+  background: white;
+}
+
+.my-classify view cover-image {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 18rpx;
+  margin-left: 38rpx;
+
+}
+
+.my-classify view text {
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 50rpx;
+
+}
+.my-sz{
+  margin-top: 20rpx;
+}

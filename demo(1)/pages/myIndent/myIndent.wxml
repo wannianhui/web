@@ -1,0 +1,152 @@
+<!--pages/myIndent/myIndent.wxml-->
+<view class="myIndent">
+	<view class="myIndent-top">
+		<text>全部</text>
+		<text>待付款</text>
+		<text>待发货</text>
+		<text>待收货</text>
+		<text>待评价</text>
+	</view>
+	<!--  -->
+	<view class="myIndent-close">
+		<view class="myIndent-num">
+			<text>订单号：2365258985</text>
+			<text>交易关闭</text>
+		</view>
+		<view class="myIndent-close-content">
+			<view class="myIndent-close-contenty1">
+					<cover-image src="../../img/myIndent/hl_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥700</text>
+				</view>
+			</view>
+			<view class="myIndent-close-contenty2">
+					<cover-image src="../../img/myIndent/hl2_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥1100</text>
+				</view>
+			</view>
+		</view>
+    <!--  -->
+    <view class="myIndent-view">
+      <view class="myIndent-close-bottom">
+       <text>共2件，合计：</text>
+       <text>￥1800</text>
+      </view>
+      <text class="myIndent-text">删除订单</text>
+    </view>
+	</view>
+  <!--  -->
+  <view class="myIndent-close">
+		<view class="myIndent-num">
+			<text>订单号：2365258985</text>
+			<text>待付款</text>
+		</view>
+		<view class="myIndent-close-content">
+			<view class="myIndent-close-contenty1">
+					<cover-image src="../../img/myIndent/xhl3_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥1100</text>
+				</view>
+			</view>
+		</view>
+    <!--  -->
+    <view class="myIndent-view">
+      <view class="myIndent-close-bottom">
+       <text>共1件，合计：</text>
+       <text>￥1800</text>
+      </view>
+      <text class="myIndent-text1">取消订单</text>
+      <text class="myIndent-text">删除订单</text>
+    </view>
+	</view>
+  <!--  -->
+    <view class="myIndent-close">
+		<view class="myIndent-num">
+			<text>订单号：2365258985</text>
+			<text>待发货</text>
+		</view>
+		<view class="myIndent-close-content">
+			<view class="myIndent-close-contenty1">
+					<cover-image src="../../img/myIndent/hl2_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥1100</text>
+				</view>
+			</view>
+		</view>
+    <!--  -->
+    <view class="myIndent-view">
+      <view class="myIndent-close-bottom">
+       <text>共1件，合计：</text>
+       <text>￥1800</text>
+      </view>
+      <text class="myIndent-text">申请退款</text>
+    </view>
+	</view>
+  <!--  -->
+      <view class="myIndent-close">
+		<view class="myIndent-num">
+			<text>订单号：2365258985</text>
+			<text>待收货</text>
+		</view>
+		<view class="myIndent-close-content">
+			<view class="myIndent-close-contenty1">
+					<cover-image src="../../img/myIndent/hl_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥1100</text>
+				</view>
+			</view>
+		</view>
+    <!--  -->
+    <view class="myIndent-view">
+      <view class="myIndent-close-bottom">
+       <text>共1件，合计：</text>
+       <text>￥1800</text>
+      </view>
+       <text class="myIndent-text1">查看物流</text>
+      <text class="myIndent-text">确认收货</text>
+    </view>
+	</view>
+  <!--  -->
+      <view class="myIndent-close">
+		<view class="myIndent-num">
+			<text>订单号：2365258985</text>
+			<text>评价</text>
+		</view>
+		<view class="myIndent-close-content">
+			<view class="myIndent-close-contenty1">
+					<cover-image src="../../img/myIndent/xhl3_icon@2x.png"></cover-image>
+				<view>
+					<text class="myIndent1-text1">跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+					<text class="myIndent1-text2">x1</text>
+					<text class="myIndent1-text3">小学3年纪</text>
+					<text class="myIndent1-text4">¥1100</text>
+				</view>
+			</view>
+		</view>
+    <!--  -->
+    <view class="myIndent-view">
+      <view class="myIndent-close-bottom">
+       <text>共1件，合计：</text>
+       <text>￥1800</text>
+      </view>
+       <text class="myIndent-text1">查看物流</text>
+      <text class="myIndent-text">确认收货</text>
+    </view>
+	</view>
+</view>

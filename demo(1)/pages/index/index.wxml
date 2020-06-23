@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="input">
+		<input class="weui-input" auto-focus placeholder="请输入您要搜索的内容" />
+		<cover-image src="../../img/index/ss_an@3x.png" class="index-left"></cover-image>
+		<cover-image src="../../img/index/xx_an@3x.png" class="index-right"></cover-image>
+		<cover-image src="../../img/index/br_nh.png" class="index-banner"></cover-image>
+	</view>
+	<cover-image src="../../img/index/yd_bg@3x.png" class="index-img"></cover-image>
+	<!-- 遍历 -->
+	<view class="img-ul">
+		<cover-image src="../../img/index/bz_1@3x.png"></cover-image>
+		<cover-image src="../../img/index/bz_2@3x.png"></cover-image>
+		<cover-image src="../../img/index/bz_3@3x.png"></cover-image>
+		<cover-image src="../../img/index/bz_4@3x.png"></cover-image>
+		<cover-image src="../../img/index/bz_5@3x.png"></cover-image>
+	</view>
+	<!-- 排行榜 ranking-->
+	<view class="ranking">
+		<cover-image src="../../img/index/hs_bg@3x.png" class="ranking-background-img"></cover-image>
+    <cover-image src="../../img/index/pmb@3x.png" class="rank-background-text"></cover-image>
+		<view class="ranking-div">
+			<view class="ranking-div-left">
+				<view>
+					<view>
+						<cover-image src="../../img/index/zs_bz@3x.png" class="div-left-img1"></cover-image>
+						<cover-image src="../../img/index/tx1@3x.png" class="div-left-img2"></cover-image>
+					</view>
+					<view>
+						<cover-image src="../../img/index/dh_bj@3x.png" class="div-left-img3"></cover-image>
+						<text class="ranking-text1">小明朋友</text>
+						<text class="ranking-text2">小朋友的个人简介这里只展示30个字符，多余小朋友的个人简介这里只展示30个字符，多余不显示</text>
+					</view>
+					<view>
+						<cover-image src="../../img/index/by_bz@3x.png" class="div-left-img4"></cover-image>
+						<text class="ranking-text3">听听他的作品</text>
+					</view>
+				</view>
+			</view>
+			<view class="ranking-div-right">
+				<view class="tx-Div2">
+					<cover-image src="../../img/index/tx3@3x.png" class="div-right-top-img1"></cover-image>
+          <cover-image src="../../img/index/dh_bg3@3x.png" class="div-right-top-img3"></cover-image>
+					<cover-image src="../../img/index/by_bz@3x.png" class="div-right-top-img2"></cover-image>
+					<text class="ranking-right-top-text1">小美盆友</text>
+					<text class="ranking-right-top-text2">小朋友的个人简介，这里只20个字</text>
+				</view>
+				<view class="tx-Div3">
+					<cover-image src="../../img/index/tx3@3x.png" class="div-right-img1"></cover-image>
+          <cover-image src="../../img/index/dh_bg3@3x.png" class="div-right-img3"></cover-image>
+					<cover-image src="../../img/index/by_bz@3x.png" class="div-right-img2"></cover-image>
+					<text class="ranking-right-text1">小美盆友</text>
+					<text class="ranking-right-text2">小朋友的个人简介，这里只20个字</text>
+				</view>
+			</view>
+		</view>
+	</view>
+  <!-- 老师教孩子列表 -->
+  <view class="kid">
+    <view class="kid1">
+     <cover-image bindtap="commodity" class="kid1-img" src="../../img/index/home_pic_10@3x.png"></cover-image>
+     <text class="kid1-text">小陈老师教孩子爱上运动</text>
+     <text class="kid1-money">¥1100</text>
+     <text class="kid1-payment">210人付款</text>
+    </view>
+    <view class="kid1">
+     <cover-image bindtap="commodity" class="kid1-img" src="../../img/index/home_pic_11@3x.png"></cover-image>
+     <text class="kid1-text">孩子计划思维从小培养起</text>
+     <text class="kid1-money">¥700</text>
+     <text class="kid1-payment">4人付款</text>
+    </view>
+    <view class="kid1">
+     <cover-image bindtap="commodity" class="kid1-img" src="../../img/index/矩形 8 拷贝 5@3x.png"></cover-image>
+     <text class="kid1-text">后悔没有早点让孩子线上 学习绘画</text>
+     <text class="kid1-money">¥1100</text>
+     <text class="kid1-payment3">210人付款</text>
+    </view>
+    <view class="kid1">
+     <cover-image bindtap="commodity" class="kid1-img" src="../../img/index/home_pic_11@3x.png"></cover-image>
+     <text class="kid1-text">孩子计划思维从小培养起</text>
+     <text class="kid1-money">¥700</text>
+     <text class="kid1-payment">4人付款</text>
+    </view>
+  </view>
+	 <tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

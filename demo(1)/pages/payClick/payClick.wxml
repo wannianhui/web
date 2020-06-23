@@ -1,0 +1,7 @@
+<!--pages/payClick/payClick.wxml-->
+<view class="payclick">
+   <cover-image src="../../img/payclick/pay_success@2x.png"></cover-image>
+   <text>支付成功</text>
+   <text bindtap="index">回到首页</text>
+   <text bindtap="myIndent" >查看订单</text>
+</view>

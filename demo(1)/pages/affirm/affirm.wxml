@@ -1,0 +1,60 @@
+<!--pages/affirm/affirm.wxml-->
+<view class="affirm">
+	<!--  -->
+	<view class="payment-iphone">
+		<view>
+			<text>少少妈</text>
+			<text>15652587478</text>
+		</view>
+		<view>
+			<text>广东省广州市天河区躺下街道惠普庭院N座25h</text>
+		</view>
+	</view>
+  <!--  -->
+  <view class="payment-message">
+		<view class="payment-message-top payment-message-top1">
+			<cover-image class="payment-message-img" src="../../img/affirm/th_1@2x.png"></cover-image>
+			<view class="payment-message-text">
+				<text>跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+				<text>x1</text>
+				<text>小学3年纪</text>
+				<text>¥700</text>
+			</view>
+		</view>
+    </view>
+    <view class="payment-message payment-message-top2">
+		<view class="payment-message-top">
+			<cover-image class="payment-message-img" src="../../img/affirm/th_2@2x.png"></cover-image>
+			<view class="payment-message-text">
+				<text>跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+				<text>x1</text>
+				<text>小学3年纪</text>
+				<text>¥1100</text>
+			</view>
+		</view>
+    </view>
+     <!-- 备注 -->
+    <view class="remark">
+      <view>
+          <text>订单备注</text>
+          <text>选填，与店家协商一致</text>
+      </view>
+      <view>
+        <text>运费：￥0.00</text>
+      </view>
+      <view>
+        <text>共2件，小计：</text>
+        <text>￥1800</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class="numbering">
+      <text>订单编号</text>
+      <text>配送方式</text>
+    </view>
+    <!--  -->
+    <view class="affirm-bottom">
+      <text>合计：1800元</text>
+      <text>立即购买</text>
+    </view>
+</view>

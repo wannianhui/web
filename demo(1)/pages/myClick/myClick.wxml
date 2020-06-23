@@ -1,0 +1,15 @@
+<!--pages/myClick/myClick.wxml-->
+<view class="myClick">
+  <view class="myClick-view">
+  <cover-image src="../../img/myClick/hs_bg@2x.png"></cover-image>
+    <text>口述日记标题</text>
+    <cover-image src="../../img/myClick/qd_icon@2x.png"></cover-image>
+    <text class="myClick-text">口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述。</text>
+  </view>
+  <view>
+  <cover-image src="../../img/myClick/hs_bg@2x.png"></cover-image>
+    <text>口述日记标题</text>
+    <cover-image src="../../img/myClick/qd_icon@2x.png"></cover-image>
+    <text class="myClick-text">口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述口述日记简单简介描述。</text>
+  </view>
+</view>

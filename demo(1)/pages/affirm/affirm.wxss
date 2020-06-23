@@ -1,0 +1,263 @@
+/* pages/affirm/affirm.wxss */
+.affirm{
+  width: 100%;
+  height: 100%;
+  background: #F7F8FC;
+}
+.payment-iphone {
+  width: 714rpx;
+  height: 185rpx;
+  border-radius: 15rpx;
+  background: white;
+  margin: 0 auto;
+}
+
+.payment-iphone view:nth-child(1) {
+  height: 90rpx;
+  line-height: 100rpx;
+}
+
+.payment-iphone view:nth-child(1) text:nth-child(1) {
+  color: #333333;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 15rpx;
+}
+
+.payment-iphone view:nth-child(1) text:nth-child(2) {
+  color: #666666;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.payment-iphone view:nth-child(2) text {
+  color: #666666;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  margin-top: -15rpx;
+}
+.payment-message {
+  width: 714rpx;
+margin: 0 auto;
+/* margin-top: 20rpx; */
+height: 248rpx;
+background: white;
+/* border-radius: 20rpx; */
+
+}
+.payment-message-top1{
+  top: 36rpx;
+}
+.payment-message-top2{
+  margin-top: -17rpx;
+}
+.payment-message-top2 view{
+  top: 36rpx;
+}
+.payment-message-top {
+  height: 220rpx;
+  position: relative;
+  border-bottom: 1px solid #EEEEEE;
+  width: 98%;
+  left: 15rpx;
+
+}
+
+.payment-message-content {
+  height: 80rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  color: #333333;
+}
+
+.payment-message-img {
+  width: 180rpx;
+  height: 180rpx;
+  /* margin-left: 15rpx; */
+  margin-top: 15rpx;
+}
+
+.payment-message-bottom {
+  height: 190rpx;
+  /* line-height: 150rpx; */
+  /* float: right; */
+}
+
+.payment-message-bottom text {
+  /* display: block; */
+  margin-top: 30rpx;
+}
+
+.payment-message-bottom .payment-message-num {
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.payment-message-bottom-text1,
+.payment-message-bottom-text2,
+.payment-message-bottom-text3 {
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.payment-message-bottom view {
+  text-align: right;
+  margin-right: 35rpx;
+  margin-top: 17rpx;
+}
+
+.payment-message-bottom-text2 {
+  position: relative;
+  left: 520rpx;
+  top: 11rpx;
+}
+
+.payment-message-text {
+  width: 518rpx;
+  position: absolute;
+  top: -2px;
+  left: 217rpx;
+
+}
+
+.payment-message-text text {
+  display: block;
+}
+
+.payment-message-text text:nth-child(1) {
+  color: #333333;
+  width: 391rpx;
+  font-size: 22rpx;
+  line-height: 46rpx;
+}
+
+.payment-message-text text:nth-child(2) {
+  position: absolute;
+  top: 62rpx;
+  right: 68rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.payment-message-text text:nth-child(3) {
+  margin-top: 18rpx;
+  font-size: 22rpx;
+  color: #AFAEAE;
+  width: 152rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  background: #F7F8FC;
+  border-radius: 15rpx;
+}
+
+.payment-message-text text:nth-child(4) {
+  position: absolute;
+  top: 155rpx;
+  right: 64rpx;
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.payment-message-top2 .payment-message-text text:nth-child(4){
+  top: 112rpx;
+}
+.payment-message-top2 .payment-message-text text:nth-child(1){
+  top: -35rpx;
+  position: relative;
+}
+.payment-message-top2 .payment-message-text text:nth-child(2){
+  top: -74rpx;
+  left: 417rpx;
+  position: relative;
+}
+.payment-message-top2 .payment-message-text text:nth-child(3){
+  margin-top: -59rpx;
+}
+.remark{
+  width: 94%;
+  margin:0 auto;
+  background: white;
+  margin-top: -3rpx;
+}
+.remark view:nth-child(1){
+  font-size: 26rpx;
+color: #333333;
+height: 100rpx;
+line-height: 138rpx;
+margin-left: 14rpx;
+
+}
+.remark view:nth-child(1) text:nth-child(1){
+  color: #333333;
+}
+.remark view:nth-child(1) text:nth-child(2){
+  color: #CCCCCC;
+  margin-left: 30rpx;
+}
+.remark view:nth-child(2){
+  font-size: 26rpx;
+color: #666666;
+height: 117rpx;
+line-height: 180rpx;
+margin-left: 16rpx;
+position: relative;
+right: -500rpx;
+}
+.remark view:nth-child(3){
+  font-size: 26rpx;
+color: #666666;
+height: 60rpx;
+line-height: 52rpx;
+position: relative;
+left: 415rpx;
+}
+.remark view:nth-child(3) text:nth-child(2){
+  font-size: black;
+  font-weight: bold;
+}
+.numbering{
+  height: 140rpx;
+}
+.numbering text{
+  color: #333333;
+  font-size: 24rpx;
+  display: block;
+  text-align: center;
+  margin-top: 45rpx;
+}
+.numbering text:nth-child(2){
+  margin-top: 30rpx;
+}
+.affirm-bottom{
+  width: 714rpx;
+height: 110rpx;
+background: white;
+margin: 0 auto;
+margin-bottom: 30rpx;
+
+}
+.affirm-bottom text:nth-child(1){
+  color: #FFB93E;
+font-size: 28rpx;
+position: relative;
+top: 35rpx;
+left: 54rpx;
+
+}
+.affirm-bottom text:nth-child(2){
+  color: white;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 198rpx;
+  background: #20CD88;
+  display: block;
+  position: relative;
+  top: -24rpx;
+  left: 484rpx;
+  
+}

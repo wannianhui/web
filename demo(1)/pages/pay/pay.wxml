@@ -1,0 +1,31 @@
+<!--pages/pay/pay.wxml-->
+<view class="pay">
+	<view class="pay-top">
+		<view>
+			<cover-image src="../../img/pay/dd_bz@2x.png"></cover-image>
+			<text>等待支付</text>
+		</view>
+    <view>
+      <text>剩余时间</text>
+      <text>15：25：31</text>
+    </view>
+    <view>
+      <text>支付金额</text>
+      <text>￥ 300.00</text>
+    </view>
+	</view>
+  <view class="pay-content">
+     <view>
+       <cover-image src="../../img/pay/pay_wechat@2x.png" class="payclick-img1"></cover-image>
+       <text>微信支付</text>
+       <cover-image src="../../img/pay/pay_yes@2x.png" class="payclick-img2"></cover-image>
+     </view>
+      <view>
+       <cover-image src="../../img/pay/pay_zfb@2x.png" class="payclick-img3"></cover-image>
+       <text>支付宝支付</text>
+     </view>
+  </view>
+  <view class="pay-bottom">
+    <text bindtap="payclick">支付</text>
+  </view>
+</view>

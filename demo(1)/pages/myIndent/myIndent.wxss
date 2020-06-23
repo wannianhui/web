@@ -1,0 +1,190 @@
+/* pages/myIndent/myIndent.wxss */
+.myIndent {
+  width: 100%;
+  height: 100%;
+  background: #F7F8FC;
+  /* position: fixed; */
+}
+
+.myIndent-top {
+  display: flex;
+  height: 100rpx;
+  width: 100%;
+  line-height: 71rpx;
+  text-align: center;
+}
+
+.myIndent-top text:nth-child(1) {
+  color: #20CD88;
+}
+
+.myIndent-top text:nth-child(1)::after {
+  width: 50rpx;
+  height: 7rpx;
+  display: block;
+  content: "";
+  background: #20CD88;
+  position: relative;
+  left: 50rpx;
+  top: -7rpx;
+}
+
+.myIndent-top text {
+  color: #666666;
+  font-size: 28rpx;
+  width: 20%;
+}
+
+.myIndent-close {
+  width: 714rpx;
+  /* height: 720rpx; */
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.myIndent-close-content view:nth-child(1) cover-image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.myIndent-close-content view:nth-child(2) cover-image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.myIndent-close-content>view:nth-child(1) {
+  display: flex;
+}
+
+.myIndent-close-content>view:nth-child(2) {
+  display: flex;
+}
+
+.myIndent-close-content view view text {
+  display: block;
+}
+
+.myIndent1-text1 {
+  font-size: 26rpx;
+  color: #333333;
+  width: 391rpx;
+  height: 64rpx;
+  margin-left: 20rpx;
+}
+
+.myIndent1-text2 {
+  font-size: 24rpx;
+  color: #666666;
+  position: relative;
+  left: 430rpx;
+  top: 0rpx;
+}
+
+.myIndent1-text3 {
+  color: #AFAEAE;
+  font-size: 22rpx;
+  width: 152rpx;
+  height: 40rpx;
+  background: #F7F8FC;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.myIndent1-text4 {
+  width: 30rpx;
+  font-size: #333333;
+  position: relative;
+  left: 380rpx;
+  top: 10rpx;
+  font-weight: bold;
+}
+.myIndent-close-content{
+  margin-left: 28rpx;
+}
+.myIndent-close-contenty1 {
+  width: 93%;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 48rpx;
+  height: 205rpx;
+  margin-top: 36rpx;
+  
+}
+.myIndent-close-contenty2 {
+  width: 93%;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 48rpx;
+  height: 216rpx;
+  margin-top: -31rpx;
+  
+}
+.myIndent-num{
+  height: 60rpx;
+}
+.myIndent-num text:nth-child(1){
+  position: relative;
+  top: 29rpx;
+  left: 31rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.myIndent-num text:nth-child(2){
+  font-size: 28rpx;
+color: #F87FA6;
+position: relative;
+top: 39rpx;
+left: 291rpx;
+
+}
+.myIndent-close-bottom{
+  position: relative;
+left: 417rpx;
+top: -22rpx;
+
+}
+.myIndent-close-bottom text:nth-child(1){
+  color: #666666;
+  font-size: 26rpx;
+}
+.myIndent-close-bottom text:nth-child(2){
+  color: #666666;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+.myIndent-text{
+  color: #2CD08F;
+font-size: 28rpx;
+width: 190rpx;
+height: 70rpx;
+line-height: 70rpx;
+text-align: center;
+border-radius: 10rpx;
+border: 1px solid #20CD88;
+display: block;
+position: relative;
+left: 478rpx;
+top: 2rpx;
+
+}
+.myIndent-text1{
+  color: #2CD08F;
+font-size: 28rpx;
+width: 190rpx;
+height: 70rpx;
+line-height: 70rpx;
+text-align: center;
+border-radius: 10rpx;
+border: 1px solid #20CD88;
+display: block;
+position: absolute;
+top: 43rpx;
+left: 254rpx;
+
+
+}
+.myIndent-view{
+  position: relative;
+height: 145rpx;
+
+}

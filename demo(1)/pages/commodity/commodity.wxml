@@ -1,0 +1,104 @@
+<!--pages/commodity/commodity.wxml-->
+<view class="commodity">
+<cover-image src="../../img/courseClick/th_bg@2x.png"></cover-image>
+<!--  -->
+  <view class="courseClick-content">
+    <view>
+      <text class="courseClick-content-text1">¥700</text>
+      <text class="courseClick-content-text2">¥899</text>
+    </view>
+    <view>
+      <text class="courseClick-content-text3">销量：178件</text>
+    </view>
+  </view>
+  <!--  -->
+  <view class="courseClick-h3">
+    <text>名师一对一辅导</text>
+    <text>提供课程回看服务</text>
+  </view>
+  <!--  -->
+  <view class="courseClick-p">
+    <text>课程名称最多显示两行多余用省略号表示，课程名称最多显示两行多余用...</text>
+    <view class="commodity-shart">
+     <cover-image src="../../img/commodity/fx_bz@2x.png"></cover-image>
+     <text>分享</text>
+    </view>
+  </view>
+  <!--  -->
+  <view class="commdity-select">
+    <view bindtap="commdityClick">
+      <text>已选</text>
+      <text>请选择</text>
+      <cover-image src="../../img/commodity/xx@2x.png"></cover-image>
+    </view>
+    <view>
+      <text>参数</text>
+      <text>产地、品牌...</text>
+      <cover-image src="../../img/commodity/xx@2x.png"></cover-image>
+    </view>
+  </view>
+   <!-- 课程详情 -->
+    <view wx:if="{{isActive}}" class="commdityclick-view">
+      <view class="shade"></view>
+      <view class="commdityclick-text">
+        <text>商品参数</text>
+        <view>
+          <view>
+            <text>品牌</text>
+            <text>开课啦</text>
+          </view>
+          <view>
+            <text>货号</text>
+            <text>KC2320125417</text>
+          </view>
+          <view>
+            <text>吊牌价</text>
+            <text>2010元</text>
+          </view>
+          <view>
+            <text>上市年份</text>
+            <text>2020年</text>
+          </view>
+          <view>
+            <text>适用性别</text>
+            <text>小学初中</text>
+          </view>
+        </view>
+        <cover-image src="../../img/commodity/gb_bz@2x.png" class="commdity-image" bindtap="imgclick"></cover-image>
+      </view>
+    </view>
+  <!--  -->
+  <view class="commdity-evaluate"> 
+    <text>宝贝评价（999+）</text>
+    <view class="commdity-evaluate-view">
+      <cover-image src="../../img/commodity/th_bz@2x.png"></cover-image>
+      <text>少少妈</text>
+      <text>2020-05-28 | 小学三年级班</text>
+      <view>
+        <cover-image src="../../img/commodity/xx1@2x.png"></cover-image>
+        <cover-image src="../../img/commodity/xx1@2x.png"></cover-image>
+        <cover-image src="../../img/commodity/xx1@2x.png"></cover-image>
+        <cover-image src="../../img/commodity/xx1@2x.png"></cover-image>
+        <cover-image src="../../img/commodity/xx1@2x.png"></cover-image>
+      </view>
+    </view>
+    <text class="commdity-last-text">老师很有耐心，家里的小孩都提起学习兴趣了，经常不懂就问，都怕烦到老师呢，好评。</text>
+  </view>
+  <!--  -->
+  <view class="commdity-bottom">
+    <view class="commdity-left">
+      <view>
+        <cover-image src="../../img/commodity/spxq_icon_service@2x.png"></cover-image>
+        <text>客服</text>
+      </view>
+      <view>
+        <cover-image src="../../img/commodity/spxq_icon_collect@2x.png"></cover-image>
+        <text>收藏 </text>
+      </view>
+    </view>
+    <view class="commdity-right">
+      <text>加入购物车</text>
+      <text bindtap="pay">立即购买</text>
+    </view>
+  </view>
+</view>

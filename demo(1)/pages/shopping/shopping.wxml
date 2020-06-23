@@ -1,0 +1,53 @@
+<!--pages/shopping/shopping.wxml-->
+<view class="shopping">
+  <view class="shopping-top">
+    <text>购物车（4）</text>
+    <text>编辑</text>
+  </view>
+  <!-- 主体 -->
+  <view class="shopping-content">
+    <view bindtap="commodity">
+     <cover-image src="../../img/shopping/Not yet selected@3x.png" class="shopping-img1"></cover-image>
+     <cover-image src="../../img/shopping/hl_icon@3x.png" class="shopping-img2"></cover-image>
+     <view class="shopping-right">
+       <text>跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+       <text>小学3年纪</text>
+       <text>¥700</text>
+       <cover-image src="../../img/shopping/-_icon@3x.png" class="shopping-img3"></cover-image>
+       <text class="shopping-num">2</text>
+       <cover-image src="../../img/shopping/+_icon@3x.png" class="shopping-img4"></cover-image>
+     </view>
+    </view>
+     <view bindtap="commodity">
+     <cover-image src="../../img/shopping/Not yet selected@3x.png" class="shopping-img1"></cover-image>
+     <cover-image src="../../img/affirm/th_2@2x.png" class="shopping-img2"></cover-image>
+     <view class="shopping-right">
+       <text>跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+       <text>小学3年纪</text>
+       <text>¥700</text>
+       <cover-image src="../../img/shopping/-_icon@3x.png" class="shopping-img3"></cover-image>
+       <text class="shopping-num">2</text>
+       <cover-image src="../../img/shopping/+_icon@3x.png" class="shopping-img4"></cover-image>
+     </view>
+    </view>
+     <view bindtap="commodity">
+     <cover-image src="../../img/shopping/Not yet selected@3x.png" class="shopping-img1"></cover-image>
+     <cover-image src="../../img/myIndent/xhl3_icon@2x.png" class="shopping-img2"></cover-image>
+     <view class="shopping-right">
+       <text>跟着Virtory教你疫情期间如何在家 游遍全世界名胜古迹</text>
+       <text>小学3年纪</text>
+       <text>¥700</text>
+       <cover-image src="../../img/shopping/-_icon@3x.png" class="shopping-img3"></cover-image>
+       <text class="shopping-num">2</text>
+       <cover-image src="../../img/shopping/+_icon@3x.png" class="shopping-img4"></cover-image>
+     </view>
+    </view>
+  </view>
+  <!-- 结算 -->
+  <view class="accounts">
+    <cover-image class="accounts-img" src="../../img/shopping/Not yet selected@3x.png"></cover-image >
+    <text class="accounts-select">全选</text>
+    <text class="accounts-money">合计：1800元</text>
+    <text class="accounts-text">结算（0）</text>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/diary/diary.wxml-->
+<view class="diary">
+	<view>
+		<text class="diary-text1">口述日记标题</text>
+		<input class="weui-input" auto-focus placeholder="请输入口述日记标题" />
+	</view>
+<view>
+	<text class="diary-text2">口述日记简介</text>
+	<textarea class = 'weui-input2' placeholder="请简要描述口述日记简介" focus="{{focus}}" />
+</view>
+<cover-image src="../../img/diary/xb_bg@2x.png" class="xb-bg"></cover-image>
+<cover-image src="../../img/diary/qd_icon@2x.png" class="clickin" wx:if="{{isActive}}" bindtap="imgclick1"></cover-image>
+<text class="time">{{timenum}}</text>
+<cover-image bindtap="imgclick2" src="../../img/diary/zt_icon@2x.png" class="clickout" wx:if="{{!isActive}}"></cover-image>
+</view>

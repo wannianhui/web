@@ -1,0 +1,109 @@
+/* pages/courseClick/courseClick.wxss */
+.courseClick-content {
+  display: flex;
+  line-height: 96rpx;
+  height: 96rpx;
+}
+
+.courseClick-content view {
+  flex: 1;
+}
+
+.courseClick-content-img {
+  width: 35rpx;
+  height: 30rpx;
+  position: relative;
+  top: 35rpx;
+  left: 180rpx;
+}
+
+.courseClick-content-text1{
+  font-size: 36rpx;
+  color: #2E2E2E;
+  font-weight: bold;
+  margin-left: 36rpx;
+}
+.courseClick-content-text2{
+  font-size: 28rpx;
+  color:#999999;
+  margin-left: 56rpx;
+}
+.courseClick-content-text3{
+  color: #999999;
+font-size: 22rpx;
+position: relative;
+top: -32rpx;
+left: 236rpx;
+}
+.courseClick-h3{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.courseClick-h3{
+font-size: 24rpx;
+color: #60B3EB;
+}
+.courseClick-h3 text{
+padding: 10rpx;
+background: rgb(240, 240,240);
+}
+.courseClick-h3 text:nth-child(1){
+  margin-left: 30rpx;
+}
+.courseClick-h3 text:nth-child(2){
+  margin-left: 22rpx;
+}
+.courseClick-p{
+  color: #444444;
+font-size: 30rpx;
+font-weight: bold;
+margin-left: 30rpx;
+line-height: 51rpx;
+margin-top: 11rpx;
+width: 92%;
+}
+.courseClick-text{
+  color: #444444;
+  font-size: 28rpx;
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 27rpx;
+line-height: 46rpx;
+
+}
+.courseClick-bottom{
+  width: 100%;
+  height: 110rpx;
+  border-top: 1px solid #666;
+  margin-top: 30rpx;
+}
+.courseClick-left{
+  width: 52%;
+  float: left;
+  display: flex;
+}
+.courseClick-bottom cover-image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.courseClick-bottom view {
+flex: 1;
+margin-left: 28rpx;
+font-size: 20rpx;
+color: #888888;
+margin-top: 9rpx;
+}
+.courseClick-bottom .courseClick-buy{
+  width: 40%;
+  float: right;
+  width: 198rpx;
+height: 80rpx;
+font-size: 28rpx;
+color: #ffffff;
+background: #20CD88;
+text-align: center;
+line-height: 80rpx;
+margin-right: 30rpx;
+margin-top: 14rpx;
+}

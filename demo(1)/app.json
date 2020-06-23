@@ -1,0 +1,54 @@
+
+{
+  "pages":[
+    "pages/index/index",
+    "pages/course/course",
+    "pages/shopping/shopping",
+    "pages/my/my",
+    "pages/courseClick/courseClick",
+    "pages/myClick/myClick",
+    "pages/payment/payment",
+    "pages/commodity/commodity",
+    "pages/affirm/affirm",
+    "pages/diary/diary",
+    "pages/pay/pay",
+    "pages/payClick/payClick",
+    "pages/myIndent/myIndent"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#20CD88",
+    "navigationBarTitleText": "tabBar",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"img/index/zy_icon@2x.png",
+      "selectedIconPath":"img/index/zy_bz@3x.png"
+    },{
+      "pagePath": "pages/course/course",
+      "text": "课程",
+      "iconPath":"img/index/kc_bz@3x.png",
+      "selectedIconPath":"img/course/kc_btn@3x.png"
+    },{
+      "pagePath": "pages/diary/diary",
+      "text": "口述日记",
+      "iconPath":"img/index/yy_btn@2x.png",
+      "selectedIconPath":"img/index/ks_an@3x.png"
+    },{
+      "pagePath": "pages/shopping/shopping",
+      "text": "购物车",
+      "iconPath":"img/index/gwc_bz@3x.png",
+      "selectedIconPath":"img/index/gwc_icon@2x.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath":"img/index/wd_bz@3x.png",
+      "selectedIconPath":"img/index/gr_icon@2x.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

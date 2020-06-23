@@ -1,0 +1,183 @@
+/* pages/shopping/shopping.wxss */
+.shopping {
+  background: #F7F8FC;
+  width: 100%;
+  height: 100%;
+}
+.shopping-top {
+  height: 103rpx;
+  background: white;
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 100%;
+  line-height: 103rpx;
+
+}
+
+.shopping-top text:nth-child(1) {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.shopping-top text:nth-child(2) {
+  color: #2CD08F;
+  position: absolute;
+  top: 1px;
+  left: 620rpx;
+
+}
+
+.shopping-content {
+  width: 94%;
+  border-radius: 30rpx;
+  background: white;
+  margin: 0 auto;
+  margin-bottom: 161rpx;
+}
+
+.shopping-content>view {
+  width: 96%;
+margin: 0 auto;
+border-bottom: 1px solid #EEEEEE;
+}
+.shopping-content>view:nth-child(3){
+  border-bottom: 0px solid red;
+}
+
+.shopping-img1 {
+  width: 10%;
+  position: relative;
+  top: 87rpx;
+  left: 12rpx;
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.shopping-img2 {
+  width: 26%;
+  position: relative;
+  top: -32rpx;
+  left: 75rpx;
+}
+
+.shopping-img3 {
+  width: 58rpx;
+}
+
+.shopping-img4 {
+  width: 58rpx;
+}
+
+.shopping-right {
+  width: 488rpx;
+  float: right;
+  position: relative;
+  top: -121px;
+  font-size: 27rpx;
+  height: 57rpx;
+
+}
+
+.shopping-right text:nth-child(1) {
+  width: 402rpx;
+  display: block;
+  position: relative;
+  top: 29rpx;
+  left: 85rpx;
+}
+
+.shopping-right text:nth-child(2) {
+  display: block;
+position: relative;
+top: 36rpx;
+left: 86rpx;
+width: 171rpx;
+background: #F7F8FC;
+text-align: center;
+height: 49rpx;
+padding: -2px;
+line-height: 49rpx;
+font-size: 22rpx;
+}
+
+.shopping-right text:nth-child(3) {
+  display: block;
+position: relative;
+top: 38rpx;
+left: 85rpx;
+font-size: 30rpx;
+font-weight: bold;
+
+}
+
+.shopping-img3 {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: -9rpx;
+  left: 313rpx;
+}
+.shopping-img4 {
+  width: 40rpx;
+  height: 40rpx;
+position: relative;
+top: -89rpx;
+left: 416rpx;
+
+}
+.shopping-num{
+  position: relative;
+top: -51rpx;
+left: 378rpx;
+font-size: 31rpx;
+
+}
+.accounts{
+  width: 94%;
+  height: 97rpx;
+  background: white;
+  margin: 0 auto;
+  border-radius: 30rpx;
+  margin-bottom: 99rpx;
+  position: relative;
+}
+.accounts-img{
+  width: 42rpx;
+height: 42rpx;
+position: relative;
+top: 30rpx;
+left: 36rpx;
+
+}
+.accounts-money{
+  text-align: center;
+position: relative;
+top: -12rpx;
+display: block;
+color: #FFB93E;
+}
+.accounts-text{
+  width: 198rpx;
+height: 80rpx;
+background: #20CD88;
+display: block;
+top: 3rpx;
+line-height: 80rpx;
+text-align: center;
+border-radius: 11rpx;
+color: white;
+font-size: 28rpx;
+font-weight: bold;
+position: relative;
+top: -41px;
+left: 488rpx;
+
+}
+.accounts-select{
+  position: absolute;
+top: 29rpx;
+left: 107rpx;
+color: #666666;
+}

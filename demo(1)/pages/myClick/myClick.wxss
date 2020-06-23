@@ -1,0 +1,49 @@
+/* pages/myClick/myClick.wxss */
+.myClick{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  background: #F7F8FC;
+  padding-top: 8rpx;
+}
+.myClick view{
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  height: 301rpx;
+  background: white;
+  border-radius: 15rpx;
+  margin-top: 15rpx;
+}
+.myClick view  cover-image:nth-child(1){
+  width: 714rpx;
+  height: 108rpx;
+  margin: 0 auto;
+}
+.myClick view  cover-image:nth-child(3){
+  width: 58rpx;
+  height: 58rpx;
+  margin: 0 auto;
+}
+.myClick-text{
+  width: 93%;
+  margin: 0 auto;
+  display: block;
+  font-size: 26rpx;
+  color: #666666;
+}
+.myClick view  text:nth-child(2){
+  position: absolute;
+top: 31rpx;
+left: 259rpx;
+color: white;
+}
+.myClick view  cover-image:nth-child(3){
+  position: absolute;
+top: 31rpx;
+left: 613rpx;
+}
+.myClick-text{
+  margin-top: 30rpx;
+}

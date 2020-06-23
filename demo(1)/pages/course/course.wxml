@@ -1,0 +1,53 @@
+<!--pages/course/course.wxml-->
+<view class="course">
+	<view class="course-top">
+		<cover-image class="course-top-img" src="../../img/course/ls_bg@3x.png"></cover-image>
+		<view>
+			<text class="course-top-text1">全部</text>
+			<text class="course-top-text1">语文</text>
+			<text class="course-top-text1">数学</text>
+		</view>
+	</view>
+	<!-- 主体 -->
+	<view class="course-content">
+		<view bindtap="btnclick">
+			<cover-image src="../../img/course/hl_icon@3x.png" class="course-content-img1"></cover-image>
+			<view>
+				<text class="course-content-text1">小孩音乐细胞从小培养起，小陈老师教小孩爱上音乐</text>
+				<view class="course-content-view">
+					<text class="course-content-text2">民谣</text>
+					<text class="course-content-text3">中/西方乐器</text>
+				</view>
+				<cover-image src="../../img/course/gk_icon@2x.png" class="course-content-img2"></cover-image>
+				<text class="course-content-text4">12人观看</text>
+				<text class="course-content-text5">¥1100 </text>
+			</view>
+		</view>
+    <view bindtap="btnclick">
+			<cover-image src="../../img/course/xhl_icon@3x.png" class="course-content-img1"></cover-image>
+			<view>
+				<text class="course-content-text1">小孩音乐细胞从小培养起，小陈老师教小孩爱上音乐</text>
+				<view class="course-content-view">
+					<text class="course-content-text2">民谣</text>
+					<text class="course-content-text3">中/西方乐器</text>
+				</view>
+				<cover-image src="../../img/course/gk_icon@2x.png" class="course-content-img2"></cover-image>
+				<text class="course-content-text4">12人观看</text>
+				<text class="course-content-text5">¥1100 </text>
+			</view>
+		</view>
+    <view bindtap="btnclick">
+			<cover-image src="../../img/course/xhi_icon@3x.png" class="course-content-img1"></cover-image>
+			<view>
+				<text class="course-content-text1">小孩音乐细胞从小培养起，小陈老师教小孩爱上音乐</text>
+				<view class="course-content-view">
+					<text class="course-content-text2">民谣</text>
+					<text class="course-content-text3">中/西方乐器</text>
+				</view>
+				<cover-image src="../../img/course/gk_icon@2x.png" class="course-content-img2"></cover-image>
+				<text class="course-content-text4">12人观看</text>
+				<text class="course-content-text5">¥1100 </text>
+			</view>
+		</view>
+	</view>
+</view>
